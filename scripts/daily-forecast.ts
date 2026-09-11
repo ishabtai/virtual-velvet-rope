@@ -112,7 +112,42 @@ async function main() {
   // not downloadable cannot be checked by anyone else.
   writeJson(join(DATA_DIR, "polls.json"), polls);
 
+  // A compact trend series, so the site can draw the history in one request
+  // instead of fetching every dated snapshot.
+  writeJson(join(DATA_DIR, "trend.json"), buildTrend(merged));
+
   console.log(`[done] wrote ${dates.length} snapshot(s) to public/data`);
+}
+
+/**
+ * Collapses every snapshot on disk into one series: seats per party per day,
+ * plus the bloc totals. Reads the files rather than the in-memory run so a
+ * backfill and an incremental run produce the same series.
+ */
+function buildTrend(index: Map<string, { date: string; headline: string }>) {
+  const points: {
+    date: string;
+    seats: Record<string, number>;
+    blocs: Record<string, number>;
+  }[] = [];
+  for (const { date } of [...index.values()].sort((a, b) => a.date.localeCompare(b.date))) {
+    const path = join(DATA_DIR, `forecast-${date}.json`);
+    if (!existsSync(path)) continue;
+    const snap = JSON.parse(readFileSync(path, "utf8")) as {
+      parties: { partyId: string; meanSeats: number }[];
+      blocs: { bloc: string; meanSeats: number }[];
+    };
+    points.push({
+      date,
+      seats: Object.fromEntries(
+        snap.parties.map((p) => [p.partyId, Number(p.meanSeats.toFixed(2))]),
+      ),
+      blocs: Object.fromEntries(
+        snap.blocs.map((b) => [b.bloc, Number(b.meanSeats.toFixed(2))]),
+      ),
+    });
+  }
+  return points;
 }
 
 function loadPrevious(date: string): FullForecast | undefined {

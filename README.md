@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# מדד הבחירות — תחזית לכנסת ה-26
 
-## Project info
+מודל תחזית לבחירות לכנסת ה-26 (27 באוקטובר 2026), ואתר שמציג את התחזית, את הדוח
+היומי ואת כל שלבי החישוב.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+המודל אינו מנבא — הוא מסכם את הסקרים שפורסמו ומכמת את אי-הוודאות סביבם, כולל
+האפשרות שכל הסקרים טועים יחד באותו כיוון.
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## הרצה
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run forecast      # מייצר את תחזית היום ל-public/data
+npm run dev           # מריץ את האתר
 ```
 
-**Edit a file directly in GitHub**
+| פקודה | מה היא עושה |
+| --- | --- |
+| `npm run forecast` | מריץ את המודל ליום הנוכחי וכותב snapshot ל-`public/data` |
+| `npm run forecast -- --date 2026-09-11` | מריץ ליום מסוים |
+| `npm run forecast -- --backfill 30` | בונה מחדש 30 יום אחורה (לגרף המגמה) |
+| `npm test` | 46 בדיקות יחידה על המנוע |
+| `npm run typecheck` | בדיקת טיפוסים |
+| `npm run build` | בניית האתר |
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## מבנה
 
-**Use GitHub Codespaces**
+```
+src/engine/            המנוע — TypeScript טהור, ללא גישה לרשת, נבדק ביחידות
+  types.ts             טיפוסי הליבה
+  config.ts            כל קבוע במודל, מתועד
+  baderOfer.ts         הקצאת מנדטים: אחוז חסימה, ד'הונדט, הסכמי עודפים
+  aggregate.ts         המרת מנדטים לאחוזים, שקלול, אמידת אפקטי-בית
+  social.ts            אות הרשתות החברתיות (מומנטום, חסום, כרגע מנוטרל)
+  simulate.ts          סימולציית מונטה קרלו ומודל השגיאה
+  coalitions.ts        קואליציות והסתברות ראשות ממשלה
+  forecast.ts          המתזמר שמחבר הכול
+  report.ts            מחולל הדוח היומי
+  data/                מפלגות, סקרים, פרופילי מכונים, נתוני רשתות
+  ingest/              ממשקי קליטת נתונים חיצוניים
+scripts/               משימת התחזית היומית
+public/data/           snapshots יומיים — מה שהאתר קורא
+src/pages/             התחזית · הדוח היומי · הסקרים · המתודולוגיה · הסימולטור
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+המנוע לעולם אינו ניגש לרשת. הוא מקבל מערכי `Poll` ו-`SocialObservation` ומחזיר
+תחזית — ולכן הוא ניתן לבדיקה ולשחזור מלא. כל מה שנוגע בעולם החיצון יושב מאחורי
+הממשקים ב-`src/engine/ingest`.
 
-## What technologies are used for this project?
+## שני דברים שחשוב לדעת לפני שמשתמשים בזה
 
-This project is built with:
+**אות הרשתות החברתיות מנוטרל.** המנגנון מיושם ונבדק במלואו, אך לסביבה שבה נבנה
+הפרויקט אין גישה ל-API של הפלטפורמות ואין מפתחות, ולכן סדרת הנתונים המחוברת אליו
+היא נתוני הדגמה. כל עוד `SOCIAL_PROVENANCE` אינו `"verified"`, המנוע מאפס את
+תרומת האות לתחזית הראשית. חיבור מקור מאומת ב-`src/engine/ingest/social.ts` מפעיל
+אותו מיד.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+**מאגר הסקרים נאסף ידנית.** הגישה לאתרי החדשות הישראליים ולוויקיפדיה נחסמה על ידי
+מדיניות ה-egress של הסביבה, ולכן הסקרים ב-`src/engine/data/polls.ts` הוזנו ידנית
+מתוך הפרסומים, עם קישור מקור לכל אחד. ערך שנגזר מסך גוש שפורסם ולא הודפס ישירות
+מסומן ב-`partial` ומתועד בשדה `notes` — והאתר מציג את שניהם.
 
-## How can I deploy this project?
+## חיבור מקור סקרים חי
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```ts
+import { registerPollSource } from "@/engine/ingest";
 
-## Can I connect a custom domain to my Lovable project?
+registerPollSource({
+  id: "my-source",
+  name: "...",
+  url: "https://...",
+  async fetch() {
+    return { items: [...], source: "my-source", fetchedAt: new Date().toISOString(), warnings: [] };
+  },
+});
+```
 
-Yes, you can!
+המשימה היומית מרימה כל מקור רשום, מאמתת כל סקר מול `validatePoll`, ומדווחת כשלים
+כאזהרות — מקור אחד שנשבר לעולם אינו מפיל את התחזית.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## אוטומציה
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+`.github/workflows/daily-forecast.yml` מריץ את המודל כל בוקר ב-04:10 UTC, מריץ את
+הבדיקות לפני כן, ומבצע commit ל-snapshot. ריצה שנכשלת משאירה את תחזית אתמול
+במקומה.
+
+## מתודולוגיה
+
+ההסבר המלא — כל שלב, כל קבוע, והנימוק לכל אחד — נמצא בעמוד `/methodology` באתר
+ובתיעוד שבתוך קבצי המנוע.

@@ -137,11 +137,15 @@ export function generateReport(f: FullForecast, previous?: FullForecast): DailyR
       (topPm
         ? `ההסתברות הגבוהה ביותר לראשות הממשלה: ${topPm.leader} — ${pct1(topPm.probability)}. `
         : "") +
-      f.pmProbability
-        .slice(0, 4)
-        .map((p) => `${p.leader} ${pct1(p.probability)}`)
-        .join(", ") +
-      `, ללא הכרעה ${pct1(f.pDeadlock)}. ההסתברויות האלה כוללות את הסבירות הפוליטית של כל מסלול, ולכן אינן זהות להסתברות האריתמטית של הגושים.`,
+      (f.pmProbability.length > 1
+        ? `אחריו: ` +
+          f.pmProbability
+            .slice(1, 4)
+            .map((p) => `${p.leader} ${pct1(p.probability)}`)
+            .join(", ") +
+          ". "
+        : "") +
+      `ללא הכרעה — ${pct1(f.pDeadlock)}. ההסתברויות האלה כוללות את הסבירות הפוליטית של כל מסלול, ולכן אינן זהות להסתברות האריתמטית של הגושים.`,
   });
 
   // --- 7. What the model is not telling you ---
