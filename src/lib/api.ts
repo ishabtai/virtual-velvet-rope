@@ -43,12 +43,12 @@ async function getJson<T>(path: string, bustCache = false): Promise<T> {
   return (await res.json()) as T;
 }
 
-export const fetchLatestForecast = () => getJson<ForecastSnapshot>("/data/latest.json", true);
-export const fetchLatestReport = () => getJson<DailyReport>("/data/latest-report.json", true);
-export const fetchTrend = () => getJson<TrendPoint[]>("/data/trend.json", true);
-export const fetchPolls = () => getJson<Poll[]>("/data/polls.json", true);
+export const fetchLatestForecast = () => getJson<ForecastSnapshot>("data/latest.json", true);
+export const fetchLatestReport = () => getJson<DailyReport>("data/latest-report.json", true);
+export const fetchTrend = () => getJson<TrendPoint[]>("data/trend.json", true);
+export const fetchPolls = () => getJson<Poll[]>("data/polls.json", true);
 export const fetchArchive = () =>
-  getJson<{ date: string; headline: string }[]>("/data/index.json", true);
-export const fetchReport = (date: string) => getJson<DailyReport>(`/data/report-${date}.json`);
+  getJson<{ date: string; headline: string }[]>("data/index.json", true);
+export const fetchReport = (date: string) => getJson<DailyReport>(`data/report-${date}.json`);
 export const fetchForecast = (date: string) =>
-  getJson<ForecastSnapshot>(`/data/forecast-${date}.json`);
+  getJson<ForecastSnapshot>(`data/forecast-${date}.json`);
