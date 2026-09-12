@@ -142,40 +142,60 @@ function stripHtml(s: string): string {
 /**
  * Maps a header row onto party ids.
  *
- * Wikipedia's headers carry the English or Hebrew party name, sometimes with an
- * abbreviation. A column we cannot confidently map is left unmapped rather than
- * guessed — an unmapped column costs us one party, a mis-mapped one corrupts
- * the whole poll.
+ * Matching is by SUBSTRING, not by exact key, and that is not a shortcut — it
+ * is required by the shape of the data. `headerTextOf` deliberately keeps both
+ * the visible cell text and its title/alt attributes so an abbreviated column
+ * is still identifiable, which means a header arrives as "Likud Likud",
+ * "Together Together (Israel)" or "RZP Religious Zionist Party". An exact-key
+ * lookup on the normalised string produced "likudlikud" and matched nothing:
+ * the first live run found 49 tables, read every header correctly, and mapped
+ * ZERO columns.
+ *
+ * Ordering is longest-first so a specific name wins over a fragment of itself,
+ * and a column that matches nothing stays null rather than being guessed —
+ * an unmapped column costs one party, a mis-mapped one corrupts a whole poll.
  */
-function mapHeader(header: string[]): (string | null)[] {
-  const ENGLISH: Record<string, string> = {
-    likud: "likud",
-    yashar: "yashar",
-    yisraelbeiteinu: "yisrael-beiteinu",
-    yisraelbeytenu: "yisrael-beiteinu",
-    shas: "shas",
-    utj: "utj",
-    unitedtorahjudaism: "utj",
-    otzmayehudit: "otzma",
-    otzma: "otzma",
-    religiouszionism: "religious-zionism",
-    thedemocrats: "democrats",
-    democrats: "democrats",
-    byachad: "byachad",
-    together: "byachad",
-    raam: "raam",
-    ual: "raam",
-    hadashtaal: "joint-list",
-    jointlist: "joint-list",
-    amchaisrael: "amcha",
-    amcha: "amcha",
-  };
+const ENGLISH_KEYS: [string, string][] = [
+  ["religiouszionist", "religious-zionism"],
+  ["unitedtorahjudaism", "utj"],
+  ["unitedarablist", "raam"],
+  ["yisraelbeiteinu", "yisrael-beiteinu"],
+  ["yisraelbeytenu", "yisrael-beiteinu"],
+  ["israelbeiteinu", "yisrael-beiteinu"],
+  ["otzmayehudit", "otzma"],
+  ["thedemocrats", "democrats"],
+  ["amchaisrael", "amcha"],
+  ["hadashtaal", "joint-list"],
+  ["reservists", "reservists"],
+  ["jointlist", "joint-list"],
+  ["democrats", "democrats"],
+  ["together", "byachad"],
+  ["yashar", "yashar"],
+  ["hadash", "joint-list"],
+  ["likud", "likud"],
+  ["zehut", "religious-zionism"],
+  ["otzma", "otzma"],
+  ["amcha", "amcha"],
+  ["raam", "raam"],
+  ["shas", "shas"],
+  ["rzp", "religious-zionism"],
+  ["utj", "utj"],
+];
 
+function mapHeader(header: string[]): (string | null)[] {
   return header.map((cell) => {
     const key = cell.toLowerCase().replace(/[^a-z]/g, "");
-    if (ENGLISH[key]) return ENGLISH[key];
+    if (key.length >= 3) {
+      for (const [needle, partyId] of ENGLISH_KEYS) {
+        if (key.includes(needle)) return partyId;
+      }
+    }
+    // Hebrew headers (he.wikipedia). The same duplication applies, so a cell
+    // naming one party twice is still that party; two DIFFERENT parties in one
+    // header cell is ambiguous and resolves to null.
     const heb = findPartyMentions(normalizeHebrew(cell));
-    if (heb.length === 1) return heb[0].partyId;
+    const unique = new Set(heb.map((m) => m.partyId));
+    if (unique.size === 1) return [...unique][0];
     return null;
   });
 }
@@ -363,3 +383,6 @@ function outletFrom(row: string[]): string {
 function slug(s: string): string {
   return s.replace(/\s+/g, "-").slice(0, 24);
 }
+
+/** Exposed for unit tests only. */
+export const __testing = { mapHeader, isoDateFrom, sampleSizeFrom };
