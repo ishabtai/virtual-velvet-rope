@@ -82,7 +82,12 @@ jobs:
       - name: Build site
         run: npm run build
 
+      # enablement: true turns Pages on via the API and sets its build type to
+      # "GitHub Actions" on the first run, so the repository needs no manual
+      # setup in Settings. It is idempotent once Pages is already configured.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
