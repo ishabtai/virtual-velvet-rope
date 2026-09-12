@@ -2,6 +2,7 @@ import type { Poll, PollMode } from "../../types";
 import { fetchText, isAllowed } from "../http";
 import { extractDate, findPartyMentions, normalizeHebrew, seatsAfterMention } from "../hebrew";
 import type { IngestResult, PollSource } from "../types";
+import { TEXT_SOURCES } from "../../data/sources";
 import { validatePoll } from "../types";
 
 /**
@@ -33,72 +34,35 @@ import { validatePoll } from "../types";
 export interface NewsOutletConfig {
   id: string;
   name: string;
-  /** Hebrew outlet name as it should appear on the site. */
   outlet: string;
-  /** Polling institute this outlet commissions, when it is consistent. */
   pollster: string;
   mode: PollMode;
-  /** Section pages listing election coverage. */
   indexUrls: string[];
-  /** Article URLs must match this to be followed. */
   articlePattern: RegExp;
-  /** Only follow links whose anchor text suggests a poll. */
   linkTextPattern?: RegExp;
-  /** Minimum parties that must be extracted for the article to count. */
   minParties?: number;
   maxArticles?: number;
 }
 
-export const NEWS_OUTLETS: NewsOutletConfig[] = [
-  {
-    id: "n12",
-    name: "חדשות 12 (mako)",
-    outlet: "חדשות 12",
-    pollster: "מדגם",
-    mode: "mixed",
-    indexUrls: [
-      "https://www.mako.co.il/news-israel-elections",
-      "https://www.mako.co.il/news-israel-elections/2026",
-    ],
-    articlePattern: /^https:\/\/www\.mako\.co\.il\/news-israel-elections\/.+\.htm$/,
-  },
-  {
-    id: "kan",
-    name: "כאן 11",
-    outlet: "כאן 11",
-    pollster: "כאן מחקרים",
-    mode: "phone",
-    indexUrls: ["https://www.kan.org.il/content/kan-news/politic/"],
-    articlePattern: /^https:\/\/www\.kan\.org\.il\/content\/kan-news\/politic\/\d+\/?$/,
-  },
-  {
-    id: "i24",
-    name: "i24NEWS",
-    outlet: "i24NEWS",
-    pollster: "דיירקט פולס",
-    mode: "online-panel",
-    indexUrls: ["https://www.i24news.tv/he/news/israel-elections-2026/polls"],
-    articlePattern: /^https:\/\/www\.i24news\.tv\/he\/news\/israel-elections-2026\/.+/,
-  },
-  {
-    id: "walla",
-    name: "וואלה",
-    outlet: "וואלה",
-    pollster: "לא ידוע",
-    mode: "unknown",
-    indexUrls: ["https://elections.walla.co.il/"],
-    articlePattern: /^https:\/\/(elections|news)\.walla\.co\.il\/item\/\d+/,
-  },
-  {
-    id: "maariv",
-    name: "מעריב",
-    outlet: "מעריב",
-    pollster: "לאזר",
-    mode: "phone",
-    indexUrls: ["https://www.maariv.co.il/elections2026"],
-    articlePattern: /^https:\/\/www\.maariv\.co\.il\/.+\/article-\d+/,
-  },
-];
+/**
+ * Derived from the shared registry in data/sources.ts rather than declared
+ * here. The site renders a source legend from that same list, and a legend
+ * maintained separately from the scraper it describes starts lying the first
+ * time a source is added.
+ */
+export const NEWS_OUTLETS: NewsOutletConfig[] = TEXT_SOURCES.map((src) => ({
+  id: src.id,
+  name: src.name,
+  outlet: src.outlet,
+  pollster: src.pollster,
+  mode: src.mode,
+  indexUrls: src.indexUrls,
+  // Patterns live in the registry as strings so the registry stays plain data
+  // and can be read by the browser bundle without pulling in the scraper.
+  articlePattern: new RegExp(src.articlePattern ?? "^https://"),
+  minParties: src.minParties,
+  maxArticles: src.maxArticles,
+}));
 
 const POLL_WORDS = /סקר|מנדטים|מנדט/;
 

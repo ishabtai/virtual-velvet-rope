@@ -5,6 +5,7 @@ const NAV = [
   { to: "/", label: "התחזית" },
   { to: "/report", label: "הדוח היומי" },
   { to: "/polls", label: "הסקרים" },
+  { to: "/sources", label: "מקרא המקורות" },
   { to: "/methodology", label: "המתודולוגיה" },
   { to: "/simulator", label: "הסימולטור" },
 ];

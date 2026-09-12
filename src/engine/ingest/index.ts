@@ -1,6 +1,6 @@
 import type { Poll, SocialObservation } from "../types";
 import { validatePoll, type IngestResult, type PollSource, type SocialSource } from "./types";
-import { wikipediaSource } from "./sources/wikipedia";
+import { hebrewWikipediaSource, wikipediaSource } from "./sources/wikipedia";
 import { NEWS_OUTLETS, hebrewNewsSource } from "./sources/hebrewNews";
 
 export * from "./types";
@@ -17,6 +17,7 @@ export { NEWS_OUTLETS } from "./sources/hebrewNews";
  */
 const pollSources: PollSource[] = [
   wikipediaSource(),
+  hebrewWikipediaSource(),
   ...NEWS_OUTLETS.map(hebrewNewsSource),
 ];
 const socialSources: SocialSource[] = [];

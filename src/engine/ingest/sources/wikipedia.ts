@@ -19,19 +19,51 @@ import type { IngestResult, PollSource } from "../types";
  * stable than the HTML, and it costs Wikimedia less to serve.
  */
 
-const API = "https://en.wikipedia.org/w/api.php";
-const PAGE = "Opinion polling for the 2026 Israeli legislative election";
+interface WikiConfig {
+  id: string;
+  name: string;
+  api: string;
+  page: string;
+  wikiBase: string;
+}
+
+const EN: WikiConfig = {
+  id: "wikipedia",
+  name: "Wikipedia — Opinion polling for the 2026 Israeli legislative election",
+  api: "https://en.wikipedia.org/w/api.php",
+  page: "Opinion polling for the 2026 Israeli legislative election",
+  wikiBase: "https://en.wikipedia.org/wiki/",
+};
+
+/**
+ * The Hebrew article. Worth running alongside the English one for two reasons:
+ * it is often updated faster for Israeli polls, and its column headers carry
+ * the parties' actual Hebrew names rather than a transliteration, which the
+ * Hebrew matcher reads directly. The same poll appearing on both pages is
+ * collapsed by the store's content fingerprint, not by URL, so it counts once.
+ */
+const HE: WikiConfig = {
+  id: "wikipedia-he",
+  name: "ויקיפדיה העברית — הבחירות לכנסת העשרים ושש",
+  api: "https://he.wikipedia.org/w/api.php",
+  page: "הבחירות לכנסת העשרים ושש",
+  wikiBase: "https://he.wikipedia.org/wiki/",
+};
 
 interface ParseResponse {
   parse?: { text?: { "*": string } };
   error?: { info?: string };
 }
 
-export function wikipediaSource(): PollSource {
+export function hebrewWikipediaSource(): PollSource {
+  return wikipediaSource(HE);
+}
+
+export function wikipediaSource(cfg: WikiConfig = EN): PollSource {
   return {
-    id: "wikipedia",
-    name: "Wikipedia — Opinion polling for the 2026 Israeli legislative election",
-    url: `https://en.wikipedia.org/wiki/${PAGE.replace(/ /g, "_")}`,
+    id: cfg.id,
+    name: cfg.name,
+    url: cfg.wikiBase + encodeURIComponent(cfg.page.replace(/ /g, "_")),
 
     async fetch(): Promise<IngestResult<Poll>> {
       const warnings: string[] = [];
@@ -39,7 +71,7 @@ export function wikipediaSource(): PollSource {
       const fetchedAt = new Date().toISOString();
 
       const url =
-        `${API}?action=parse&page=${encodeURIComponent(PAGE)}` +
+        `${cfg.api}?action=parse&page=${encodeURIComponent(cfg.page)}` +
         `&prop=text&format=json&formatversion=2&origin=*`;
 
       const res = await fetchJson<ParseResponse>(url);
@@ -51,12 +83,12 @@ export function wikipediaSource(): PollSource {
       const tables = extractTables(html);
       if (tables.length === 0) warnings.push("no wikitable found — page layout may have changed");
 
-      for (const table of tables) {
-        const parsed = parseTable(table, warnings);
-        items.push(...parsed);
-      }
+      warnings.push(`found ${tables.length} wikitable(s)`);
+      tables.forEach((table, i) => {
+        items.push(...parseTable(table, warnings, `table ${i + 1}`, cfg));
+      });
 
-      return { items, source: "wikipedia", fetchedAt, warnings };
+      return { items, source: cfg.id, fetchedAt, warnings };
     },
   };
 }
@@ -68,6 +100,16 @@ function extractTables(html: string): string[] {
   let m: RegExpExecArray | null;
   while ((m = re.exec(html)) !== null) out.push(m[0]);
   return out;
+}
+
+/**
+ * Header cells often carry the party name in a `title` or `abbr` attribute
+ * rather than in the visible text — Wikipedia abbreviates narrow columns. This
+ * keeps both, so "UTJ" and "United Torah Judaism" are both available to match.
+ */
+function headerTextOf(cellHtml: string): string {
+  const attrs = [...cellHtml.matchAll(/(?:title|alt|data-sort-value)="([^"]+)"/gi)].map((m) => m[1]);
+  return [stripHtml(cellHtml), ...attrs].join(" ");
 }
 
 function rowsOf(table: string): string[][] {
@@ -138,18 +180,41 @@ function mapHeader(header: string[]): (string | null)[] {
   });
 }
 
-function parseTable(table: string, warnings: string[]): Poll[] {
+function parseTable(table: string, warnings: string[], label: string, cfg: WikiConfig): Poll[] {
   const rows = rowsOf(table);
+  const headerRows = headerRowsOf(table);
   if (rows.length < 2) return [];
 
-  const columns = mapHeader(rows[0]);
+  // Wikipedia polling tables routinely use TWO header rows (a grouping row over
+  // a party row), and sometimes carry the party name only in a title attribute.
+  // Trying every header row and keeping the best mapping is what turns "one
+  // poll parsed" into the whole table: the first live run mapped the grouping
+  // row, found almost nothing, and silently returned a single row.
+  let columns: (string | null)[] = [];
+  let headerIndex = -1;
+  for (let i = 0; i < Math.min(headerRows.length, 4); i++) {
+    const candidate = mapHeader(headerRows[i]);
+    if (candidate.filter(Boolean).length > columns.filter(Boolean).length) {
+      columns = candidate;
+      headerIndex = i;
+    }
+  }
+
   const mapped = columns.filter(Boolean).length;
-  // A polling table has a column per party. Two or three mapped columns means
-  // this is some other table on the page (seat history, a summary box), not
-  // a table we half-understood.
-  if (mapped < 5) return [];
+  if (mapped < 5) {
+    warnings.push(
+      `${label}: only ${mapped} party column(s) mapped from ${headerRows.length} header row(s) ` +
+        `— header sample: ${(headerRows[0] ?? []).slice(0, 8).join(" | ").slice(0, 160)}`,
+    );
+    return [];
+  }
+  warnings.push(
+    `${label}: mapped ${mapped} party columns from header row ${headerIndex + 1}; ${rows.length - 1} data row(s) to read`,
+  );
 
   const polls: Poll[] = [];
+  let skippedNoDate = 0;
+  let skippedFewSeats = 0;
 
   for (const row of rows.slice(1)) {
     if (row.length < columns.length - 2) continue;
@@ -166,13 +231,19 @@ function parseTable(table: string, warnings: string[]): Poll[] {
     }
 
     const total = Object.values(seats).reduce((a, b) => a + b, 0);
-    if (Object.keys(seats).length < 5 || total > 120) continue;
+    if (Object.keys(seats).length < 5 || total > 120) {
+      skippedFewSeats++;
+      continue;
+    }
 
     // The leading cells carry dates, pollster and sample size in some order.
     const lead = row.slice(0, 4).join(" | ");
     const date = isoDateFrom(lead);
     if (!date) {
-      warnings.push(`row skipped: no parsable date in "${lead.slice(0, 60)}"`);
+      skippedNoDate++;
+      if (skippedNoDate <= 3) {
+        warnings.push(`${label}: no parsable date in "${lead.slice(0, 70)}"`);
+      }
       continue;
     }
 
@@ -180,7 +251,7 @@ function parseTable(table: string, warnings: string[]): Poll[] {
     const pollster = pollsterFrom(row);
 
     polls.push({
-      id: `wiki-${date}-${slug(pollster)}`,
+      id: `${cfg.id}-${date}-${slug(pollster)}`,
       date,
       pollster,
       outlet: outletFrom(row) || "ויקיפדיה",
@@ -188,29 +259,62 @@ function parseTable(table: string, warnings: string[]): Poll[] {
       mode: "unknown",
       seats,
       provenance: total === 120 ? "published-full" : "published-partial",
-      source: `https://en.wikipedia.org/wiki/${PAGE.replace(/ /g, "_")}`,
+      source: cfg.wikiBase + encodeURIComponent(cfg.page.replace(/ /g, "_")),
       partial: total !== 120,
       notes: `נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (${total} מנדטים).`,
     });
   }
 
+  warnings.push(
+    `${label}: ${polls.length} poll(s) parsed, ${skippedNoDate} skipped for date, ` +
+      `${skippedFewSeats} skipped for seat count`,
+  );
   return polls;
 }
 
+/** Rows that are all <th> — the header rows, of which there may be several. */
+function headerRowsOf(table: string): string[][] {
+  const out: string[][] = [];
+  const rowRe = /<tr[\s\S]*?<\/tr>/gi;
+  let r: RegExpExecArray | null;
+  while ((r = rowRe.exec(table)) !== null) {
+    const cells = [...r[0].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi)].map((m) => headerTextOf(m[1]));
+    const dataCells = (r[0].match(/<td[^>]*>/gi) ?? []).length;
+    // A header row is one with several <th> and no <td>.
+    if (cells.length >= 3 && dataCells === 0) out.push(cells);
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+
+const MONTHS: Record<string, number> = {
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
+  jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+};
+
 /** Wikipedia writes fieldwork as "5-7 Sep 2026"; we want the END of fieldwork. */
 function isoDateFrom(text: string): string | null {
-  const MONTHS: Record<string, number> = {
-    jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
-    jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
-  };
   const m = text.match(/(\d{1,2})(?:\s*[-–—]\s*(\d{1,2}))?\s+([A-Za-z]{3})[a-z]*\s+(\d{4})/);
   if (m) {
     const day = m[2] ?? m[1]; // end of the fieldwork window
     const mon = MONTHS[m[3].toLowerCase()];
     if (mon) return `${m[4]}-${String(mon).padStart(2, "0")}-${day.padStart(2, "0")}`;
   }
+  // "September 5, 2026"
+  const monthFirst = text.match(/([A-Za-z]{3})[a-z]*\s+(\d{1,2})(?:\s*[-–—]\s*(\d{1,2}))?,?\s+(\d{4})/);
+  if (monthFirst) {
+    const mon = MONTHS[monthFirst[1].toLowerCase()];
+    const day = monthFirst[3] ?? monthFirst[2];
+    if (mon) return `${monthFirst[4]}-${String(mon).padStart(2, "0")}-${day.padStart(2, "0")}`;
+  }
   const iso = text.match(/(\d{4})-(\d{2})-(\d{2})/);
-  return iso ? iso[0] : null;
+  if (iso) return iso[0];
+  // "5/9/2026" — day first, which is the convention on the Hebrew page.
+  const dmy = text.match(/(\d{1,2})[./](\d{1,2})[./](\d{4})/);
+  if (dmy) {
+    return `${dmy[3]}-${dmy[2].padStart(2, "0")}-${dmy[1].padStart(2, "0")}`;
+  }
+  return null;
 }
 
 function sampleSizeFrom(text: string): number | null {
