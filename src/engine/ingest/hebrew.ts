@@ -170,6 +170,19 @@ export function findPartyMentions(text: string): Mention[] {
 }
 
 /**
+ * Words that mean the number after them is a CHANGE, not a level.
+ *
+ * This guard exists because the first live run produced "הליכוד: 4 מנדטים" from
+ * a Channel 12 article. The Likud polls at 21-24; the article said it had LOST
+ * four seats, and the parser read the delta as the total. Hebrew election copy
+ * is saturated with this construction — a party "מאבד ארבעה", "יורד ב-3",
+ * "מתחזק בשניים" — and every one of those numbers is in legal seat range, so
+ * nothing downstream can catch it. It has to be caught here.
+ */
+const DELTA_WORDS =
+  /מאבד|מאבדת|איבד|איבדה|מפסיד|מפסידה|יורד|יורדת|ירד|ירדה|ירידה|צונח|צנח|נחלש|נחלשת|נחלשה|מתרסק|עולה|עלתה|עלה|עלייה|עליה|מזנק|זינק|מתחזק|מתחזקת|התחזק|התחזקה|מוסיף|מוסיפה|הוסיף|הוסיפה|מרוויח|פער|הפרש|לעומת|בהשוואה|יותר|פחות|מאחור|לפני|מוביל|מובילה|מקדים|מקדימה/;
+
+/**
  * Pulls a seat count out of the text immediately following a party mention.
  *
  * Israeli coverage writes this in a small number of shapes — "הליכוד מקבל 24
@@ -201,12 +214,39 @@ export function seatsAfterMention(
   if (sentenceEnd >= 0) bounded = bounded.slice(0, sentenceEnd);
 
   const withUnit = bounded.match(/(\d{1,3})(?:\.\d)?\s*מנדט/);
-  if (withUnit) return legalSeatCount(Number(withUnit[1]));
+  if (withUnit) return readLevel(bounded, withUnit);
 
   const bare = bounded.match(/(?:^|[\s\-–—:(])(\d{1,3})(?:\.\d)?(?:$|[\s,.)])/);
-  if (bare) return legalSeatCount(Number(bare[1]));
+  if (bare) return readLevel(bounded, bare);
 
   return null;
+}
+
+/**
+ * Accepts a matched number only if nothing between the party name and the
+ * number marks it as a change rather than a level.
+ *
+ * Refusing outright is deliberate. Skipping ahead to the next number in the
+ * sentence would look more helpful and be far more dangerous: "הליכוד מאבד 4
+ * מנדטים ויורד ל-21" and "הליכוד מאבד 4 מנדטים, ישר עולה ל-25" are the same
+ * shape, and guessing wrong writes a real party's number onto another party.
+ * A party we fail to read costs the aggregate one data point; a party we read
+ * wrong corrupts it.
+ */
+function readLevel(context: string, match: RegExpMatchArray): number | null {
+  const before = context.slice(0, match.index ?? 0);
+  if (DELTA_WORDS.test(before)) return null;
+
+  // "ב-4" / "ב 4" is the standard Hebrew way to write a delta ("dropped BY
+  // four"), as distinct from "ל-4" ("down TO four"), which is a level.
+  //
+  // Written without \b on purpose: JavaScript's word boundary is defined over
+  // [A-Za-z0-9_], so it never fires next to a Hebrew letter and the guard
+  // silently did nothing. normalizeHebrew has already turned every dash form
+  // into a space by this point, so "ב-5" reaches here as "ב 5".
+  if (/(?:^|\s)ב\s*$/.test(before)) return null;
+
+  return legalSeatCount(Number(match[1]));
 }
 
 /**

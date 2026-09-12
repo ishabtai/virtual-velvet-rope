@@ -218,8 +218,14 @@ function sampleSizeFrom(text: string): number | null {
   if (!m) return null;
   for (const raw of m) {
     const n = Number(raw);
-    // Plausible sample; excludes years and seat numbers.
-    if (n >= 300 && n <= 20000 && n !== 2026) return n;
+    if (n < 300 || n > 20000) continue;
+    // Every four-digit number in a plausible year range is rejected outright.
+    // The first live run read a poll's date column as its sample size and
+    // recorded "2024 respondents". A real sample of exactly 2024 people does
+    // exist in principle, and losing it is a far cheaper mistake than weighting
+    // a poll by its own year.
+    if (n >= 1990 && n <= 2100) continue;
+    return n;
   }
   return null;
 }
