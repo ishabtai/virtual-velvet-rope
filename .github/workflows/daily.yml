@@ -108,12 +108,16 @@ jobs:
       - name: Build site
         run: npm run build
 
-      # enablement: true turns Pages on via the API and sets its build type to
-      # "GitHub Actions" on the first run, so the repository needs no manual
-      # setup in Settings. It is idempotent once Pages is already configured.
+      # NOTE: Pages must be switched on ONCE by a human, in
+      # Settings -> Pages -> Source: "GitHub Actions".
+      #
+      # `enablement: true` was tried here and does not work: the automatic
+      # GITHUB_TOKEN can DEPLOY to an existing Pages site but cannot CREATE one.
+      # Creating it needs repository admin rights the token does not carry, and
+      # the step fails with "Create Pages site failed. Error: Resource not
+      # accessible by integration". Leaving the flag on would just fail every
+      # run until someone enabled Pages by hand anyway.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
