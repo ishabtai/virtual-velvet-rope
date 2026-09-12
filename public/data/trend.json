@@ -449,24 +449,24 @@
   {
     "date": "2026-09-12",
     "seats": {
-      "yashar": 24.25,
-      "likud": 20.01,
-      "byachad": 11.91,
-      "democrats": 10.23,
-      "yisrael-beiteinu": 9.04,
-      "utj": 7.89,
-      "otzma": 7.82,
+      "likud": 24.59,
+      "yashar": 24.31,
+      "byachad": 12.44,
+      "democrats": 10.61,
+      "yisrael-beiteinu": 9.37,
+      "otzma": 8.18,
+      "utj": 7.93,
       "shas": 7.06,
-      "joint-list": 6.4,
-      "raam": 3.66,
-      "religious-zionism": 3.63,
-      "amcha": 2.35,
-      "reservists": 0.48
+      "joint-list": 6.59,
+      "raam": 3.47,
+      "religious-zionism": 2.78,
+      "amcha": 2.17,
+      "reservists": 0.49
     },
     "blocs": {
-      "netanyahu": 48.77,
-      "change": 55.91,
-      "arab": 10.07
+      "netanyahu": 52.71,
+      "change": 57.23,
+      "arab": 10.06
     }
   }
 ]
