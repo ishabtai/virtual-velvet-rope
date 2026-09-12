@@ -82,6 +82,102 @@
     "notes": "פירוט מלא של 120 מנדטים כפי שפורסם. המילואימניקים והכלכלית 1.4% ו'כחול לבן' 1.1% — מתחת לאחוז החסימה."
   },
   {
+    "id": "i24-2026-09-09-1ptftp2",
+    "date": "2026-09-09",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": null,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 27,
+      "yashar": 22,
+      "byachad": 10,
+      "democrats": 9,
+      "utj": 8,
+      "otzma": 8,
+      "joint-list": 7,
+      "raam": 5,
+      "amcha": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a92f58d0",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 100 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "n12-2026-09-09-1d7mqpd",
+    "date": "2026-09-09",
+    "pollster": "מדגם",
+    "outlet": "חדשות 12",
+    "sampleSize": null,
+    "mode": "mixed",
+    "seats": {
+      "likud": 4,
+      "yashar": 25,
+      "byachad": 13,
+      "democrats": 10,
+      "yisrael-beiteinu": 9,
+      "utj": 8,
+      "joint-list": 7,
+      "shas": 7,
+      "religious-zionism": 6,
+      "amcha": 4,
+      "raam": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.mako.co.il/news-israel-elections/2026/Article-c27dc00e8c680a1026.htm",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 97 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "n12-2026-09-09-1d7mqpd",
+    "date": "2026-09-09",
+    "pollster": "מדגם",
+    "outlet": "חדשות 12",
+    "sampleSize": null,
+    "mode": "mixed",
+    "seats": {
+      "likud": 4,
+      "yashar": 25,
+      "byachad": 13,
+      "democrats": 10,
+      "yisrael-beiteinu": 9,
+      "utj": 8,
+      "joint-list": 7,
+      "shas": 7,
+      "religious-zionism": 6,
+      "amcha": 4,
+      "raam": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.mako.co.il/news-israel-elections/2026/Article-c27dc00e8c680a1026.htm",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 97 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "i24-2026-09-09-1ptftp2",
+    "date": "2026-09-09",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": null,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 27,
+      "yashar": 22,
+      "byachad": 10,
+      "democrats": 9,
+      "utj": 8,
+      "otzma": 8,
+      "joint-list": 7,
+      "raam": 5,
+      "amcha": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a92f58d0",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 100 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c12-2026-09-08",
     "date": "2026-09-08",
     "pollster": "מדגם",
@@ -156,6 +252,29 @@
     "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a44c587c",
     "partial": true,
     "notes": "הסקר הראשון שכלל את 'עמך ישראל' של עופר וינטר (8 מנדטים) — הליכוד איבד חמישה מנדטים לעומת 18/8. הליכוד, ישר ועמך ישראל פורסמו במפורש; שאר החלוקה נגזרה. הציונות הדתית–זהות מתחת לאחוז החסימה."
+  },
+  {
+    "id": "i24-2026-08-26-1gftv2",
+    "date": "2026-08-26",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 532,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 8,
+      "yashar": 23,
+      "democrats": 10,
+      "byachad": 8,
+      "shas": 7,
+      "otzma": 6,
+      "raam": 6,
+      "joint-list": 6,
+      "religious-zionism": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a44c587c",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 78 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
     "id": "c13-2026-08-19",
@@ -257,5 +376,87 @@
     "source": "https://www.haaretz.co.il/news/elections/2026-07-08/ty-article/0000019f-42db-d07c-af9f-cadf758a0000",
     "partial": true,
     "notes": "לראשונה מפלגת ישר עוקפת את הליכוד במנדט אחד."
+  },
+  {
+    "id": "wiki-2024-03-07-לאזר",
+    "date": "2024-03-07",
+    "pollster": "לאזר",
+    "outlet": "ויקיפדיה",
+    "sampleSize": 2024,
+    "mode": "unknown",
+    "seats": {
+      "likud": 18,
+      "otzma": 9,
+      "shas": 6,
+      "utj": 9,
+      "yisrael-beiteinu": 4,
+      "raam": 5,
+      "joint-list": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (55 מנדטים)."
+  },
+  {
+    "id": "wiki-2024-03-07-לאזר",
+    "date": "2024-03-07",
+    "pollster": "לאזר",
+    "outlet": "ויקיפדיה",
+    "sampleSize": 2024,
+    "mode": "unknown",
+    "seats": {
+      "likud": 18,
+      "otzma": 9,
+      "shas": 6,
+      "utj": 9,
+      "yisrael-beiteinu": 4,
+      "raam": 5,
+      "joint-list": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (55 מנדטים)."
+  },
+  {
+    "id": "wiki-2024-03-03-קמיל-פוקס",
+    "date": "2024-03-03",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": 2024,
+    "mode": "unknown",
+    "seats": {
+      "likud": 17,
+      "otzma": 9,
+      "shas": 7,
+      "utj": 9,
+      "yisrael-beiteinu": 5,
+      "raam": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (51 מנדטים)."
+  },
+  {
+    "id": "wiki-2024-03-03-קמיל-פוקס",
+    "date": "2024-03-03",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": 2024,
+    "mode": "unknown",
+    "seats": {
+      "likud": 17,
+      "otzma": 9,
+      "shas": 7,
+      "utj": 9,
+      "yisrael-beiteinu": 5,
+      "raam": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (51 מנדטים)."
   }
 ]
