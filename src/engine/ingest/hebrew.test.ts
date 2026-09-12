@@ -109,6 +109,18 @@ describe("seatsAfterMention", () => {
     expect(read("הליכוד מוביל ב 5 מנדטים לעומת ישר")).toEqual({});
   });
 
+  it("does not throw away a level just because a change verb is nearby", () => {
+    // The over-correction this guards against: a first version of the delta
+    // list included מוביל/עולה/יורד/יותר and cut the seats recovered per article
+    // by a third. Hebrew marks the difference with the preposition, not the
+    // verb — "יורד ל-21" and "יורד ב-4" share a verb and mean opposite things.
+    expect(read("ישר מובילה עם 25 מנדטים")).toEqual({ yashar: 25 });
+    expect(read("הליכוד יורד ל 21 מנדטים")).toEqual({ likud: 21 });
+    expect(read("ביחד עולה ל 15 מנדטים")).toEqual({ byachad: 15 });
+    expect(read("הדמוקרטים מתחזקים ל 11 מנדטים")).toEqual({ democrats: 11 });
+    expect(read("ש\"ס עומדת על 7 מנדטים")).toEqual({ shas: 7 });
+  });
+
   it("still reads a level written with ל- rather than ב-", () => {
     // "יורד ל-21" is a level (down TO 21); "יורד ב-4" is a change (by four).
     // The delta verb guard must not swallow the level form... but when both a

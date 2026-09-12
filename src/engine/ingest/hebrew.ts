@@ -170,17 +170,16 @@ export function findPartyMentions(text: string): Mention[] {
 }
 
 /**
- * Words that mean the number after them is a CHANGE, not a level.
+ * Verbs that mean the number after them is a CHANGE, not a level.
  *
- * This guard exists because the first live run produced "הליכוד: 4 מנדטים" from
- * a Channel 12 article. The Likud polls at 21-24; the article said it had LOST
- * four seats, and the parser read the delta as the total. Hebrew election copy
- * is saturated with this construction — a party "מאבד ארבעה", "יורד ב-3",
- * "מתחזק בשניים" — and every one of those numbers is in legal seat range, so
- * nothing downstream can catch it. It has to be caught here.
+ * Kept deliberately SHORT. A first attempt at this list included יורד, עולה,
+ * מתחזק, מוביל, יותר, פחות and לעומת, and it cut the seats recovered per
+ * article by a third: those words are everywhere in election prose, including
+ * in sentences whose number is a perfectly good level ("מובילה עם 25 מנדטים",
+ * "יורד ל-21"). Only verbs that cannot introduce a level survive here.
  */
-const DELTA_WORDS =
-  /מאבד|מאבדת|איבד|איבדה|מפסיד|מפסידה|יורד|יורדת|ירד|ירדה|ירידה|צונח|צנח|נחלש|נחלשת|נחלשה|מתרסק|עולה|עלתה|עלה|עלייה|עליה|מזנק|זינק|מתחזק|מתחזקת|התחזק|התחזקה|מוסיף|מוסיפה|הוסיף|הוסיפה|מרוויח|פער|הפרש|לעומת|בהשוואה|יותר|פחות|מאחור|לפני|מוביל|מובילה|מקדים|מקדימה/;
+const DELTA_VERBS =
+  /מאבד|מאבדת|איבד|איבדה|מפסיד|מפסידה|הפסיד|מוסיף|מוסיפה|הוסיף|הוסיפה|מרוויח|מרוויחה|פער|הפרש/;
 
 /**
  * Pulls a seat count out of the text immediately following a party mention.
@@ -235,16 +234,24 @@ export function seatsAfterMention(
  */
 function readLevel(context: string, match: RegExpMatchArray): number | null {
   const before = context.slice(0, match.index ?? 0);
-  if (DELTA_WORDS.test(before)) return null;
 
-  // "ב-4" / "ב 4" is the standard Hebrew way to write a delta ("dropped BY
-  // four"), as distinct from "ל-4" ("down TO four"), which is a level.
+  // The preposition immediately before the number decides this, and it decides
+  // it far more reliably than the verb does. Hebrew marks the distinction
+  // explicitly: "יורד ל-21" is a level (down TO 21), "יורד ב-4" is a change (by
+  // four) — same verb, opposite meanings, and only the letter tells them apart.
   //
   // Written without \b on purpose: JavaScript's word boundary is defined over
-  // [A-Za-z0-9_], so it never fires next to a Hebrew letter and the guard
-  // silently did nothing. normalizeHebrew has already turned every dash form
-  // into a space by this point, so "ב-5" reaches here as "ב 5".
-  if (/(?:^|\s)ב\s*$/.test(before)) return null;
+  // [A-Za-z0-9_], so it never fires next to a Hebrew letter and an earlier
+  // version of this guard silently did nothing. normalizeHebrew has already
+  // turned every dash form into a space, so "ל-21" reaches here as "ל 21".
+  const LEVEL_PREPOSITION = /(?:^|\s)(?:ל|עם|על|בסך)\s*$/;
+  const DELTA_PREPOSITION = /(?:^|\s)ב\s*$/;
+
+  if (LEVEL_PREPOSITION.test(before)) return legalSeatCount(Number(match[1]));
+  if (DELTA_PREPOSITION.test(before)) return null;
+
+  // No preposition to go on — fall back to the narrow verb list.
+  if (DELTA_VERBS.test(before)) return null;
 
   return legalSeatCount(Number(match[1]));
 }
