@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyMerge, effectivePolls, fingerprint, mergePolls } from "./store";
+import { applyMerge, dedupePolls, effectivePolls, fingerprint, mergePolls } from "./store";
 import type { Poll } from "../types";
 
 function poll(over: Partial<Poll>): Poll {
@@ -89,5 +89,72 @@ describe("effectivePolls", () => {
     const stored = [poll({ id: "dup-of-curated" }), poll({ id: "unique", date: "2026-09-01", seats: { likud: 26, yashar: 20, byachad: 14, democrats: 10, shas: 8, utj: 8 } })];
     const got = effectivePolls(curated, stored);
     expect(got.map((p) => p.id).sort()).toEqual(["curated", "unique"]);
+  });
+});
+
+describe("dedupePolls — one poll per institute per date", () => {
+  const seats11 = { likud: 21, yashar: 25, byachad: 13, democrats: 10, "yisrael-beiteinu": 9, otzma: 9, utj: 8, shas: 7, "joint-list": 7, raam: 5, "religious-zionism": 6 };
+  const seats12 = { ...seats11, amcha: 0 };
+
+  it("collapses several readings of one poll into the most complete one", () => {
+    // Exactly the 9 September case from the live data: the same Channel 12 poll
+    // read out of several articles, each extraction slightly different.
+    const readings = [
+      poll({ id: "a", date: "2026-09-09", pollster: "מדגם", seats: { likud: 21, yashar: 25, byachad: 13 } }),
+      poll({ id: "b", date: "2026-09-09", pollster: "מדגם", seats: seats11 }),
+      poll({ id: "c", date: "2026-09-09", pollster: "מדגם", seats: { likud: 21, yashar: 24 } }),
+    ];
+    const got = dedupePolls(readings);
+    expect(got).toHaveLength(1);
+    expect(got[0].id).toBe("b");
+  });
+
+  it("keeps two genuinely different institutes on the same date", () => {
+    const got = dedupePolls([
+      poll({ id: "midgam", date: "2026-09-09", pollster: "מדגם", seats: seats11 }),
+      poll({ id: "direct", date: "2026-09-09", pollster: "דיירקט פולס", seats: seats11 }),
+    ]);
+    expect(got.map((p) => p.id).sort()).toEqual(["direct", "midgam"]);
+  });
+
+  it("drops an aggregator's copy when an identified poll covers that date", () => {
+    // An aggregator republishing someone else's poll is a duplicate by
+    // construction, and it carries no institute name to correct it by.
+    const got = dedupePolls([
+      poll({ id: "primary", date: "2026-09-09", pollster: "מדגם", seats: seats11 }),
+      poll({ id: "agg", date: "2026-09-09", pollster: "משתנה", outlet: "סקר הסקרים", seats: seats11 }),
+    ]);
+    expect(got.map((p) => p.id)).toEqual(["primary"]);
+  });
+
+  it("keeps an aggregator's poll when nothing identified covers that date", () => {
+    const got = dedupePolls([
+      poll({ id: "agg", date: "2026-09-02", pollster: "משתנה", outlet: "סקר הסקרים", seats: seats11 }),
+    ]);
+    expect(got.map((p) => p.id)).toEqual(["agg"]);
+  });
+
+  it("keeps only one row per aggregator per date", () => {
+    const got = dedupePolls([
+      poll({ id: "x1", date: "2026-09-02", pollster: "משתנה", outlet: "סקר הסקרים", seats: seats11 }),
+      poll({ id: "x2", date: "2026-09-02", pollster: "משתנה", outlet: "סקר הסקרים", seats: seats12 }),
+      poll({ id: "y1", date: "2026-09-02", pollster: "לא ידוע", outlet: "וואלה", seats: seats11 }),
+    ]);
+    expect(got).toHaveLength(2);
+    expect(got.map((p) => p.outlet).sort()).toEqual(["וואלה", "סקר הסקרים"]);
+  });
+
+  it("never lets a scraped reading displace a hand-checked one", () => {
+    const curated = poll({ id: "curated", date: "2026-09-09", pollster: "מדגם", seats: seats11, provenance: "published-full", sampleSize: 800 });
+    const scraped = poll({ id: "scraped", date: "2026-09-09", pollster: "מדגם", seats: seats12, provenance: "published-partial", sampleSize: null });
+    expect(effectivePolls([curated], [scraped]).map((p) => p.id)).toEqual(["curated"]);
+  });
+
+  it("removes the exact duplicates that stored+fresh merging produced", () => {
+    // effectivePolls used to concatenate the store and the fresh scrape without
+    // deduping between them, so a poll already in the store appeared twice.
+    const p1 = poll({ id: "stored", date: "2026-09-05", pollster: "כאן מחקרים", seats: seats11 });
+    const p2 = poll({ id: "fresh", date: "2026-09-05", pollster: "כאן מחקרים", seats: seats11 });
+    expect(effectivePolls([], [p1, p2])).toHaveLength(1);
   });
 });

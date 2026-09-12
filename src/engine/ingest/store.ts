@@ -122,13 +122,89 @@ export function applyMerge(existing: Poll[], report: MergeReport): StoredPolls {
   };
 }
 
+/** Pollster fields that name no actual institute. */
+const UNKNOWN_POLLSTERS = new Set(["משתנה", "לא ידוע", ""]);
+
+const isKnownPollster = (p: Poll) => !UNKNOWN_POLLSTERS.has(p.pollster);
+
+/** More parties extracted, and a better provenance tier, is a better reading. */
+const PROVENANCE_RANK: Record<string, number> = {
+  "published-full": 3,
+  reconstructed: 2,
+  "published-partial": 1,
+  scenario: 0,
+};
+
+function completeness(p: Poll): number {
+  return (
+    Object.keys(p.seats).length * 10 +
+    (PROVENANCE_RANK[p.provenance] ?? 0) +
+    (p.sampleSize ? 1 : 0)
+  );
+}
+
+/**
+ * Collapses multiple readings of the same underlying poll.
+ *
+ * THE PROBLEM THIS SOLVES. An institute publishes one poll; five websites then
+ * report it, and the scraper reads each of them slightly differently — eleven
+ * parties from one article, twelve from another, one party misparsed in a
+ * third. The content fingerprint treats all of those as distinct polls because
+ * it compares the exact seat map, so one night of fieldwork entered the average
+ * up to SEVEN times. That inflates whichever outlet happened to be scraped most
+ * and, worse, it hands the house-effect estimator two contradictory readings
+ * attributed to the same institute on the same date, which is how "מדגם" ended
+ * up with a +4.65 point house effect on Yisrael Beiteinu — a number six times
+ * larger than any real house effect, and pure artefact.
+ *
+ * THE IDENTITY RULE. A poll is identified by WHO CONDUCTED IT AND WHEN, not by
+ * the numbers someone transcribed from it. That is how every serious aggregator
+ * works: an institute publishes one poll per fieldwork date, so (pollster, date)
+ * is the poll. Among readings sharing that key, the most complete one wins.
+ *
+ * AGGREGATORS. A site that republishes other people's polls carries no
+ * institute name, so it cannot be keyed this way — and by construction its rows
+ * are duplicates of a primary publication. So an unattributed poll is kept only
+ * when NO identified poll exists for that date, and then only one per outlet.
+ * It is a gap-filler, never a vote.
+ */
+export function dedupePolls(polls: Poll[]): Poll[] {
+  const best = new Map<string, Poll>();
+  const datesWithKnownPollster = new Set<string>();
+
+  // Pass 1: identified polls, keyed by institute and date.
+  for (const poll of polls) {
+    if (!isKnownPollster(poll)) continue;
+    datesWithKnownPollster.add(poll.date);
+    const key = `known|${poll.pollster}|${poll.date}`;
+    const prev = best.get(key);
+    if (!prev || completeness(poll) > completeness(prev)) best.set(key, poll);
+  }
+
+  // Pass 2: unattributed polls, only where nothing identified covers the date.
+  for (const poll of polls) {
+    if (isKnownPollster(poll)) continue;
+    if (datesWithKnownPollster.has(poll.date)) continue;
+    const key = `anon|${poll.outlet}|${poll.date}`;
+    const prev = best.get(key);
+    if (!prev || completeness(poll) > completeness(prev)) best.set(key, poll);
+  }
+
+  return [...best.values()].sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+}
+
 /**
  * The set the model actually runs on: curated polls, plus every stored scraped
- * poll that does not collide with one.
+ * poll that does not duplicate one.
+ *
+ * Curated polls are hand-checked, so they win every collision — `dedupePolls`
+ * sees them first and `completeness` never displaces them, because a curated
+ * entry is always at least as complete as the scrape it was written from.
  */
 export function effectivePolls(curated: Poll[], stored: Poll[]): Poll[] {
-  const ids = new Set(curated.map((p) => p.id));
-  const prints = new Set(curated.map(fingerprint));
-  const extra = stored.filter((p) => !ids.has(p.id) && !prints.has(fingerprint(p)));
-  return [...curated, ...extra].sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  const curatedKeys = new Set(
+    curated.filter(isKnownPollster).map((p) => `${p.pollster}|${p.date}`),
+  );
+  const extra = stored.filter((p) => !curatedKeys.has(`${p.pollster}|${p.date}`));
+  return dedupePolls([...curated, ...extra]);
 }

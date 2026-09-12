@@ -25,6 +25,7 @@ interface WikiConfig {
   api: string;
   page: string;
   wikiBase: string;
+  outlet: string;
 }
 
 const EN: WikiConfig = {
@@ -33,6 +34,7 @@ const EN: WikiConfig = {
   api: "https://en.wikipedia.org/w/api.php",
   page: "Opinion polling for the 2026 Israeli legislative election",
   wikiBase: "https://en.wikipedia.org/wiki/",
+  outlet: "ויקיפדיה",
 };
 
 /**
@@ -48,6 +50,7 @@ const HE: WikiConfig = {
   api: "https://he.wikipedia.org/w/api.php",
   page: "הבחירות לכנסת העשרים ושש",
   wikiBase: "https://he.wikipedia.org/wiki/",
+  outlet: "ויקיפדיה (עברית)",
 };
 
 interface ParseResponse {
@@ -274,7 +277,7 @@ function parseTable(table: string, warnings: string[], label: string, cfg: WikiC
       id: `${cfg.id}-${date}-${slug(pollster)}`,
       date,
       pollster,
-      outlet: outletFrom(row) || "ויקיפדיה",
+      outlet: outletFrom(row) || cfg.outlet,
       sampleSize,
       mode: "unknown",
       seats,

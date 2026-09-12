@@ -66,7 +66,10 @@ export const SOURCES: SourceDescriptor[] = [
     name: "ויקיפדיה העברית — הבחירות לכנסת ה-26",
     kind: "structured",
     url: "https://he.wikipedia.org/wiki/הבחירות_לכנסת_העשרים_ושש",
-    outlet: "ויקיפדיה",
+    // Distinct from the English page on purpose: the legend groups live
+    // contribution by outlet, and sharing a name made both cards show the
+    // combined total as if each had produced it.
+    outlet: "ויקיפדיה (עברית)",
     pollster: "משתנה",
     mode: "unknown",
     status: "unverified",

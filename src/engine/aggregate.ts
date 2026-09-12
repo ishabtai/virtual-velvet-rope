@@ -214,12 +214,24 @@ export function localAverage(
  * are centred to a weighted mean of zero per party, and the residual common
  * error is handled by the simulation's correlated error terms instead.
  */
+/**
+ * Placeholder pollster fields that name no institute. A poll carrying one of
+ * these is still averaged, but it gets no house-effect correction: "unknown"
+ * is not an institute, and lumping every unattributed poll into one pseudo-
+ * institute and then measuring its systematic bias produces a number about
+ * nothing. Worse, that number is then SUBTRACTED from each of those polls as
+ * if it were a correction.
+ */
+const UNATTRIBUTED = new Set(["משתנה", "לא ידוע", ""]);
+
 export function estimateHouseEffects(
   weighted: WeightedPoll[],
   config: ModelConfig,
   iterations = 12,
 ): Record<string, Record<string, number>> {
-  const pollsters = Array.from(new Set(weighted.map((w) => w.poll.pollster)));
+  const pollsters = Array.from(
+    new Set(weighted.map((w) => w.poll.pollster).filter((h) => !UNATTRIBUTED.has(h))),
+  );
   const partyIds = REAL_PARTIES.map((p) => p.id);
   const SHRINK_K = 3;
 
