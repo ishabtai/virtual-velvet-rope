@@ -143,6 +143,27 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (6 מפלגות, 60 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
+    "id": "i24-2026-09-09-1ptftp2",
+    "date": "2026-09-09",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": null,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 27,
+      "democrats": 9,
+      "utj": 8,
+      "joint-list": 7,
+      "byachad": 6,
+      "raam": 5,
+      "amcha": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a92f58d0",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 66 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c12-2026-09-08",
     "date": "2026-09-08",
     "pollster": "מדגם",
