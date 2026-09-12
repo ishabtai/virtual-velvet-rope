@@ -97,6 +97,27 @@ describe("seatsAfterMention", () => {
     expect(read("הליכוד. הבחירות ייערכו בעוד 46 ימים")).toEqual({});
   });
 
+  it("refuses a delta rather than reading it as a level", () => {
+    // The bug the first live run produced: an article saying the Likud LOST
+    // four seats was recorded as the Likud HAVING four. Every one of these is
+    // in legal seat range, so nothing downstream can catch it.
+    expect(read("הליכוד מאבד 4 מנדטים")).toEqual({});
+    expect(read("הליכוד יורד ב 4 מנדטים")).toEqual({});
+    expect(read("ישר מתחזק ב 2 מנדטים")).toEqual({});
+    expect(read("ביחד נחלש ב 5 מנדטים")).toEqual({});
+    expect(read("הליכוד עם פער של 4 מנדטים")).toEqual({});
+    expect(read("הליכוד מוביל ב 5 מנדטים לעומת ישר")).toEqual({});
+  });
+
+  it("still reads a level written with ל- rather than ב-", () => {
+    // "יורד ל-21" is a level (down TO 21); "יורד ב-4" is a change (by four).
+    // The delta verb guard must not swallow the level form... but when both a
+    // verb and a level appear, refusing is still the safe answer, so this only
+    // asserts the plain level form.
+    expect(read("הליכוד עומד על 21 מנדטים")).toEqual({ likud: 21 });
+    expect(read("ישר מגיעה ל 24 מנדטים")).toEqual({ yashar: 24 });
+  });
+
   it("prefers a number carrying the word מנדט over a nearer bare number", () => {
     expect(read("ש״ס, שקיבלה בשנת 2022 יחד 11 מנדטים")).toEqual({ shas: 11 });
   });
