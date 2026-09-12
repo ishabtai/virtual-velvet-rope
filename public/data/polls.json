@@ -841,6 +841,28 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 73 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
+    "id": "i24-2026-08-26-1gftv2",
+    "date": "2026-08-26",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 532,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 26,
+      "democrats": 10,
+      "byachad": 8,
+      "shas": 7,
+      "otzma": 6,
+      "raam": 6,
+      "joint-list": 6,
+      "religious-zionism": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a44c587c",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 73 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c13-2026-08-19",
     "date": "2026-08-19",
     "pollster": "קמיל פוקס",
@@ -1067,29 +1089,6 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
-    "id": "i24-2026-08-13-8f83ie",
-    "date": "2026-08-13",
-    "pollster": "דיירקט פולס",
-    "outlet": "i24NEWS",
-    "sampleSize": 512,
-    "mode": "online-panel",
-    "seats": {
-      "likud": 30,
-      "yashar": 23,
-      "democrats": 10,
-      "yisrael-beiteinu": 9,
-      "utj": 9,
-      "shas": 8,
-      "byachad": 8,
-      "religious-zionism": 5,
-      "raam": 5
-    },
-    "provenance": "published-partial",
-    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 107 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
-  },
-  {
     "id": "israelvoting-2026-08-10-i76otl",
     "date": "2026-08-10",
     "pollster": "משתנה",
@@ -1256,6 +1255,30 @@
     "source": "https://israelvoting.com/polls/n12-2026-08-03",
     "partial": true,
     "notes": "נקלט אוטומטית מטקסט הכתבה (12 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "i24-2026-07-27-u4mh56",
+    "date": "2026-07-27",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 525,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 29,
+      "yashar": 21,
+      "democrats": 10,
+      "byachad": 9,
+      "shas": 9,
+      "yisrael-beiteinu": 9,
+      "utj": 8,
+      "joint-list": 7,
+      "religious-zionism": 5,
+      "raam": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-02214cba",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 112 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
     "id": "i24-2026-07-27-u4mh56",
@@ -1516,6 +1539,46 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
+    "id": "wikipedia-2025-02-17-מדגם",
+    "date": "2025-02-17",
+    "pollster": "מדגם",
+    "outlet": "ויקיפדיה",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "otzma": 12,
+      "shas": 5,
+      "utj": 7,
+      "yisrael-beiteinu": 54,
+      "raam": 17,
+      "democrats": 12
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (107 מנדטים)."
+  },
+  {
+    "id": "wikipedia-2025-02-17-מדגם",
+    "date": "2025-02-17",
+    "pollster": "מדגם",
+    "outlet": "ויקיפדיה",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "otzma": 12,
+      "shas": 5,
+      "utj": 7,
+      "yisrael-beiteinu": 54,
+      "raam": 17,
+      "democrats": 12
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (107 מנדטים)."
+  },
+  {
     "id": "wiki-2024-03-07-לאזר",
     "date": "2024-03-07",
     "pollster": "לאזר",
@@ -1537,6 +1600,50 @@
     "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (55 מנדטים)."
   },
   {
+    "id": "wikipedia-2024-03-07-לאזר",
+    "date": "2024-03-07",
+    "pollster": "לאזר",
+    "outlet": "ויקיפדיה",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "likud": 18,
+      "religious-zionism": 4,
+      "otzma": 9,
+      "shas": 6,
+      "utj": 9,
+      "yisrael-beiteinu": 4,
+      "raam": 5,
+      "joint-list": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (59 מנדטים)."
+  },
+  {
+    "id": "wikipedia-2024-03-07-לאזר",
+    "date": "2024-03-07",
+    "pollster": "לאזר",
+    "outlet": "ויקיפדיה",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "likud": 18,
+      "religious-zionism": 4,
+      "otzma": 9,
+      "shas": 6,
+      "utj": 9,
+      "yisrael-beiteinu": 4,
+      "raam": 5,
+      "joint-list": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (59 מנדטים)."
+  },
+  {
     "id": "wiki-2024-03-03-קמיל-פוקס",
     "date": "2024-03-03",
     "pollster": "קמיל פוקס",
@@ -1555,5 +1662,49 @@
     "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
     "partial": true,
     "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (51 מנדטים)."
+  },
+  {
+    "id": "wikipedia-2024-03-03-קמיל-פוקס",
+    "date": "2024-03-03",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "likud": 17,
+      "religious-zionism": 5,
+      "otzma": 9,
+      "shas": 7,
+      "utj": 9,
+      "yisrael-beiteinu": 5,
+      "raam": 4,
+      "democrats": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (60 מנדטים)."
+  },
+  {
+    "id": "wikipedia-2024-03-03-קמיל-פוקס",
+    "date": "2024-03-03",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "likud": 17,
+      "religious-zionism": 5,
+      "otzma": 9,
+      "shas": 7,
+      "utj": 9,
+      "yisrael-beiteinu": 5,
+      "raam": 4,
+      "democrats": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (60 מנדטים)."
   }
 ]
