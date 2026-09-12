@@ -72,12 +72,38 @@ jobs:
           git add data public/data
           if git diff --staged --quiet; then
             echo "Nothing changed today."
-          else
-            git commit -m "תחזית יומית: $(date -u +%Y-%m-%d)"
-            # Another run may have landed while this one was working.
-            git pull --rebase --autostash origin ${{ github.ref_name }} || true
-            git push
+            exit 0
           fi
+          git commit -m "תחזית יומית: $(date -u +%Y-%m-%d)"
+
+          # Everything this step commits is GENERATED. Rebasing generated output
+          # onto other generated output conflicts on essentially every line and
+          # the conflict is meaningless — there is no hand-written change to
+          # preserve, only a question of which run produced its files last.
+          #
+          # The earlier version rebased and swallowed the failure with "|| true",
+          # which left the runner on a detached HEAD mid-rebase and then failed
+          # the push with exit 128. Two runs hit exactly that.
+          #
+          # So: merge rather than rebase, and resolve conflicting hunks in favour
+          # of this run (-X ours), because this run generated its files from the
+          # same or newer inputs. Files the other run added and we did not touch
+          # still merge in normally.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "Push rejected — another run landed first. Merging and retrying."
+            git fetch origin ${{ github.ref_name }}
+            git merge origin/${{ github.ref_name }} -X ours --no-edit || {
+              git merge --abort || true
+              echo "::error::Could not reconcile generated data with origin."
+              exit 1
+            }
+          done
+          echo "::error::Push still rejected after 3 attempts."
+          exit 1
 
       - name: Build site
         run: npm run build
