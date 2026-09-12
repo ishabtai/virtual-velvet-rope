@@ -185,3 +185,28 @@ describe("scenario polls", () => {
     expect(withScenario.shares.likud).toBeCloseTo(without.shares.likud, 12);
   });
 });
+
+describe("unattributed polls", () => {
+  it("gets no house-effect correction for a pollster field that names no institute", () => {
+    // "unknown" is not an institute. Lumping every unattributed poll into one
+    // pseudo-institute and measuring its bias produces a number about nothing —
+    // which is then subtracted from those polls as if it were a correction.
+    const polls: Poll[] = [];
+    for (let i = 0; i < 4; i++) {
+      const d = `2026-09-0${i + 1}`;
+      polls.push(poll({ id: `k${i}`, date: d, pollster: "מדגם", seats: { likud: 30, yashar: 30, byachad: 30, democrats: 30 } }));
+      polls.push(poll({ id: `u${i}`, date: d, pollster: "משתנה", seats: { likud: 60, yashar: 20, byachad: 20, democrats: 20 } }));
+    }
+    const he = estimateHouseEffects(weighPolls(polls, "2026-09-05", cfg, {}), cfg);
+    expect(Object.keys(he)).not.toContain("משתנה");
+    expect(Object.keys(he)).toContain("מדגם");
+  });
+
+  it("still counts an unattributed poll in the average", () => {
+    const known = poll({ id: "k", pollster: "מדגם", seats: { likud: 40, yashar: 40, byachad: 40 } });
+    const anon = poll({ id: "a", pollster: "לא ידוע", seats: { likud: 60, yashar: 30, byachad: 30 } });
+    const withAnon = aggregatePolls([known, anon], "2026-09-11", cfg, {});
+    const without = aggregatePolls([known], "2026-09-11", cfg, {});
+    expect(withAnon.shares.likud).toBeGreaterThan(without.shares.likud);
+  });
+});
