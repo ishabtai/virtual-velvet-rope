@@ -54,7 +54,7 @@ export const ONLINE_REPRESENTATIVENESS: Record<string, number> = {
   utj: 0.15,
   // Arab parties: present online, but turnout — not preference — is what moves
   // their seat count, and turnout is not what engagement measures.
-  "hadash-taal": 0.45,
+  "joint-list": 0.45,
   raam: 0.45,
 };
 

@@ -77,12 +77,12 @@ export const PARTIES: Party[] = [
   {
     id: "utj",
     name: "יהדות התורה",
-    leader: "יצחק גולדקנופף",
+    leader: "יעקב אשר",
     bloc: "netanyahu",
     color: "#8b5cf6",
     seats2022: 7,
     surplusPartner: "shas",
-    note: "חרדים אשכנזים",
+    note: "חרדים אשכנזים; בראשות יעקב אשר לראשונה — הנהגת דגל התורה הדיחה את גפני ומקלב מהרשימה בספטמבר 2026",
   },
   {
     id: "otzma",
@@ -122,13 +122,14 @@ export const PARTIES: Party[] = [
     note: "מפלגה חדשה; מרחפת סביב אחוז החסימה",
   },
   {
-    id: "hadash-taal",
-    name: "חד\"ש–תע\"ל",
-    leader: "איימן עודה",
+    id: "joint-list",
+    name: "הרשימה המשותפת",
+    leader: "יוסף ג'בארין",
     bloc: "arab",
     color: "#22c55e",
     seats2022: 5,
     surplusPartner: "raam",
+    note: "חד\"ש, בל\"ד ותע\"ל מתמודדות יחד; בראשות ג'בארין, טיבי ואבו שחאדה",
   },
   {
     id: "raam",
@@ -137,7 +138,7 @@ export const PARTIES: Party[] = [
     bloc: "arab",
     color: "#15803d",
     seats2022: 5,
-    surplusPartner: "hadash-taal",
+    surplusPartner: "joint-list",
   },
   {
     id: "other",

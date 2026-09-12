@@ -16,7 +16,8 @@ function poll(over: Partial<Poll>): Poll {
     sampleSize: 1000,
     mode: "phone",
     seats: {},
-    source: "",
+    source: "https://example.test/poll",
+    provenance: "published-full",
     ...over,
   };
 }
@@ -163,5 +164,24 @@ describe("aggregatePolls", () => {
     const agg = aggregatePolls(POLLS, "2026-09-11", cfg, BELOW_THRESHOLD);
     expect(agg.effectivePollCount).toBeLessThanOrEqual(POLLS.length);
     expect(agg.effectivePollCount).toBeGreaterThan(1);
+  });
+});
+
+describe("scenario polls", () => {
+  it("publishes a scenario variant but keeps it out of the average", () => {
+    const base = poll({ id: "base", seats: { likud: 60, yashar: 60 } });
+    const scenario = poll({
+      id: "scenario",
+      seats: { likud: 20, yashar: 100 },
+      provenance: "scenario",
+      excludeFromAverage: true,
+    });
+    const weighted = weighPolls([base, scenario], "2026-09-11", cfg, {});
+    expect(weighted.map((w) => w.poll.id)).toEqual(["base"]);
+
+    // The scenario's wildly different numbers must not move the estimate.
+    const withScenario = aggregatePolls([base, scenario], "2026-09-11", cfg, {});
+    const without = aggregatePolls([base], "2026-09-11", cfg, {});
+    expect(withScenario.shares.likud).toBeCloseTo(without.shares.likud, 12);
   });
 });

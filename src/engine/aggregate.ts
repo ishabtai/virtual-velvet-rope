@@ -143,6 +143,10 @@ export function pollWeight(
 
 export function weighPolls(polls: Poll[], asOf: string, config: ModelConfig, belowThreshold: Record<string, string[]>): WeightedPoll[] {
   return polls
+    // A scenario variant shares its respondents with the main poll published
+    // beside it. Counting both would weight one night of fieldwork twice and
+    // tilt the average toward whichever branch the outlet chose to model.
+    .filter((p) => !p.excludeFromAverage)
     .filter((p) => Date.parse(p.date) <= Date.parse(asOf))
     .map((poll) => {
       const w = pollWeight(poll, asOf, config);

@@ -23,7 +23,7 @@ import type { SimulationResult } from "./simulate";
 
 const NETANYAHU_BLOC = ["likud", "shas", "utj", "otzma", "religious-zionism", "amcha"];
 const CHANGE_BLOC = ["yashar", "byachad", "democrats", "yisrael-beiteinu", "reservists"];
-const ARAB_BLOC = ["hadash-taal", "raam"];
+const ARAB_BLOC = ["joint-list", "raam"];
 
 interface ScenarioSpec {
   id: string;

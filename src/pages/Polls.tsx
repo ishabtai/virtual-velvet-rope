@@ -8,6 +8,35 @@ import { PARTY_BY_ID, REAL_PARTIES } from "@/engine/data/parties";
 import { POLLSTERS } from "@/engine/data/pollsters";
 import { DEFAULT_CONFIG } from "@/engine/config";
 import { pollWeight } from "@/engine/aggregate";
+import type { PollProvenance } from "@/engine/types";
+
+/**
+ * Provenance is shown on every row rather than summarised once at the top,
+ * because it varies row by row and it is the single most useful thing a reader
+ * can know about a number before trusting it.
+ */
+const PROVENANCE: Record<PollProvenance, { label: string; hint: string; tone: string }> = {
+  "published-full": {
+    label: "פילוח מלא",
+    hint: "כל המפלגות פורסמו במפורש, בסך 120 מנדטים. לא נגזר דבר.",
+    tone: "hsl(var(--good))",
+  },
+  "published-partial": {
+    label: "פילוח חלקי",
+    hint: "רק חלק מהמפלגות פורסמו. הסקר משפיע רק עליהן — שאר המפלגות פשוט חסרות, ולא הושלמו.",
+    tone: "hsl(var(--muted-foreground))",
+  },
+  reconstructed: {
+    label: "כולל ערך שנגזר",
+    hint: "לפחות ערך אחד חושב מסך גוש שפורסם בניכוי שאר המפלגות שפורסמו. אריתמטיקה תקינה, אך זו הסקה — ההערה מפרטת איזה ערך.",
+    tone: "hsl(var(--warn))",
+  },
+  scenario: {
+    label: "תרחיש — אינו נספר בממוצע",
+    hint: "גרסה מותנית שפורסמה לצד סקר הבסיס מאותו שדה. נתונים אמיתיים, אך אינם סקר עצמאי: הם חולקים נדגמים עם סקר הבסיס, ולכן ספירתם תשקלל לילה אחד של ראיונות פעמיים.",
+    tone: "hsl(var(--primary))",
+  },
+};
 
 export default function Polls() {
   const polls = useQuery({ queryKey: ["polls"], queryFn: fetchPolls });
@@ -31,12 +60,24 @@ export default function Polls() {
       <header>
         <h1 className="text-3xl font-black">הסקרים</h1>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-          כל סקר שנכנס למודל, עם קישור לפרסום המקורי והמשקל שהוא מקבל. סקר שסומן{" "}
-          <span className="rounded bg-secondary px-1.5 py-0.5 text-xs">חלקי</span> הוא סקר
-          שהפרסום שלו לא כלל פילוח מלא, וחלק מהערכים נגזרו מסך גוש שכן פורסם. כל גזירה
-          כזו מתועדת בהערה שמתחת לשורה — אגרגטור שמסתיר את השחזור שלו אינו ניתן לביקורת.
+          כל סקר שנכנס למודל, עם קישור לפרסום המקורי, המשקל שהוא מקבל, ו<strong>דירוג
+          מקור</strong> שאומר כמה ממנו פורסם וכמה ממנו נגזר. אגרגטור שמסתיר את השחזור שלו
+          אינו ניתן לביקורת, ולכן הדירוג מופיע על כל שורה ולא פעם אחת בראש העמוד.
         </p>
       </header>
+
+      <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        {(Object.keys(PROVENANCE) as PollProvenance[]).map((key) => (
+          <div key={key} className="panel p-3">
+            <div className="text-xs font-semibold" style={{ color: PROVENANCE[key].tone }}>
+              {PROVENANCE[key].label}
+            </div>
+            <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+              {PROVENANCE[key].hint}
+            </p>
+          </div>
+        ))}
+      </div>
 
       {polls.isLoading && <Skeleton className="mt-8 h-96 w-full" />}
 
@@ -79,11 +120,16 @@ export default function Polls() {
                         >
                           {poll.outlet} ←
                         </a>
-                        {poll.partial && (
-                          <span className="rounded bg-secondary px-1.5 py-px text-[10px] text-muted-foreground">
-                            חלקי
-                          </span>
-                        )}
+                        <span
+                          className="rounded px-1.5 py-px text-[10px]"
+                          style={{
+                            background: `color-mix(in srgb, ${PROVENANCE[poll.provenance].tone} 14%, transparent)`,
+                            color: PROVENANCE[poll.provenance].tone,
+                          }}
+                          title={PROVENANCE[poll.provenance].hint}
+                        >
+                          {PROVENANCE[poll.provenance].label}
+                        </span>
                       </div>
                     </td>
                     <td className="tnum p-2 text-left text-xs">
@@ -92,18 +138,28 @@ export default function Polls() {
                       )}
                     </td>
                     <td className="p-2 text-left">
-                      <div
-                        className="tnum text-xs font-semibold"
-                        title={`עדכניות ${w.recency.toFixed(2)} × מדגם ${w.sample.toFixed(2)} × דירוג ${w.grade.toFixed(2)} × שיטה ${w.mode.toFixed(2)}${w.partial !== 1 ? ` × חלקיות ${w.partial.toFixed(2)}` : ""}`}
-                      >
-                        {w.weight.toFixed(3)}
-                      </div>
-                      <div className="mt-1 h-1 w-14 rounded-full bg-muted">
-                        <div
-                          className="h-1 rounded-full bg-primary"
-                          style={{ width: `${Math.min(100, w.weight * 100)}%` }}
-                        />
-                      </div>
+                      {poll.excludeFromAverage ? (
+                        // Showing the computed weight here would be a lie: this
+                        // row never reaches the average at all.
+                        <div className="text-xs text-muted-foreground" title="מוחרג מהממוצע">
+                          מוחרג
+                        </div>
+                      ) : (
+                        <>
+                          <div
+                            className="tnum text-xs font-semibold"
+                            title={`עדכניות ${w.recency.toFixed(2)} × מדגם ${w.sample.toFixed(2)} × דירוג ${w.grade.toFixed(2)} × שיטה ${w.mode.toFixed(2)}${w.partial !== 1 ? ` × חלקיות ${w.partial.toFixed(2)}` : ""}`}
+                          >
+                            {w.weight.toFixed(3)}
+                          </div>
+                          <div className="mt-1 h-1 w-14 rounded-full bg-muted">
+                            <div
+                              className="h-1 rounded-full bg-primary"
+                              style={{ width: `${Math.min(100, w.weight * 100)}%` }}
+                            />
+                          </div>
+                        </>
+                      )}
                     </td>
                     {columns.map((c) => (
                       <td key={c.id} className="tnum p-2 text-center">

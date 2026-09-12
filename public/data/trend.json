@@ -67,7 +67,7 @@
       "amcha": 7.42,
       "utj": 6.53,
       "shas": 6.51,
-      "hadash-taal": 6.27,
+      "joint-list": 6.27,
       "raam": 5.03,
       "religious-zionism": 1.02,
       "reservists": 1
@@ -90,7 +90,7 @@
       "otzma": 7.36,
       "utj": 6.57,
       "shas": 6.53,
-      "hadash-taal": 6.3,
+      "joint-list": 6.3,
       "raam": 5.06,
       "religious-zionism": 1,
       "reservists": 0.98
@@ -113,7 +113,7 @@
       "otzma": 7.4,
       "utj": 6.56,
       "shas": 6.55,
-      "hadash-taal": 6.28,
+      "joint-list": 6.28,
       "raam": 5.05,
       "reservists": 0.99,
       "religious-zionism": 0.99
@@ -136,7 +136,7 @@
       "amcha": 7.42,
       "utj": 6.57,
       "shas": 6.52,
-      "hadash-taal": 6.28,
+      "joint-list": 6.28,
       "raam": 5.04,
       "reservists": 1,
       "religious-zionism": 0.98
@@ -159,7 +159,7 @@
       "amcha": 7.4,
       "shas": 6.57,
       "utj": 6.54,
-      "hadash-taal": 6.29,
+      "joint-list": 6.29,
       "raam": 5.05,
       "religious-zionism": 0.98,
       "reservists": 0.97
@@ -182,7 +182,7 @@
       "otzma": 7.41,
       "utj": 6.56,
       "shas": 6.54,
-      "hadash-taal": 6.3,
+      "joint-list": 6.3,
       "raam": 5.09,
       "religious-zionism": 0.96,
       "reservists": 0.95
@@ -205,7 +205,7 @@
       "otzma": 7.42,
       "shas": 6.59,
       "utj": 6.56,
-      "hadash-taal": 6.3,
+      "joint-list": 6.3,
       "raam": 5.09,
       "religious-zionism": 0.96,
       "reservists": 0.95
@@ -228,7 +228,7 @@
       "amcha": 7.4,
       "utj": 6.57,
       "shas": 6.53,
-      "hadash-taal": 6.3,
+      "joint-list": 6.3,
       "raam": 5.07,
       "reservists": 0.96,
       "religious-zionism": 0.94
@@ -251,7 +251,7 @@
       "otzma": 7.43,
       "utj": 6.57,
       "shas": 6.55,
-      "hadash-taal": 6.3,
+      "joint-list": 6.3,
       "raam": 5.06,
       "religious-zionism": 0.95,
       "reservists": 0.93
@@ -274,7 +274,7 @@
       "amcha": 7.43,
       "shas": 6.59,
       "utj": 6.54,
-      "hadash-taal": 6.31,
+      "joint-list": 6.31,
       "raam": 5.07,
       "reservists": 0.95,
       "religious-zionism": 0.94
@@ -297,7 +297,7 @@
       "otzma": 7.42,
       "utj": 6.58,
       "shas": 6.58,
-      "hadash-taal": 6.31,
+      "joint-list": 6.31,
       "raam": 5.12,
       "reservists": 0.93,
       "religious-zionism": 0.91
@@ -320,7 +320,7 @@
       "amcha": 7.44,
       "shas": 6.57,
       "utj": 6.54,
-      "hadash-taal": 6.28,
+      "joint-list": 6.28,
       "raam": 5.07,
       "religious-zionism": 0.92,
       "reservists": 0.92
@@ -342,7 +342,7 @@
       "otzma": 6.97,
       "utj": 6.85,
       "shas": 6.83,
-      "hadash-taal": 6.62,
+      "joint-list": 6.62,
       "raam": 4.41,
       "amcha": 4.26,
       "reservists": 1.76,
@@ -365,7 +365,7 @@
       "otzma": 7.67,
       "utj": 7.31,
       "shas": 6.82,
-      "hadash-taal": 6.13,
+      "joint-list": 6.13,
       "raam": 4.22,
       "amcha": 2.91,
       "reservists": 1.73,
@@ -388,7 +388,7 @@
       "otzma": 7.79,
       "utj": 7.62,
       "shas": 6.95,
-      "hadash-taal": 6.28,
+      "joint-list": 6.28,
       "raam": 4.13,
       "religious-zionism": 2.84,
       "amcha": 2.39,
@@ -411,7 +411,7 @@
       "otzma": 7.81,
       "utj": 7.62,
       "shas": 6.94,
-      "hadash-taal": 6.32,
+      "joint-list": 6.32,
       "raam": 4.17,
       "religious-zionism": 2.79,
       "amcha": 2.4,
@@ -426,24 +426,47 @@
   {
     "date": "2026-09-11",
     "seats": {
-      "likud": 24.8,
-      "yashar": 24.64,
-      "byachad": 12.24,
-      "democrats": 10.41,
-      "yisrael-beiteinu": 9.33,
-      "otzma": 7.8,
-      "utj": 7.6,
-      "shas": 6.96,
-      "hadash-taal": 6.35,
-      "raam": 4.16,
-      "religious-zionism": 2.83,
-      "amcha": 2.36,
+      "likud": 24.71,
+      "yashar": 24.15,
+      "byachad": 12.87,
+      "democrats": 10.56,
+      "yisrael-beiteinu": 9.2,
+      "otzma": 8.03,
+      "utj": 7.68,
+      "shas": 6.94,
+      "joint-list": 6.43,
+      "raam": 3.76,
+      "religious-zionism": 2.88,
+      "amcha": 2.29,
       "reservists": 0.51
     },
     "blocs": {
-      "netanyahu": 52.36,
-      "change": 57.13,
-      "arab": 10.51
+      "netanyahu": 52.53,
+      "change": 57.28,
+      "arab": 10.19
+    }
+  },
+  {
+    "date": "2026-09-12",
+    "seats": {
+      "likud": 24.68,
+      "yashar": 24.17,
+      "byachad": 12.86,
+      "democrats": 10.57,
+      "yisrael-beiteinu": 9.23,
+      "otzma": 8.04,
+      "utj": 7.68,
+      "shas": 6.93,
+      "joint-list": 6.42,
+      "raam": 3.75,
+      "religious-zionism": 2.87,
+      "amcha": 2.31,
+      "reservists": 0.49
+    },
+    "blocs": {
+      "netanyahu": 52.52,
+      "change": 57.32,
+      "arab": 10.17
     }
   }
 ]

@@ -108,7 +108,7 @@
       "trend14d": 0
     },
     {
-      "partyId": "hadash-taal",
+      "partyId": "joint-list",
       "share": 0.05475857819482501,
       "pollShare": 0.05475857819482501,
       "socialAdjustment": 0,
@@ -206,7 +206,7 @@
         "democrats",
         "yisrael-beiteinu",
         "reservists",
-        "hadash-taal",
+        "joint-list",
         "raam"
       ],
       "probability": 0.96675,
@@ -300,7 +300,7 @@
       "religious-zionism": 0,
       "amcha": -0.004247225323376998,
       "reservists": 0,
-      "hadash-taal": 0.00016425733294828107,
+      "joint-list": 0.00016425733294828107,
       "raam": -0.0009679449977309474
     },
     "דיירקט פולס": {
@@ -315,7 +315,7 @@
       "religious-zionism": 0,
       "amcha": 0.007819440624060288,
       "reservists": 0,
-      "hadash-taal": -0.0003024093059028829,
+      "joint-list": -0.0003024093059028829,
       "raam": 0.0017820548383562845
     },
     "קמיל פוקס": {
@@ -330,7 +330,7 @@
       "religious-zionism": 0,
       "amcha": 0.0017861076503416444,
       "reservists": 0,
-      "hadash-taal": -0.0000690759864773009,
+      "joint-list": -0.0000690759864773009,
       "raam": 0.0004070549203126677
     }
   },
@@ -371,7 +371,7 @@
     "religious-zionism": 0.026000000000000002,
     "amcha": 0.04097462096238187,
     "reservists": 0.029911564924194608,
-    "hadash-taal": 0.05475857819482501,
+    "joint-list": 0.05475857819482501,
     "raam": 0.04153427135192404,
     "other": 0.012157825638770992
   }

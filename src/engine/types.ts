@@ -36,6 +36,30 @@ export interface Party {
 /** How a poll's fieldwork was carried out — drives the mode-quality weight. */
 export type PollMode = "phone" | "online-panel" | "mixed" | "ivr" | "unknown";
 
+/**
+ * How much of a poll entry came from the published report, and how much was
+ * reconstructed. This is graded rather than boolean because the honest answer
+ * is graded: there is a real difference between a poll whose full 120-seat
+ * breakdown was printed and one where nine parties were printed and the tenth
+ * follows arithmetically from a published bloc total.
+ *
+ *  published-full      Every party's seats printed, summing to 120.
+ *  published-partial   Only some parties printed; the rest are simply absent
+ *                      and the model uses the poll only for what it reported.
+ *  reconstructed       At least one value derived from a published bloc total
+ *                      minus the other published parties. Sound arithmetic,
+ *                      but it is inference, and `notes` must say which value.
+ *  scenario            A conditional variant ("if party X runs") published
+ *                      alongside a main poll from the same fieldwork. Real
+ *                      data, but NOT an independent poll — see
+ *                      `excludeFromAverage`.
+ */
+export type PollProvenance =
+  | "published-full"
+  | "published-partial"
+  | "reconstructed"
+  | "scenario";
+
 export interface Poll {
   id: string;
   /** ISO date the fieldwork ended (the date the engine treats as the poll's age). */
@@ -62,6 +86,19 @@ export interface Poll {
    * are down-weighted and flagged in the UI.
    */
   partial?: boolean;
+  /** Provenance tier. Displayed on the site next to every poll. */
+  provenance: PollProvenance;
+  /**
+   * Excludes the entry from the weighted average while still publishing it.
+   *
+   * Set on scenario polls. A "what if Winter runs" variant shares its fieldwork
+   * and its respondents with the main poll it was published beside, so counting
+   * both would weight that one night of interviewing twice and would pull the
+   * average toward whichever branch the outlet chose to model. The scenario is
+   * still worth publishing — it is the only direct measurement of what happens
+   * when a borderline party crosses — so it is shown and labelled, not used.
+   */
+  excludeFromAverage?: boolean;
   notes?: string;
 }
 

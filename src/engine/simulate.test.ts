@@ -16,7 +16,7 @@ const shares: Record<string, number> = {
   otzma: 0.063,
   utj: 0.06,
   shas: 0.055,
-  "hadash-taal": 0.053,
+  "joint-list": 0.053,
   raam: 0.04,
   "religious-zionism": 0.034,
   amcha: 0.033,

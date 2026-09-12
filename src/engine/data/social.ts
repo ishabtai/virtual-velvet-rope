@@ -50,7 +50,7 @@ function buildPlaceholderSeries(): SocialObservation[] {
     reservists: { vol: 0.03, sent: 0.06, eng: 0.03 },
     shas: { vol: 0.02, sent: -0.04, eng: 0.015 },
     utj: { vol: 0.015, sent: -0.06, eng: 0.01 },
-    "hadash-taal": { vol: 0.02, sent: -0.01, eng: 0.02 },
+    "joint-list": { vol: 0.02, sent: -0.01, eng: 0.02 },
     raam: { vol: 0.015, sent: 0.0, eng: 0.015 },
   };
 
