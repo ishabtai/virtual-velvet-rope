@@ -277,6 +277,29 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 78 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
+    "id": "i24-2026-08-26-1gftv2",
+    "date": "2026-08-26",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 532,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 8,
+      "yashar": 23,
+      "democrats": 10,
+      "byachad": 8,
+      "shas": 7,
+      "otzma": 6,
+      "raam": 6,
+      "joint-list": 6,
+      "religious-zionism": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a44c587c",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 78 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c13-2026-08-19",
     "date": "2026-08-19",
     "pollster": "קמיל פוקס",
@@ -328,6 +351,56 @@
     "notes": "גוש איזנקוט מוביל בחמישה מנדטים על מפלגות הקואליציה. שלוש הגדולות בלבד."
   },
   {
+    "id": "i24-2026-08-13-8f83ie",
+    "date": "2026-08-13",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 512,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 30,
+      "yashar": 23,
+      "democrats": 10,
+      "yisrael-beiteinu": 9,
+      "utj": 9,
+      "shas": 8,
+      "byachad": 8,
+      "otzma": 7,
+      "joint-list": 6,
+      "religious-zionism": 5,
+      "raam": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "i24-2026-08-13-8f83ie",
+    "date": "2026-08-13",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 512,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 30,
+      "yashar": 23,
+      "democrats": 10,
+      "yisrael-beiteinu": 9,
+      "utj": 9,
+      "shas": 8,
+      "byachad": 8,
+      "otzma": 7,
+      "joint-list": 6,
+      "religious-zionism": 5,
+      "raam": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "haaretz-2026-08-06",
     "date": "2026-08-06",
     "pollster": "קמיל פוקס",
@@ -342,6 +415,54 @@
     "source": "https://www.haaretz.com/israel-news/elections/2026-08-06/ty-article/poll-opposition-bloc-slips-to-58-seats-as-zionist-home-misses-threshold/0000019f-d5ca-d315-a1df-ffeedf480000",
     "partial": true,
     "notes": "גוש האופוזיציה יורד ל-58. 'הבית הציוני' אינו חוצה את אחוז החסימה."
+  },
+  {
+    "id": "i24-2026-07-27-u4mh56",
+    "date": "2026-07-27",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 525,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 29,
+      "yashar": 21,
+      "democrats": 10,
+      "byachad": 9,
+      "shas": 9,
+      "yisrael-beiteinu": 9,
+      "utj": 8,
+      "joint-list": 7,
+      "religious-zionism": 5,
+      "raam": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-02214cba",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 112 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "i24-2026-07-27-u4mh56",
+    "date": "2026-07-27",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 525,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 29,
+      "yashar": 21,
+      "democrats": 10,
+      "byachad": 9,
+      "shas": 9,
+      "yisrael-beiteinu": 9,
+      "utj": 8,
+      "joint-list": 7,
+      "religious-zionism": 5,
+      "raam": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-02214cba",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 112 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
     "id": "kan-2026-07-20",
