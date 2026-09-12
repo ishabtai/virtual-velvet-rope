@@ -1,4 +1,109 @@
 {
-  "updatedAt": "",
-  "polls": []
+  "updatedAt": "2026-09-12T21:44:21.909Z",
+  "polls": [
+    {
+      "id": "i24-2026-09-09-1ptftp2",
+      "date": "2026-09-09",
+      "pollster": "דיירקט פולס",
+      "outlet": "i24NEWS",
+      "sampleSize": null,
+      "mode": "online-panel",
+      "seats": {
+        "likud": 27,
+        "democrats": 9,
+        "utj": 8,
+        "joint-list": 7,
+        "byachad": 6,
+        "raam": 5,
+        "amcha": 4
+      },
+      "provenance": "published-partial",
+      "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a92f58d0",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 66 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "n12-2026-09-09-1d7mqpd",
+      "date": "2026-09-09",
+      "pollster": "מדגם",
+      "outlet": "חדשות 12",
+      "sampleSize": null,
+      "mode": "mixed",
+      "seats": {
+        "likud": 21,
+        "byachad": 13,
+        "utj": 8,
+        "joint-list": 7,
+        "shas": 7,
+        "raam": 4
+      },
+      "provenance": "published-partial",
+      "source": "https://www.mako.co.il/news-israel-elections/2026/Article-c27dc00e8c680a1026.htm",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (6 מפלגות, 60 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "i24-2026-08-13-8f83ie",
+      "date": "2026-08-13",
+      "pollster": "דיירקט פולס",
+      "outlet": "i24NEWS",
+      "sampleSize": 512,
+      "mode": "online-panel",
+      "seats": {
+        "likud": 30,
+        "yashar": 23,
+        "democrats": 10,
+        "yisrael-beiteinu": 9,
+        "utj": 9,
+        "shas": 8,
+        "religious-zionism": 5,
+        "raam": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 99 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "wiki-2024-03-07-לאזר",
+      "date": "2024-03-07",
+      "pollster": "לאזר",
+      "outlet": "ויקיפדיה",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 18,
+        "otzma": 9,
+        "shas": 6,
+        "utj": 9,
+        "yisrael-beiteinu": 4,
+        "raam": 5,
+        "joint-list": 4
+      },
+      "provenance": "published-partial",
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (55 מנדטים)."
+    },
+    {
+      "id": "wiki-2024-03-03-קמיל-פוקס",
+      "date": "2024-03-03",
+      "pollster": "קמיל פוקס",
+      "outlet": "חדשות 13",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 17,
+        "otzma": 9,
+        "shas": 7,
+        "utj": 9,
+        "yisrael-beiteinu": 5,
+        "raam": 4
+      },
+      "provenance": "published-partial",
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (51 מנדטים)."
+    }
+  ]
 }
