@@ -1,0 +1,241 @@
+{
+  "asOf": "2026-08-25",
+  "electionDate": "2026-10-27",
+  "daysToElection": 63,
+  "parties": [
+    {
+      "partyId": "likud",
+      "share": 0.19530122796065577,
+      "pollShare": 0.19530122796065577,
+      "socialAdjustment": 0,
+      "meanSeats": 23.22015,
+      "medianSeats": 23,
+      "low80": 19,
+      "high80": 27,
+      "pAboveThreshold": 1,
+      "pLargest": 0.5607,
+      "trend14d": 0.01619220708976879
+    },
+    {
+      "partyId": "yashar",
+      "share": 0.1893312332404442,
+      "pollShare": 0.1893312332404442,
+      "socialAdjustment": 0,
+      "meanSeats": 22.8992,
+      "medianSeats": 23,
+      "low80": 19,
+      "high80": 26,
+      "pAboveThreshold": 1,
+      "pLargest": 0.4391,
+      "trend14d": 0.0021805457028906128
+    },
+    {
+      "partyId": "byachad",
+      "share": 0.11009153090060055,
+      "pollShare": 0.11009153090060055,
+      "socialAdjustment": 0,
+      "meanSeats": 13.1041,
+      "medianSeats": 13,
+      "low80": 10,
+      "high80": 16,
+      "pAboveThreshold": 0.99995,
+      "pLargest": 0.0002,
+      "trend14d": -0.01053346909939945
+    },
+    {
+      "partyId": "democrats",
+      "share": 0.08041666666666666,
+      "pollShare": 0.08041666666666666,
+      "socialAdjustment": 0,
+      "meanSeats": 9.29005,
+      "medianSeats": 9,
+      "low80": 7,
+      "high80": 12,
+      "pAboveThreshold": 0.99865,
+      "pLargest": 0,
+      "trend14d": 0
+    }
+  ],
+  "blocs": [
+    {
+      "bloc": "netanyahu",
+      "meanSeats": 23.22015,
+      "low80": 19,
+      "high80": 27,
+      "pMajority": 0
+    },
+    {
+      "bloc": "change",
+      "meanSeats": 45.29335,
+      "low80": 41,
+      "high80": 50,
+      "pMajority": 0
+    },
+    {
+      "bloc": "arab",
+      "meanSeats": 0,
+      "low80": 0,
+      "high80": 0,
+      "pMajority": 0
+    }
+  ],
+  "coalitions": [
+    {
+      "id": "unity-without-netanyahu",
+      "label": "ממשלת אחדות — ליכוד ללא נתניהו",
+      "members": [
+        "likud",
+        "yashar",
+        "byachad",
+        "yisrael-beiteinu"
+      ],
+      "probability": 0.3505,
+      "meanSeats": 59.22345,
+      "plausibility": 0.25,
+      "reasoning": "תרחיש שנפתח רק אם הליכוד מחליף מנהיגות אחרי הבחירות. איזנקוט וליברמן לא פסלו ישיבה עם הליכוד — הם פסלו ישיבה עם נתניהו. אריתמטית זו אחת הקואליציות הקלות ביותר להרכבה; פוליטית היא דורשת אירוע שטרם קרה."
+    },
+    {
+      "id": "netanyahu-bloc",
+      "label": "ממשלת נתניהו — הגוש הנוכחי",
+      "members": [
+        "likud",
+        "shas",
+        "utj",
+        "otzma",
+        "religious-zionism",
+        "amcha"
+      ],
+      "probability": 0,
+      "meanSeats": 23.22015,
+      "plausibility": 0.95,
+      "reasoning": "הקואליציה היוצאת בתוספת 'עמך ישראל' של וינטר. כל המפלגות בגוש הצהירו על תמיכה בנתניהו לראשות הממשלה, ולכן אם האריתמטיקה מסתדרת — הממשלה קמה. הסיכון העיקרי אינו פוליטי אלא חשבוני: הציונות הדתית–זהות ועמך ישראל מרחפות סביב אחוז החסימה, וכישלון של אחת מהן מוחק ארבעה מנדטים מהגוש."
+    },
+    {
+      "id": "change-bloc",
+      "label": "ממשלת שינוי — ללא המפלגות הערביות",
+      "members": [
+        "yashar",
+        "byachad",
+        "democrats",
+        "yisrael-beiteinu",
+        "reservists"
+      ],
+      "probability": 0,
+      "meanSeats": 45.29335,
+      "plausibility": 0.9,
+      "reasoning": "ישר, ביחד, הדמוקרטים, ישראל ביתנו והמילואימניקים. זו הקואליציה שאיזנקוט מכוון אליה במפורש. החיכוך הפנימי — ליברמן מול גולן בנושאי דת ומדינה — משמעותי אך פחות מהמשותף: הסכמה על החלפת נתניהו. תלויה קריטית בשאלה אם הנדל–זליכה חוצים את אחוז החסימה."
+    },
+    {
+      "id": "change-plus-arab-support",
+      "label": "ממשלת שינוי בתמיכת המפלגות הערביות",
+      "members": [
+        "yashar",
+        "byachad",
+        "democrats",
+        "yisrael-beiteinu",
+        "reservists",
+        "joint-list",
+        "raam"
+      ],
+      "probability": 0,
+      "meanSeats": 45.29335,
+      "plausibility": 0.45,
+      "reasoning": "תמיכה מבחוץ או שותפות מלאה של חד\"ש–תע\"ל ורע\"מ. תקדים ממשלת בנט–לפיד (2021) מוכיח שזה אפשרי עם רע\"מ, אך ליברמן וחלק מישר הביעו הסתייגות, וחד\"ש–תע\"ל עצמה סירבה היסטורית להיכנס לקואליציה. הסתברות פוליטית בינונית — ולכן היא מוצגת בנפרד ולא מוזגת לתרחיש הגוש."
+    },
+    {
+      "id": "grand-coalition",
+      "label": "ממשלת אחדות רחבה — ליכוד וישר",
+      "members": [
+        "likud",
+        "yashar"
+      ],
+      "probability": 0,
+      "meanSeats": 46.11935,
+      "plausibility": 0.12,
+      "reasoning": "שתי המפלגות הגדולות בלבד. חוסמת מבוי סתום אך דורשת מאיזנקוט לחזור בו מהתחייבותו המרכזית. מוצגת כי האריתמטיקה שלה כמעט תמיד עובדת — וזו בדיוק הסיבה לא להסיק ממנה מסקנות."
+    }
+  ],
+  "pmProbability": [],
+  "pDeadlock": 1,
+  "pollsUsed": 6,
+  "effectivePollCount": 4.570733824624356,
+  "houseEffects": {
+    "קמיל פוקס": {
+      "likud": -0.006348383622573027,
+      "yashar": -0.0006979347435102658,
+      "byachad": -0.001062677262273696,
+      "democrats": 0,
+      "yisrael-beiteinu": 0,
+      "shas": 0,
+      "utj": 0,
+      "otzma": 0,
+      "religious-zionism": 0,
+      "amcha": 0,
+      "reservists": 0,
+      "joint-list": 0,
+      "raam": 0
+    },
+    "דיירקט פולס": {
+      "likud": 0.018785119075529377,
+      "yashar": 0.0013963267957719594,
+      "byachad": -0.00013882746839998013,
+      "democrats": 0,
+      "yisrael-beiteinu": 0,
+      "shas": 0,
+      "utj": 0,
+      "otzma": 0,
+      "religious-zionism": 0,
+      "amcha": 0,
+      "reservists": 0,
+      "joint-list": 0,
+      "raam": 0
+    },
+    "כאן מחקרים": {
+      "likud": -0.001278679497071302,
+      "yashar": 0.00022334497616195676,
+      "byachad": 0.0015723139218597163,
+      "democrats": 0,
+      "yisrael-beiteinu": 0,
+      "shas": 0,
+      "utj": 0,
+      "otzma": 0,
+      "religious-zionism": 0,
+      "amcha": 0,
+      "reservists": 0,
+      "joint-list": 0,
+      "raam": 0
+    }
+  },
+  "config": {
+    "recencyHalfLifeDays": 14,
+    "referenceSampleSize": 1000,
+    "modeWeights": {
+      "phone": 1,
+      "mixed": 0.95,
+      "online-panel": 0.8,
+      "ivr": 0.6,
+      "unknown": 0.7
+    },
+    "partialPollPenalty": 0.75,
+    "threshold": 0.0325,
+    "totalSeats": 120,
+    "majority": 61,
+    "socialMaxAdjustmentPp": 0.6,
+    "socialHalfLifeDays": 7,
+    "simulations": 20000,
+    "nationalErrorSd": 0.006,
+    "blocErrorSd": 0.013,
+    "partyErrorSd": 0.011,
+    "electionDate": "2026-10-27",
+    "timeUncertaintyPer30Days": 0.3
+  },
+  "socialEnabled": false,
+  "socialProvenance": "placeholder",
+  "centralShares": {
+    "likud": 0.19530122796065577,
+    "yashar": 0.1893312332404442,
+    "byachad": 0.11009153090060055,
+    "democrats": 0.08041666666666666,
+    "other": 0.4248593412316328
+  }
+}

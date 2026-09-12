@@ -1,0 +1,393 @@
+{
+  "asOf": "2026-09-11",
+  "electionDate": "2026-10-27",
+  "daysToElection": 46,
+  "parties": [
+    {
+      "partyId": "likud",
+      "share": 0.18948235782072761,
+      "pollShare": 0.18948235782072761,
+      "socialAdjustment": 0,
+      "meanSeats": 24.71135,
+      "medianSeats": 25,
+      "low80": 21,
+      "high80": 29,
+      "pAboveThreshold": 1,
+      "pLargest": 0.5993,
+      "trend14d": -0.007069867075903125
+    },
+    {
+      "partyId": "yashar",
+      "share": 0.18466206284203082,
+      "pollShare": 0.18466206284203082,
+      "socialAdjustment": 0,
+      "meanSeats": 24.15395,
+      "medianSeats": 24,
+      "low80": 20,
+      "high80": 28,
+      "pAboveThreshold": 1,
+      "pLargest": 0.4007,
+      "trend14d": -0.0017248557931842934
+    },
+    {
+      "partyId": "byachad",
+      "share": 0.1001332334972916,
+      "pollShare": 0.1001332334972916,
+      "socialAdjustment": 0,
+      "meanSeats": 12.86735,
+      "medianSeats": 13,
+      "low80": 10,
+      "high80": 16,
+      "pAboveThreshold": 0.99995,
+      "pLargest": 0,
+      "trend14d": -0.001212376742091903
+    },
+    {
+      "partyId": "democrats",
+      "share": 0.08196333398895629,
+      "pollShare": 0.08196333398895629,
+      "socialAdjustment": 0,
+      "meanSeats": 10.5569,
+      "medianSeats": 11,
+      "low80": 8,
+      "high80": 13,
+      "pAboveThreshold": 0.99965,
+      "pLargest": 0,
+      "trend14d": 0.007306544315821617
+    },
+    {
+      "partyId": "yisrael-beiteinu",
+      "share": 0.07207062938786096,
+      "pollShare": 0.07207062938786096,
+      "socialAdjustment": 0,
+      "meanSeats": 9.1967,
+      "medianSeats": 9,
+      "low80": 7,
+      "high80": 12,
+      "pAboveThreshold": 0.9986,
+      "pLargest": 0,
+      "trend14d": 0.010403962721194294
+    },
+    {
+      "partyId": "otzma",
+      "share": 0.0649217249306468,
+      "pollShare": 0.0649217249306468,
+      "socialAdjustment": 0,
+      "meanSeats": 8.02585,
+      "medianSeats": 8,
+      "low80": 6,
+      "high80": 10,
+      "pAboveThreshold": 0.9936,
+      "pLargest": 0,
+      "trend14d": 0.0032550582639801276
+    },
+    {
+      "partyId": "utj",
+      "share": 0.06073249819351641,
+      "pollShare": 0.06073249819351641,
+      "socialAdjustment": 0,
+      "meanSeats": 7.67915,
+      "medianSeats": 8,
+      "low80": 6,
+      "high80": 10,
+      "pAboveThreshold": 0.9869,
+      "pLargest": 0,
+      "trend14d": 0.00677416486018307
+    },
+    {
+      "partyId": "shas",
+      "share": 0.055385327403235145,
+      "pollShare": 0.055385327403235145,
+      "socialAdjustment": 0,
+      "meanSeats": 6.9391,
+      "medianSeats": 7,
+      "low80": 5,
+      "high80": 9,
+      "pAboveThreshold": 0.9726,
+      "pLargest": 0,
+      "trend14d": 0.0014269940699018074
+    },
+    {
+      "partyId": "joint-list",
+      "share": 0.05377344511236038,
+      "pollShare": 0.05377344511236038,
+      "socialAdjustment": 0,
+      "meanSeats": 6.4255,
+      "medianSeats": 7,
+      "low80": 0,
+      "high80": 10,
+      "pAboveThreshold": 0.8896,
+      "pLargest": 0,
+      "trend14d": -0.00018488822097295632
+    },
+    {
+      "partyId": "raam",
+      "share": 0.038289589992733096,
+      "pollShare": 0.038289589992733096,
+      "socialAdjustment": 0,
+      "meanSeats": 3.7647,
+      "medianSeats": 5,
+      "low80": 0,
+      "high80": 7,
+      "pAboveThreshold": 0.66765,
+      "pLargest": 0,
+      "trend14d": -0.007960410007266917
+    },
+    {
+      "partyId": "religious-zionism",
+      "share": 0.034594359016945644,
+      "pollShare": 0.034594359016945644,
+      "socialAdjustment": 0,
+      "meanSeats": 2.8844,
+      "medianSeats": 4,
+      "low80": 0,
+      "high80": 6,
+      "pAboveThreshold": 0.5893,
+      "pLargest": 0,
+      "trend14d": 0.008594359016945642
+    },
+    {
+      "partyId": "amcha",
+      "share": 0.03235256836329543,
+      "pollShare": 0.03235256836329543,
+      "socialAdjustment": 0,
+      "meanSeats": 2.28655,
+      "medianSeats": 0,
+      "low80": 0,
+      "high80": 5,
+      "pAboveThreshold": 0.48905,
+      "pLargest": 0,
+      "trend14d": -0.02931409830337124
+    },
+    {
+      "partyId": "reservists",
+      "share": 0.02323038025407058,
+      "pollShare": 0.02323038025407058,
+      "socialAdjustment": 0,
+      "meanSeats": 0.5085,
+      "medianSeats": 0,
+      "low80": 0,
+      "high80": 4,
+      "pAboveThreshold": 0.11975,
+      "pLargest": 0,
+      "trend14d": -0.0027696197459294233
+    }
+  ],
+  "blocs": [
+    {
+      "bloc": "netanyahu",
+      "meanSeats": 52.5264,
+      "low80": 46,
+      "high80": 59,
+      "pMajority": 0.0518
+    },
+    {
+      "bloc": "change",
+      "meanSeats": 57.2834,
+      "low80": 51,
+      "high80": 64,
+      "pMajority": 0.2401
+    },
+    {
+      "bloc": "arab",
+      "meanSeats": 10.1902,
+      "low80": 4,
+      "high80": 16,
+      "pMajority": 0
+    }
+  ],
+  "coalitions": [
+    {
+      "id": "change-plus-arab-support",
+      "label": "ממשלת שינוי בתמיכת המפלגות הערביות",
+      "members": [
+        "yashar",
+        "byachad",
+        "democrats",
+        "yisrael-beiteinu",
+        "reservists",
+        "joint-list",
+        "raam"
+      ],
+      "probability": 0.9209,
+      "meanSeats": 67.4736,
+      "plausibility": 0.45,
+      "reasoning": "תמיכה מבחוץ או שותפות מלאה של חד\"ש–תע\"ל ורע\"מ. תקדים ממשלת בנט–לפיד (2021) מוכיח שזה אפשרי עם רע\"מ, אך ליברמן וחלק מישר הביעו הסתייגות, וחד\"ש–תע\"ל עצמה סירבה היסטורית להיכנס לקואליציה. הסתברות פוליטית בינונית — ולכן היא מוצגת בנפרד ולא מוזגת לתרחיש הגוש."
+    },
+    {
+      "id": "unity-without-netanyahu",
+      "label": "ממשלת אחדות — ליכוד ללא נתניהו",
+      "members": [
+        "likud",
+        "yashar",
+        "byachad",
+        "yisrael-beiteinu"
+      ],
+      "probability": 0.9919,
+      "meanSeats": 70.92935,
+      "plausibility": 0.25,
+      "reasoning": "תרחיש שנפתח רק אם הליכוד מחליף מנהיגות אחרי הבחירות. איזנקוט וליברמן לא פסלו ישיבה עם הליכוד — הם פסלו ישיבה עם נתניהו. אריתמטית זו אחת הקואליציות הקלות ביותר להרכבה; פוליטית היא דורשת אירוע שטרם קרה."
+    },
+    {
+      "id": "change-bloc",
+      "label": "ממשלת שינוי — ללא המפלגות הערביות",
+      "members": [
+        "yashar",
+        "byachad",
+        "democrats",
+        "yisrael-beiteinu",
+        "reservists"
+      ],
+      "probability": 0.2401,
+      "meanSeats": 57.2834,
+      "plausibility": 0.9,
+      "reasoning": "ישר, ביחד, הדמוקרטים, ישראל ביתנו והמילואימניקים. זו הקואליציה שאיזנקוט מכוון אליה במפורש. החיכוך הפנימי — ליברמן מול גולן בנושאי דת ומדינה — משמעותי אך פחות מהמשותף: הסכמה על החלפת נתניהו. תלויה קריטית בשאלה אם הנדל–זליכה חוצים את אחוז החסימה."
+    },
+    {
+      "id": "netanyahu-bloc",
+      "label": "ממשלת נתניהו — הגוש הנוכחי",
+      "members": [
+        "likud",
+        "shas",
+        "utj",
+        "otzma",
+        "religious-zionism",
+        "amcha"
+      ],
+      "probability": 0.0518,
+      "meanSeats": 52.5264,
+      "plausibility": 0.95,
+      "reasoning": "הקואליציה היוצאת בתוספת 'עמך ישראל' של וינטר. כל המפלגות בגוש הצהירו על תמיכה בנתניהו לראשות הממשלה, ולכן אם האריתמטיקה מסתדרת — הממשלה קמה. הסיכון העיקרי אינו פוליטי אלא חשבוני: הציונות הדתית–זהות ועמך ישראל מרחפות סביב אחוז החסימה, וכישלון של אחת מהן מוחק ארבעה מנדטים מהגוש."
+    },
+    {
+      "id": "grand-coalition",
+      "label": "ממשלת אחדות רחבה — ליכוד וישר",
+      "members": [
+        "likud",
+        "yashar"
+      ],
+      "probability": 0.0026,
+      "meanSeats": 48.8653,
+      "plausibility": 0.12,
+      "reasoning": "שתי המפלגות הגדולות בלבד. חוסמת מבוי סתום אך דורשת מאיזנקוט לחזור בו מהתחייבותו המרכזית. מוצגת כי האריתמטיקה שלה כמעט תמיד עובדת — וזו בדיוק הסיבה לא להסיק ממנה מסקנות."
+    }
+  ],
+  "pmProbability": [
+    {
+      "partyId": "yashar",
+      "leader": "גדי איזנקוט",
+      "probability": 0.5461850000000564
+    },
+    {
+      "partyId": "likud",
+      "leader": "בנימין נתניהו",
+      "probability": 0.0518
+    }
+  ],
+  "pDeadlock": 0.40174000000008625,
+  "pollsUsed": 10,
+  "effectivePollCount": 6.937904204818631,
+  "houseEffects": {
+    "מדגם": {
+      "likud": -0.005697332592571327,
+      "yashar": 0.0011010646730009166,
+      "byachad": 0.005419139289238524,
+      "democrats": 0.0030606139902795092,
+      "yisrael-beiteinu": 0.003995701442190085,
+      "shas": 0.0002072585302732344,
+      "utj": 0.001643880776046914,
+      "otzma": 0.0034463928933618775,
+      "religious-zionism": -0.004012882014790797,
+      "amcha": -0.0013917607103790574,
+      "reservists": 0,
+      "joint-list": -0.0009573710982091427,
+      "raam": -0.001527441218114756
+    },
+    "דיירקט פולס": {
+      "likud": 0.01600526568950571,
+      "yashar": -0.002910611320173998,
+      "byachad": -0.009556144924687359,
+      "democrats": -0.005354363743408101,
+      "yisrael-beiteinu": -0.006988613690625047,
+      "shas": -0.0002520927778261001,
+      "utj": -0.0007090825529427903,
+      "otzma": -0.001368140797117788,
+      "religious-zionism": 0.0038468184699912275,
+      "amcha": 0.004451101816660197,
+      "reservists": 0,
+      "joint-list": 0.000691693374535181,
+      "raam": 0.0019320866635134278
+    },
+    "כאן מחקרים": {
+      "likud": -0.00638325996533791,
+      "yashar": 0.001522690973143568,
+      "byachad": 0.002158483621632735,
+      "democrats": 0.0014859351481261542,
+      "yisrael-beiteinu": 0.001919083655129677,
+      "shas": -0.000039158913751401265,
+      "utj": -0.001680908819743614,
+      "otzma": -0.003417925201444932,
+      "religious-zionism": 0.001225084962021187,
+      "amcha": -0.002432521561385571,
+      "reservists": 0,
+      "joint-list": 0.0006083148006131899,
+      "raam": 0.0001521942973351478
+    },
+    "קמיל פוקס": {
+      "likud": -0.008080326635787474,
+      "yashar": 0.0003684333856657271,
+      "byachad": 0.0013285678135261897,
+      "democrats": -0.0000032904428835143376,
+      "yisrael-beiteinu": 0.00004081267477879893,
+      "shas": 0.000027023367204731796,
+      "utj": -0.00009164352724887255,
+      "otzma": -0.0007723373179041468,
+      "religious-zionism": 0.001225084962021187,
+      "amcha": -0.0013917607103790574,
+      "reservists": 0,
+      "joint-list": 0.00016496160332064248,
+      "raam": -0.00007967765764834189
+    }
+  },
+  "config": {
+    "recencyHalfLifeDays": 14,
+    "referenceSampleSize": 1000,
+    "modeWeights": {
+      "phone": 1,
+      "mixed": 0.95,
+      "online-panel": 0.8,
+      "ivr": 0.6,
+      "unknown": 0.7
+    },
+    "partialPollPenalty": 0.75,
+    "threshold": 0.0325,
+    "totalSeats": 120,
+    "majority": 61,
+    "socialMaxAdjustmentPp": 0.6,
+    "socialHalfLifeDays": 7,
+    "simulations": 20000,
+    "nationalErrorSd": 0.006,
+    "blocErrorSd": 0.013,
+    "partyErrorSd": 0.011,
+    "electionDate": "2026-10-27",
+    "timeUncertaintyPer30Days": 0.3
+  },
+  "socialEnabled": false,
+  "socialProvenance": "placeholder",
+  "centralShares": {
+    "likud": 0.18948235782072761,
+    "yashar": 0.18466206284203082,
+    "byachad": 0.1001332334972916,
+    "democrats": 0.08196333398895629,
+    "yisrael-beiteinu": 0.07207062938786096,
+    "shas": 0.055385327403235145,
+    "utj": 0.06073249819351641,
+    "otzma": 0.0649217249306468,
+    "religious-zionism": 0.034594359016945644,
+    "amcha": 0.03235256836329543,
+    "reservists": 0.02323038025407058,
+    "joint-list": 0.05377344511236038,
+    "raam": 0.038289589992733096,
+    "other": 0.008408489196329305
+  }
+}
