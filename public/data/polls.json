@@ -129,53 +129,6 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 114 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
-    "id": "n12-2026-09-09-1d7mqpd",
-    "date": "2026-09-09",
-    "pollster": "מדגם",
-    "outlet": "חדשות 12",
-    "sampleSize": null,
-    "mode": "mixed",
-    "seats": {
-      "yashar": 25,
-      "likud": 21,
-      "byachad": 13,
-      "democrats": 10,
-      "yisrael-beiteinu": 9,
-      "utj": 8,
-      "joint-list": 7,
-      "shas": 7,
-      "religious-zionism": 6,
-      "amcha": 4,
-      "raam": 4
-    },
-    "provenance": "published-partial",
-    "source": "https://www.mako.co.il/news-israel-elections/2026/Article-c27dc00e8c680a1026.htm",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 114 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
-  },
-  {
-    "id": "i24-2026-09-09-1ptftp2",
-    "date": "2026-09-09",
-    "pollster": "דיירקט פולס",
-    "outlet": "i24NEWS",
-    "sampleSize": null,
-    "mode": "online-panel",
-    "seats": {
-      "likud": 27,
-      "byachad": 10,
-      "democrats": 9,
-      "utj": 8,
-      "otzma": 8,
-      "joint-list": 7,
-      "raam": 5,
-      "amcha": 4
-    },
-    "provenance": "published-partial",
-    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a92f58d0",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 78 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
-  },
-  {
     "id": "c12-2026-09-08",
     "date": "2026-09-08",
     "pollster": "מדגם",
@@ -274,28 +227,6 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 73 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
-    "id": "i24-2026-08-26-1gftv2",
-    "date": "2026-08-26",
-    "pollster": "דיירקט פולס",
-    "outlet": "i24NEWS",
-    "sampleSize": 532,
-    "mode": "online-panel",
-    "seats": {
-      "likud": 26,
-      "democrats": 10,
-      "byachad": 8,
-      "shas": 7,
-      "otzma": 6,
-      "raam": 6,
-      "joint-list": 6,
-      "religious-zionism": 4
-    },
-    "provenance": "published-partial",
-    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-a44c587c",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 73 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
-  },
-  {
     "id": "c13-2026-08-19",
     "date": "2026-08-19",
     "pollster": "קמיל פוקס",
@@ -370,29 +301,6 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 107 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
-    "id": "i24-2026-08-13-8f83ie",
-    "date": "2026-08-13",
-    "pollster": "דיירקט פולס",
-    "outlet": "i24NEWS",
-    "sampleSize": 512,
-    "mode": "online-panel",
-    "seats": {
-      "likud": 30,
-      "yashar": 23,
-      "democrats": 10,
-      "yisrael-beiteinu": 9,
-      "utj": 9,
-      "shas": 8,
-      "byachad": 8,
-      "religious-zionism": 5,
-      "raam": 5
-    },
-    "provenance": "published-partial",
-    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-26c56d10",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 107 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
-  },
-  {
     "id": "haaretz-2026-08-06",
     "date": "2026-08-06",
     "pollster": "קמיל פוקס",
@@ -407,30 +315,6 @@
     "source": "https://www.haaretz.com/israel-news/elections/2026-08-06/ty-article/poll-opposition-bloc-slips-to-58-seats-as-zionist-home-misses-threshold/0000019f-d5ca-d315-a1df-ffeedf480000",
     "partial": true,
     "notes": "גוש האופוזיציה יורד ל-58. 'הבית הציוני' אינו חוצה את אחוז החסימה."
-  },
-  {
-    "id": "i24-2026-07-27-u4mh56",
-    "date": "2026-07-27",
-    "pollster": "דיירקט פולס",
-    "outlet": "i24NEWS",
-    "sampleSize": 525,
-    "mode": "online-panel",
-    "seats": {
-      "likud": 29,
-      "yashar": 21,
-      "democrats": 10,
-      "byachad": 9,
-      "shas": 9,
-      "yisrael-beiteinu": 9,
-      "utj": 8,
-      "joint-list": 7,
-      "religious-zionism": 5,
-      "raam": 5
-    },
-    "provenance": "published-partial",
-    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-02214cba",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 112 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
     "id": "i24-2026-07-27-u4mh56",
@@ -510,47 +394,6 @@
     "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
     "partial": true,
     "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (55 מנדטים)."
-  },
-  {
-    "id": "wiki-2024-03-07-לאזר",
-    "date": "2024-03-07",
-    "pollster": "לאזר",
-    "outlet": "ויקיפדיה",
-    "sampleSize": null,
-    "mode": "unknown",
-    "seats": {
-      "likud": 18,
-      "otzma": 9,
-      "shas": 6,
-      "utj": 9,
-      "yisrael-beiteinu": 4,
-      "raam": 5,
-      "joint-list": 4
-    },
-    "provenance": "published-partial",
-    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (55 מנדטים)."
-  },
-  {
-    "id": "wiki-2024-03-03-קמיל-פוקס",
-    "date": "2024-03-03",
-    "pollster": "קמיל פוקס",
-    "outlet": "חדשות 13",
-    "sampleSize": null,
-    "mode": "unknown",
-    "seats": {
-      "likud": 17,
-      "otzma": 9,
-      "shas": 7,
-      "utj": 9,
-      "yisrael-beiteinu": 5,
-      "raam": 4
-    },
-    "provenance": "published-partial",
-    "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
-    "partial": true,
-    "notes": "נקלט אוטומטית מטבלת הסקרים בוויקיפדיה (51 מנדטים)."
   },
   {
     "id": "wiki-2024-03-03-קמיל-פוקס",

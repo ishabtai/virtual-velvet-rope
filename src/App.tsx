@@ -9,6 +9,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Report from "./pages/Report";
 import Polls from "./pages/Polls";
+import Sources from "./pages/Sources";
 import Methodology from "./pages/Methodology";
 import Simulator from "./pages/Simulator";
 import NotFound from "./pages/NotFound";
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/report" element={<Report />} />
           <Route path="/polls" element={<Polls />} />
+          <Route path="/sources" element={<Sources />} />
           <Route path="/methodology" element={<Methodology />} />
           <Route path="/simulator" element={<Simulator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
