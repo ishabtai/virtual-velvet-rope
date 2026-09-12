@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# The scraped poll store and quarantine are source data — keep them.
+!data/

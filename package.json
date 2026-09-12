@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "forecast": "tsx scripts/daily-forecast.ts",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "scrape": "tsx scripts/scrape.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

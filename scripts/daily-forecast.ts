@@ -15,7 +15,7 @@ import { mkdirSync, writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { buildForecast, toSnapshot, type FullForecast } from "../src/engine/forecast";
 import { generateReport, reportToMarkdown } from "../src/engine/report";
-import { collectAll, listPollSources, listSocialSources } from "../src/engine/ingest";
+import { collectAll, effectivePolls, listPollSources, listSocialSources } from "../src/engine/ingest";
 import { BELOW_THRESHOLD, POLLS } from "../src/engine/data/polls";
 import { SOCIAL_OBSERVATIONS } from "../src/engine/data/social";
 import type { Poll } from "../src/engine/types";
@@ -55,8 +55,16 @@ async function main() {
     console.warn(`[ingest] failed sources: ${collected.failedSources.join(", ")}`);
   }
 
-  const seen = new Set(POLLS.map((p) => p.id));
-  const polls: Poll[] = [...POLLS, ...collected.polls.filter((p) => !seen.has(p.id))];
+  // Curated polls, plus everything the scraper has accumulated over the
+  // campaign, plus anything this run just fetched. `effectivePolls` drops a
+  // stored poll that duplicates a curated one so no night of fieldwork counts
+  // twice.
+  const storePath = join(process.cwd(), "data", "scraped-polls.json");
+  const stored: Poll[] = existsSync(storePath)
+    ? (JSON.parse(readFileSync(storePath, "utf8")) as { polls: Poll[] }).polls
+    : [];
+  const polls: Poll[] = effectivePolls(POLLS, [...stored, ...collected.polls]);
+  console.log(`[forecast] ${POLLS.length} curated + ${stored.length} stored = ${polls.length} polls`);
   const social = collected.social.length > 0 ? collected.social : SOCIAL_OBSERVATIONS;
 
   // --- Build ----------------------------------------------------------------

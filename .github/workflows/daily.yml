@@ -1,0 +1,98 @@
+name: סריקה יומית, תחזית ופרסום
+
+# The whole pipeline, once a day: scrape the polls, rebuild the forecast, commit
+# the snapshot, and publish the site to GitHub Pages.
+#
+# The steps are ordered so a failure degrades instead of breaking. The scrape
+# may fail entirely and the forecast still runs on the curated set; the commit
+# may find nothing to commit and the deploy still happens. Only a failing test
+# suite stops the run, because that is the one failure that would publish a
+# wrong number.
+on:
+  schedule:
+    # 04:10 UTC — after the previous evening's Israeli bulletins have published
+    # their polls, and before the morning audience arrives.
+    - cron: "10 4 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "How many past days to rebuild as well"
+        required: false
+        default: "0"
+      skip_scrape:
+        description: "Skip the scrape and rebuild from stored polls only"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-forecast
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      # The model runs before the forecast does. A green suite is the only thing
+      # standing between a bad refactor and a published number.
+      - name: Tests
+        run: npm test
+
+      # Fail-soft: a newspaper changing its markup must not stop the forecast.
+      # scripts/scrape.ts exits non-zero only when EVERY source failed, and even
+      # that is tolerated here so the run continues on the curated set.
+      - name: Scrape polls
+        if: ${{ inputs.skip_scrape != true }}
+        continue-on-error: true
+        run: npm run scrape
+
+      - name: Build forecast
+        run: npm run forecast -- --backfill ${{ inputs.backfill || '0' }}
+
+      - name: Commit polls and snapshots
+        run: |
+          git config user.name "forecast-bot"
+          git config user.email "forecast-bot@users.noreply.github.com"
+          git add data public/data
+          if git diff --staged --quiet; then
+            echo "Nothing changed today."
+          else
+            git commit -m "תחזית יומית: $(date -u +%Y-%m-%d)"
+            # Another run may have landed while this one was working.
+            git pull --rebase --autostash origin ${{ github.ref_name }} || true
+            git push
+          fi
+
+      - name: Build site
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

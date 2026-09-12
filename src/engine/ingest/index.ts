@@ -1,20 +1,24 @@
 import type { Poll, SocialObservation } from "../types";
 import { validatePoll, type IngestResult, type PollSource, type SocialSource } from "./types";
+import { wikipediaSource } from "./sources/wikipedia";
+import { NEWS_OUTLETS, hebrewNewsSource } from "./sources/hebrewNews";
 
 export * from "./types";
+export * from "./store";
+export { NEWS_OUTLETS } from "./sources/hebrewNews";
 
 /**
- * Registry of live sources. Empty by design — see `types.ts` for why. Register
- * an adapter here and the daily job picks it up with no other change:
+ * Registry of live sources.
  *
- *   registerPollSource({
- *     id: "knesset-aggregator",
- *     name: "...",
- *     url: "https://...",
- *     async fetch() { ... },
- *   });
+ * Order is precedence: on a duplicate poll id, the first source registered
+ * wins. Wikipedia leads because it is the only structured source — it publishes
+ * pollster, sample size and fieldwork dates, which the news adapters have to
+ * infer or do without.
  */
-const pollSources: PollSource[] = [];
+const pollSources: PollSource[] = [
+  wikipediaSource(),
+  ...NEWS_OUTLETS.map(hebrewNewsSource),
+];
 const socialSources: SocialSource[] = [];
 
 export function registerPollSource(s: PollSource): void {
