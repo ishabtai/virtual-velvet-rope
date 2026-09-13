@@ -1,5 +1,26 @@
 [
   {
+    "id": "israelvoting-2026-09-13-11cnv4r",
+    "date": "2026-09-13",
+    "pollster": "משתנה",
+    "outlet": "Israel Voting",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "likud": 32,
+      "religious-zionism": 14,
+      "shas": 11,
+      "utj": 7,
+      "yisrael-beiteinu": 6,
+      "raam": 5,
+      "joint-list": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://israelvoting.com/swing",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "israelvoting-2026-09-12-11cnv4r",
     "date": "2026-09-12",
     "pollster": "משתנה",
