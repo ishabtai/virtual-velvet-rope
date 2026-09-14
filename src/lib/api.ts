@@ -1,4 +1,5 @@
 import type { BlocId, CoalitionScenario, ModelConfig, PartyEstimate, Poll } from "@/engine/types";
+import type { Calibration } from "@/engine/calibration";
 
 /** The shape written to public/data by `npm run forecast`. */
 export interface ForecastSnapshot {
@@ -17,6 +18,8 @@ export interface ForecastSnapshot {
   socialEnabled: boolean;
   socialProvenance: string;
   centralShares: Record<string, number>;
+  calibration: Calibration;
+  calibrationEnabled: boolean;
 }
 
 export interface DailyReport {
