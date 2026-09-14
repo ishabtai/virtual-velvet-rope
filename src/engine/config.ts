@@ -57,7 +57,16 @@ export const DEFAULT_CONFIG: ModelConfig = {
    * partyErrorSd     — party-specific error, scaled by party size.
    */
   nationalErrorSd: 0.006,
-  blocErrorSd: 0.013,
+  /**
+   * Raised from 0.013 after checking the model against the historical record.
+   *
+   * Bloc-level misses between the final polls and the count run from about one
+   * seat to eight across 2015, 2019, 2021 and 2022, with a standard deviation
+   * near 3.5 seats. The old value implied about 1.6 — it understated the single
+   * most dangerous error in Israeli polling by more than half, which made every
+   * "probability of reaching 61" far too confident. See calibration.ts.
+   */
+  blocErrorSd: 0.028,
   partyErrorSd: 0.011,
 
   electionDate: "2026-10-27",

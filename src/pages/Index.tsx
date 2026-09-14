@@ -7,6 +7,7 @@ import { BlocGauge } from "@/components/forecast/BlocGauge";
 import { TrendChart } from "@/components/forecast/TrendChart";
 import { CoalitionCard } from "@/components/forecast/CoalitionCard";
 import { ThresholdWatch } from "@/components/forecast/ThresholdWatch";
+import { CalibrationPanel } from "@/components/forecast/CalibrationPanel";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { fetchLatestForecast, fetchLatestReport, fetchTrend } from "@/lib/api";
@@ -221,6 +222,9 @@ export default function Index() {
           </TabsContent>
         </Tabs>
       </section>
+
+      {/* ---- Poll-to-result calibration ---- */}
+      <CalibrationPanel forecast={f} />
 
       {/* ---- Coalitions ---- */}
       <section className="mt-8">

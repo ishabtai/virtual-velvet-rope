@@ -50,6 +50,12 @@ export interface SimulationResult {
   simulations: number;
 }
 
+/**
+ * Share of the vote held by the bloc `blocErrorSd` was calibrated from — the
+ * Netanyahu bloc, at roughly 45%. Other blocs scale against this.
+ */
+const REFERENCE_BLOC_SHARE = 0.45;
+
 export function timeUncertaintyMultiplier(asOf: string, config: ModelConfig): number {
   const days = Math.max(
     0,
@@ -90,10 +96,21 @@ export function runSimulations(
   }
 
   for (let s = 0; s < config.simulations; s++) {
+    // The bloc term is calibrated from the Netanyahu bloc, which holds roughly
+    // 45% of the vote. Applying that same ABSOLUTE size to the Arab bloc, at
+    // about 8%, gave it an 80% interval of 0-19 seats — it made a bloc that has
+    // never gone below four seats routinely vanish. Error grows with bloc size,
+    // but sub-linearly: the historical misses are ~3.5 seats on a 55-seat bloc
+    // and ~2 seats on a 10-seat one, which is a much larger RELATIVE error on
+    // the small bloc. sqrt scaling sits between "same absolute" and "same
+    // relative" and reproduces both.
+    const blocScale = (bloc: BlocId) =>
+      Math.sqrt(Math.max(0.02, blocTotals[bloc]) / REFERENCE_BLOC_SHARE);
+
     const blocShock: Record<BlocId, number> = {
-      netanyahu: normal() * config.blocErrorSd * scale,
-      change: normal() * config.blocErrorSd * scale,
-      arab: normal() * config.blocErrorSd * scale,
+      netanyahu: normal() * config.blocErrorSd * scale * blocScale("netanyahu"),
+      change: normal() * config.blocErrorSd * scale * blocScale("change"),
+      arab: normal() * config.blocErrorSd * scale * blocScale("arab"),
     };
     // Arab turnout gets an extra, independent shock on top of the bloc term.
     // Deliberately NOT multiplied by `scale`: the time-distance inflation models

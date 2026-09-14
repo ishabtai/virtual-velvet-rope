@@ -4,6 +4,7 @@ import { aggregatePolls, weighPolls, type WeightedPoll } from "./aggregate";
 import { computeSocialSignals, type SocialSignal } from "./social";
 import { runSimulations, summarise, timeUncertaintyMultiplier } from "./simulate";
 import { evaluateCoalitions, governmentOutlook } from "./coalitions";
+import { computeCalibration, type Calibration } from "./calibration";
 import { REAL_PARTIES } from "./data/parties";
 import { BELOW_THRESHOLD, POLLS } from "./data/polls";
 import { SOCIAL_OBSERVATIONS, SOCIAL_PROVENANCE } from "./data/social";
@@ -20,6 +21,11 @@ export interface ForecastInput {
    * verified — the headline forecast never moves on unvalidated data.
    */
   includeSocial?: boolean;
+  /**
+   * Whether to apply the poll-to-result calibration. On by default; exposed so
+   * the simulator can show what the forecast looks like without it.
+   */
+  includeCalibration?: boolean;
 }
 
 export interface FullForecast extends Forecast {
@@ -30,6 +36,9 @@ export interface FullForecast extends Forecast {
   uncertaintyMultiplier: number;
   /** Central share estimates keyed by party, after the social adjustment. */
   centralShares: Record<string, number>;
+  /** The poll-to-result correction, and whether it was applied. */
+  calibration: Calibration;
+  calibrationEnabled: boolean;
 }
 
 export function buildForecast(input: ForecastInput): FullForecast {
@@ -38,6 +47,7 @@ export function buildForecast(input: ForecastInput): FullForecast {
   const belowThreshold = input.belowThreshold ?? BELOW_THRESHOLD;
   const social = input.social ?? SOCIAL_OBSERVATIONS;
   const socialEnabled = input.includeSocial ?? SOCIAL_PROVENANCE === "verified";
+  const calibrationEnabled = input.includeCalibration ?? true;
 
   const asOf = input.asOf;
 
@@ -49,11 +59,19 @@ export function buildForecast(input: ForecastInput): FullForecast {
   const socialById: Record<string, number> = {};
   for (const s of socialSignals) socialById[s.partyId] = s.adjustment;
 
+  // --- 2b. Poll-to-result calibration ---
+  // Applied AFTER the poll average and BEFORE the simulation, because it
+  // corrects an error in the polls themselves rather than anything the
+  // simulation does. Weighted by present-day strength, so a bloc's correction
+  // lands on the parties that actually hold that bloc's votes today.
+  const calibration = computeCalibration(config, agg.shares);
+
   const centralShares: Record<string, number> = {};
   for (const party of REAL_PARTIES) {
     const base = agg.shares[party.id];
     if (base === undefined) continue;
-    centralShares[party.id] = Math.max(0.0005, base + (socialById[party.id] ?? 0));
+    const calib = calibrationEnabled ? (calibration.partyAdjustments[party.id] ?? 0) : 0;
+    centralShares[party.id] = Math.max(0.0005, base + (socialById[party.id] ?? 0) + calib);
   }
   centralShares.other = agg.shares.other ?? 0.035;
 
@@ -125,6 +143,8 @@ export function buildForecast(input: ForecastInput): FullForecast {
     socialProvenance: SOCIAL_PROVENANCE,
     uncertaintyMultiplier: timeUncertaintyMultiplier(asOf, config),
     centralShares,
+    calibration,
+    calibrationEnabled,
   };
 }
 
@@ -136,6 +156,8 @@ export function toSnapshot(f: FullForecast): Forecast & {
   socialEnabled: boolean;
   socialProvenance: string;
   centralShares: Record<string, number>;
+  calibration: Calibration;
+  calibrationEnabled: boolean;
 } {
   return {
     asOf: f.asOf,
@@ -153,5 +175,7 @@ export function toSnapshot(f: FullForecast): Forecast & {
     socialEnabled: f.socialEnabled,
     socialProvenance: f.socialProvenance,
     centralShares: f.centralShares,
+    calibration: f.calibration,
+    calibrationEnabled: f.calibrationEnabled,
   };
 }
