@@ -1,5 +1,46 @@
 [
   {
+    "id": "c13-2026-09-19-fcj29g",
+    "date": "2026-09-19",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": null,
+    "mode": "mixed",
+    "seats": {
+      "yashar": 22,
+      "likud": 18,
+      "byachad": 12,
+      "democrats": 10,
+      "religious-zionism": 8,
+      "shas": 7,
+      "amcha": 6
+    },
+    "provenance": "published-partial",
+    "source": "https://13tv.co.il/item/news/politics/politics/survey-905363096/?pid=62&amp;refc=902992386",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 83 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "kan-2026-09-19-3d8lmj",
+    "date": "2026-09-19",
+    "pollster": "כאן מחקרים",
+    "outlet": "כאן 11",
+    "sampleSize": null,
+    "mode": "phone",
+    "seats": {
+      "yashar": 24,
+      "likud": 20,
+      "reservists": 4,
+      "byachad": 12,
+      "democrats": 8,
+      "utj": 7
+    },
+    "provenance": "published-partial",
+    "source": "https://www.kan.org.il/content/kan-news/politic/1099439/",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (6 מפלגות, 75 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c13-2026-09-18-1pjymjo",
     "date": "2026-09-18",
     "pollster": "קמיל פוקס",
