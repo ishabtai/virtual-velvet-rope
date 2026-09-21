@@ -1,6 +1,47 @@
 {
-  "updatedAt": "2026-09-20T09:17:48.030Z",
+  "updatedAt": "2026-09-21T09:56:05.096Z",
   "polls": [
+    {
+      "id": "israelvoting-2026-09-21-11cnv4r",
+      "date": "2026-09-21",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 32,
+        "religious-zionism": 14,
+        "shas": 11,
+        "utj": 7,
+        "yisrael-beiteinu": 6,
+        "raam": 5,
+        "joint-list": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/swing",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kan-2026-09-21-3d8lmj",
+      "date": "2026-09-21",
+      "pollster": "כאן מחקרים",
+      "outlet": "כאן 11",
+      "sampleSize": null,
+      "mode": "phone",
+      "seats": {
+        "yashar": 24,
+        "likud": 20,
+        "reservists": 4,
+        "byachad": 12,
+        "democrats": 8,
+        "utj": 7
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kan.org.il/content/kan-news/politic/1099439/",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (6 מפלגות, 75 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "israelvoting-2026-09-20-11cnv4r",
       "date": "2026-09-20",
