@@ -1,6 +1,50 @@
 {
-  "updatedAt": "2026-09-30T10:29:35.665Z",
+  "updatedAt": "2026-10-01T10:56:46.701Z",
   "polls": [
+    {
+      "id": "israelvoting-2026-10-01-11cnv4r",
+      "date": "2026-10-01",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 32,
+        "religious-zionism": 14,
+        "shas": 11,
+        "utj": 7,
+        "yisrael-beiteinu": 6,
+        "raam": 5,
+        "joint-list": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/swing",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kikar-2026-10-01-c775n0",
+      "date": "2026-10-01",
+      "pollster": "לא ידוע",
+      "outlet": "כיכר השבת",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "yashar": 13,
+        "shas": 7,
+        "joint-list": 13,
+        "likud": 19,
+        "democrats": 11,
+        "otzma": 8,
+        "religious-zionism": 7,
+        "byachad": 15,
+        "amcha": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kikar.co.il/political-news/netanyahu-bloc-leads-54-mandates-channel-13-poll",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 98 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "israelvoting-2026-09-30-11cnv4r",
       "date": "2026-09-30",
