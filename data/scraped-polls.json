@@ -1,6 +1,76 @@
 {
-  "updatedAt": "2026-10-01T10:56:46.701Z",
+  "updatedAt": "2026-10-02T10:30:42.351Z",
   "polls": [
+    {
+      "id": "israelvoting-2026-10-02-11cnv4r",
+      "date": "2026-10-02",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 32,
+        "religious-zionism": 14,
+        "shas": 11,
+        "utj": 7,
+        "yisrael-beiteinu": 6,
+        "raam": 5,
+        "joint-list": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/swing",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kikar-2026-10-02-c775n0",
+      "date": "2026-10-02",
+      "pollster": "לא ידוע",
+      "outlet": "כיכר השבת",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "yashar": 13,
+        "shas": 7,
+        "joint-list": 13,
+        "likud": 19,
+        "democrats": 11,
+        "otzma": 8,
+        "religious-zionism": 7,
+        "byachad": 15,
+        "amcha": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kikar.co.il/political-news/netanyahu-bloc-leads-54-mandates-channel-13-poll",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 98 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "i24-2026-10-01-1nbra0z",
+      "date": "2026-10-01",
+      "pollster": "דיירקט פולס",
+      "outlet": "i24NEWS",
+      "sampleSize": 504,
+      "mode": "online-panel",
+      "seats": {
+        "likud": 28,
+        "byachad": 9,
+        "democrats": 9,
+        "shas": 7,
+        "yisrael-beiteinu": 7,
+        "otzma": 8,
+        "utj": 8,
+        "raam": 5,
+        "religious-zionism": 5,
+        "joint-list": 8,
+        "amcha": 4,
+        "yashar": 21
+      },
+      "provenance": "published-partial",
+      "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (12 מפלגות, 119 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "israelvoting-2026-10-01-11cnv4r",
       "date": "2026-10-01",
