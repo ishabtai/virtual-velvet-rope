@@ -1,5 +1,27 @@
 [
   {
+    "id": "kan-2026-10-05-1fnj0bl",
+    "date": "2026-10-05",
+    "pollster": "כאן מחקרים",
+    "outlet": "כאן 11",
+    "sampleSize": null,
+    "mode": "phone",
+    "seats": {
+      "yashar": 23,
+      "democrats": 8,
+      "byachad": 12,
+      "joint-list": 8,
+      "otzma": 8,
+      "religious-zionism": 6,
+      "reservists": 4,
+      "raam": 5
+    },
+    "provenance": "published-partial",
+    "source": "https://www.kan.org.il/content/kan-news/politic/1105927/",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 74 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "israelvoting-2026-10-04-11cnv4r",
     "date": "2026-10-04",
     "pollster": "משתנה",
