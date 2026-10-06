@@ -1,6 +1,49 @@
 {
-  "updatedAt": "2026-10-05T11:27:57.281Z",
+  "updatedAt": "2026-10-06T11:17:09.283Z",
   "polls": [
+    {
+      "id": "israelvoting-2026-10-06-11cnv4r",
+      "date": "2026-10-06",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 32,
+        "religious-zionism": 14,
+        "shas": 11,
+        "utj": 7,
+        "yisrael-beiteinu": 6,
+        "raam": 5,
+        "joint-list": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/swing",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kan-2026-10-06-1fnj0bl",
+      "date": "2026-10-06",
+      "pollster": "כאן מחקרים",
+      "outlet": "כאן 11",
+      "sampleSize": null,
+      "mode": "phone",
+      "seats": {
+        "yashar": 23,
+        "democrats": 8,
+        "byachad": 12,
+        "joint-list": 8,
+        "otzma": 8,
+        "religious-zionism": 6,
+        "reservists": 4,
+        "raam": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kan.org.il/content/kan-news/politic/1105927/",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 74 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "israelvoting-2026-10-05-11cnv4r",
       "date": "2026-10-05",
@@ -43,6 +86,31 @@
       "source": "https://www.kan.org.il/content/kan-news/politic/1105927/",
       "partial": true,
       "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 74 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "n12-2026-10-05-40l0hp",
+      "date": "2026-10-05",
+      "pollster": "מדגם",
+      "outlet": "חדשות 12",
+      "sampleSize": null,
+      "mode": "mixed",
+      "seats": {
+        "yashar": 23,
+        "likud": 21,
+        "byachad": 13,
+        "democrats": 9,
+        "yisrael-beiteinu": 9,
+        "joint-list": 8,
+        "utj": 8,
+        "shas": 7,
+        "otzma": 7,
+        "religious-zionism": 6,
+        "raam": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.mako.co.il/news-israel-elections/2026/Article-d7459e0cc7c01a1026.htm",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 116 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
     },
     {
       "id": "israelvoting-2026-10-04-11cnv4r",
