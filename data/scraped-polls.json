@@ -1,6 +1,70 @@
 {
-  "updatedAt": "2026-10-08T11:22:05.412Z",
+  "updatedAt": "2026-10-09T11:20:51.885Z",
   "polls": [
+    {
+      "id": "israelvoting-2026-10-09-11cnv4r",
+      "date": "2026-10-09",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 32,
+        "religious-zionism": 14,
+        "shas": 11,
+        "utj": 7,
+        "yisrael-beiteinu": 6,
+        "raam": 5,
+        "joint-list": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/swing",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kan-2026-10-09-1fnj0bl",
+      "date": "2026-10-09",
+      "pollster": "כאן מחקרים",
+      "outlet": "כאן 11",
+      "sampleSize": null,
+      "mode": "phone",
+      "seats": {
+        "yashar": 23,
+        "democrats": 8,
+        "byachad": 12,
+        "joint-list": 8,
+        "otzma": 8,
+        "religious-zionism": 6,
+        "reservists": 4,
+        "raam": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kan.org.il/content/kan-news/politic/1105927/",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 74 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kikar-2026-10-09-s7onp1",
+      "date": "2026-10-09",
+      "pollster": "לא ידוע",
+      "outlet": "כיכר השבת",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "joint-list": 13,
+        "yashar": 20,
+        "democrats": 10,
+        "raam": 6,
+        "shas": 7,
+        "religious-zionism": 7,
+        "likud": 21
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kikar.co.il/political-news/channel-13-poll-netanyahu-bloc-55-mandates-record",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 84 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "c13-2026-10-08-aw658q",
       "date": "2026-10-08",
