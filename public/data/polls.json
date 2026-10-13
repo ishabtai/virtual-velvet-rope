@@ -1,7 +1,7 @@
 [
   {
-    "id": "israelvoting-2026-10-12-11cnv4r",
-    "date": "2026-10-12",
+    "id": "israelvoting-2026-10-13-11cnv4r",
+    "date": "2026-10-13",
     "pollster": "משתנה",
     "outlet": "Israel Voting",
     "sampleSize": null,
@@ -19,6 +19,31 @@
     "source": "https://israelvoting.com/swing",
     "partial": true,
     "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
+    "id": "n12-2026-10-12-1dkmti7",
+    "date": "2026-10-12",
+    "pollster": "מדגם",
+    "outlet": "חדשות 12",
+    "sampleSize": null,
+    "mode": "mixed",
+    "seats": {
+      "yashar": 23,
+      "likud": 20,
+      "byachad": 13,
+      "yisrael-beiteinu": 9,
+      "joint-list": 8,
+      "shas": 8,
+      "otzma": 8,
+      "utj": 7,
+      "religious-zionism": 6,
+      "raam": 5,
+      "reservists": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://www.mako.co.il/news-israel-elections/2026/Article-cc91389788031a1026.htm",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 111 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
     "id": "kan-2026-10-11-1fnj0bl",
