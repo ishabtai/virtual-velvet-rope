@@ -1181,5 +1181,28 @@
       "change": 48.64,
       "arab": 10.35
     }
+  },
+  {
+    "date": "2026-10-14",
+    "seats": {
+      "likud": 22.15,
+      "yashar": 19.97,
+      "amcha": 10.84,
+      "byachad": 10.58,
+      "shas": 8.07,
+      "democrats": 7.79,
+      "otzma": 6.89,
+      "religious-zionism": 6.75,
+      "utj": 6.72,
+      "joint-list": 6.69,
+      "yisrael-beiteinu": 5.36,
+      "reservists": 4.65,
+      "raam": 3.53
+    },
+    "blocs": {
+      "netanyahu": 61.42,
+      "change": 48.36,
+      "arab": 10.23
+    }
   }
 ]
