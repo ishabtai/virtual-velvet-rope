@@ -1,5 +1,26 @@
 [
   {
+    "id": "c13-2026-10-15-l39vz4",
+    "date": "2026-10-15",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": null,
+    "mode": "mixed",
+    "seats": {
+      "yashar": 20,
+      "byachad": 12,
+      "joint-list": 9,
+      "utj": 8,
+      "shas": 7,
+      "raam": 6,
+      "reservists": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://13tv.co.il/item/news/politics/politics/survey-905396904/?pid=62&amp;refc=902992386",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 66 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "israelvoting-2026-10-14-11cnv4r",
     "date": "2026-10-14",
     "pollster": "משתנה",
@@ -21,25 +42,29 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
-    "id": "israelvoting-2026-10-13-11cnv4r",
+    "id": "i24-2026-10-13-1nbra0z",
     "date": "2026-10-13",
-    "pollster": "משתנה",
-    "outlet": "Israel Voting",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
     "sampleSize": null,
-    "mode": "unknown",
+    "mode": "online-panel",
     "seats": {
-      "likud": 32,
-      "religious-zionism": 14,
-      "shas": 11,
-      "utj": 7,
-      "yisrael-beiteinu": 6,
-      "raam": 5,
-      "joint-list": 5
+      "likud": 27,
+      "byachad": 13,
+      "democrats": 9,
+      "shas": 7,
+      "yisrael-beiteinu": 7,
+      "otzma": 9,
+      "utj": 8,
+      "raam": 6,
+      "religious-zionism": 6,
+      "joint-list": 7,
+      "yashar": 21
     },
     "provenance": "published-partial",
-    "source": "https://israelvoting.com/swing",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls",
     "partial": true,
-    "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 80 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
     "id": "n12-2026-10-12-1dkmti7",
