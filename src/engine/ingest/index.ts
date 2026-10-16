@@ -2,6 +2,7 @@ import type { Poll, SocialObservation } from "../types";
 import { validatePoll, type IngestResult, type PollSource, type SocialSource } from "./types";
 import { hebrewWikipediaSource, wikipediaSource } from "./sources/wikipedia";
 import { NEWS_OUTLETS, hebrewNewsSource } from "./sources/hebrewNews";
+import { kanLobbySource } from "./sources/kanLobby";
 
 export * from "./types";
 export * from "./store";
@@ -18,6 +19,10 @@ export { NEWS_OUTLETS } from "./sources/hebrewNews";
 const pollSources: PollSource[] = [
   wikipediaSource(),
   hebrewWikipediaSource(),
+  // Structured in substance if not in form: the lobby lists individual polls
+  // with their institute and date, so it outranks prose. It is registered
+  // after Wikipedia because Wikipedia also carries sample sizes.
+  kanLobbySource(),
   ...NEWS_OUTLETS.map(hebrewNewsSource),
 ];
 const socialSources: SocialSource[] = [];

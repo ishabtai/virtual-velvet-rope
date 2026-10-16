@@ -94,6 +94,19 @@ export const SOURCES: SourceDescriptor[] = [
     articlePattern: "^https://www\\.skarim\\.org/",
   },
   {
+    id: "kan-lobby",
+    name: "כאן 11 — לובי הסקרים",
+    kind: "aggregator",
+    url: "https://www.kan.org.il/lobby/skarim/",
+    outlet: "כאן 11",
+    pollster: "משתנה",
+    mode: "unknown",
+    status: "unverified",
+    notes:
+      "לובי הסקרים של כאן: 241 סקרים מתשעה כלי תקשורת, אחורה עד נובמבר 2025 — המקור הגדול ביותר שזמין למערכת הזו, ובמקביל הבדיקה החיצונית הטובה ביותר למודל. הוא מפרסם גם ממוצע וגם מפת גושים משלו, ואלה פלט של מודל מתחרה ולא ראיה: האדפטר קולט שורות של סקר בודד עם מכון נקוב בלבד, ומסרב לכל השאר.",
+    indexUrls: ["https://www.kan.org.il/lobby/skarim/"],
+  },
+  {
     id: "israelvoting",
     name: "Israel Voting — סקרי מנדטים",
     kind: "aggregator",
