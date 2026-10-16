@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "forecast": "tsx scripts/daily-forecast.ts",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
-    "scrape": "tsx scripts/scrape.ts"
+    "scrape": "tsx scripts/scrape.ts",
+    "revalidate": "tsx scripts/revalidate.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

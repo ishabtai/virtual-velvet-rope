@@ -62,6 +62,13 @@ jobs:
         continue-on-error: true
         run: npm run scrape
 
+      # The validator used to run only at intake, so a row that entered the
+      # store before a guard existed stayed in the published forecast forever.
+      # Two of them moved the October 2026 bloc numbers by six seats. Running it
+      # against the whole store makes every future tightening retroactive.
+      - name: Re-validate the stored polls
+        run: npm run revalidate
+
       - name: Build forecast
         run: npm run forecast -- --backfill ${{ inputs.backfill || '0' }}
 

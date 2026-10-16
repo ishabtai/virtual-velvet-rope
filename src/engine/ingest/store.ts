@@ -172,6 +172,33 @@ export function dedupePolls(polls: Poll[]): Poll[] {
   const best = new Map<string, Poll>();
   const datesWithKnownPollster = new Set<string>();
 
+  // Pass 0: one article is one poll, however many times it was scraped.
+  //
+  // `poll.date` conflates the fieldwork date with the day the scraper ran, so
+  // an article that stays on a section page for a fortnight was re-ingested
+  // every morning under a fresh date — and `fingerprint` includes the date, so
+  // each copy looked new. 133 stored records collapsed to 80 distinct ones;
+  // one aggregator alone accounted for 34 copies of a single page. Worse than
+  // the double counting, the copies carried fresh recency: a poll from three
+  // weeks ago kept being weighted as if it were published today.
+  // Keyed on the article AND its numbers. Article alone is too blunt: a live
+  // blog or a round-up page legitimately publishes several different polls at
+  // one URL, and collapsing those would throw away real data. Identical
+  // numbers at an identical URL, on the other hand, are one poll counted twice.
+  const byArticle = new Map<string, Poll>();
+  for (const poll of polls) {
+    const seats = Object.entries(poll.seats)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([id, n]) => `${id}:${n}`)
+      .join(",");
+    const key = `${poll.source || poll.id}|${seats}`;
+    const prev = byArticle.get(key);
+    // Keep the EARLIEST sighting: that is closest to the real fieldwork date,
+    // and keeping the latest is exactly the recency laundering to be avoided.
+    if (!prev || poll.date < prev.date) byArticle.set(key, poll);
+  }
+  polls = [...byArticle.values()];
+
   // Pass 1: identified polls, keyed by institute and date.
   for (const poll of polls) {
     if (!isKnownPollster(poll)) continue;

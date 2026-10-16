@@ -224,6 +224,28 @@ export function localAverage(
  */
 const UNATTRIBUTED = new Set(["משתנה", "לא ידוע", ""]);
 
+/**
+ * Largest residual, in share units, that may enter a house-effect average.
+ *
+ * No institute has a real systematic bias of three percentage points on a
+ * party; the largest ever measured here is under two. Anything beyond that is
+ * a parse error wearing an institute's name.
+ *
+ * This clip exists because of a specific failure mode, and it is worth being
+ * precise about it because it is counter-intuitive. ONE scraped article gave a
+ * small party fifty-two seats under the name of a highly-graded institute. The
+ * direct damage was limited — that poll carried only 7% of the party's weight.
+ * The real damage came through the zero-centring step below: a +38pp residual
+ * for one institute forced a MINUS 4.7pp "house effect" onto every other
+ * institute, and since the correction is SUBTRACTED, every clean reading of
+ * four seats was inflated to nearly eight. Two thirds of the resulting error
+ * came not from the bad poll but from the model treating it as evidence of
+ * industry-wide bias and "correcting" twenty clean polls against it.
+ */
+const MAX_RESIDUAL = 0.03;
+
+const clipResidual = (x: number) => Math.max(-MAX_RESIDUAL, Math.min(MAX_RESIDUAL, x));
+
 export function estimateHouseEffects(
   weighted: WeightedPoll[],
   config: ModelConfig,
@@ -256,7 +278,7 @@ export function estimateHouseEffects(
           });
           if (consensus.value === null) continue;
           const w = wp.components.sample * wp.components.grade * wp.components.mode;
-          num += (raw - consensus.value) * w;
+          num += clipResidual(raw - consensus.value) * w;
           den += w;
           n++;
         }
@@ -295,6 +317,20 @@ export interface AggregateResult {
   pollsUsed: number;
   /** Kish effective sample: (Σw)² / Σw². How many "full" polls this really is. */
   effectivePollCount: number;
+  /**
+   * Sum of the per-party share estimates BEFORE the residual is assigned.
+   *
+   * This is the aggregate's own consistency check and it is worth publishing.
+   * Every party is averaged over the polls that reported IT, so the denominator
+   * differs party by party and the sum is not forced to one. A healthy board
+   * lands a little under one, leaving room for the lists that win nothing. A
+   * sum ABOVE one means at least one party's estimate is being carried by a
+   * subset of polls that flatter it — in October 2026 the sum reached 1.079,
+   * and every point of that excess came from two contaminated rows. Removing
+   * them put it back at 1.000. The number was diagnostic the whole time;
+   * nothing was looking at it.
+   */
+  rawShareSum: number;
 }
 
 export function aggregatePolls(
@@ -339,6 +375,17 @@ export function aggregatePolls(
   const assigned = Object.values(shares).reduce((a, b) => a + b, 0);
   shares.other = Math.max(0.005, 1 - assigned);
 
+  // An over-subscribed board is a data problem, not a rounding problem, and the
+  // floor above hides it: the residual clamps to 0.5% and the caller silently
+  // renormalises, so a 1.08 sum reads as a plausible forecast. Say it out loud.
+  if (assigned > 1.02) {
+    console.warn(
+      `[aggregate] party shares sum to ${(assigned * 100).toFixed(1)}% before the residual. ` +
+        `Above 102% means at least one estimate rests on a flattering subset of polls — ` +
+        `check coverage per party before trusting this board.`,
+    );
+  }
+
   const sumW = weighted.reduce((a, w) => a + w.weight, 0);
   const sumW2 = weighted.reduce((a, w) => a + w.weight * w.weight, 0);
 
@@ -348,6 +395,7 @@ export function aggregatePolls(
     houseEffects,
     pollsUsed: weighted.filter((w) => w.weight > 0.02).length,
     effectivePollCount: sumW2 > 0 ? (sumW * sumW) / sumW2 : 0,
+    rawShareSum: assigned,
   };
 }
 

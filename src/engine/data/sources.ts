@@ -102,9 +102,10 @@ export const SOURCES: SourceDescriptor[] = [
     pollster: "משתנה",
     mode: "unknown",
     status: "unverified",
-    notes: "אגרגטור נוסף. מוחזק כגיבוי לסקר הסקרים — שני אגרגטורים בלתי תלויים מקטינים את הסיכון ששבירה של אחד תשתיק את הערוץ כולו.",
+    notes:
+      "אגרגטור נוסף. מוחזק כגיבוי לסקר הסקרים — שני אגרגטורים בלתי תלויים מקטינים את הסיכון ששבירה של אחד תשתיק את הערוץ כולו. הדומיין מכיל גם מחשבון סווינג (/swing) שאינו סקר: הוא פותח בתוצאת 2022 ונסרק כסקר טרי 34 ימים רצופים, ולכן התבנית מוגבלת ל-/polls.",
     indexUrls: ["https://israelvoting.com/polls"],
-    articlePattern: "^https://israelvoting\\.com/",
+    articlePattern: "^https://israelvoting\\.com/polls",
   },
 
   // ---- Television and daily press -----------------------------------------
