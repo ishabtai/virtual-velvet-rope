@@ -892,6 +892,30 @@
     "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
   },
   {
+    "id": "israelvoting-2026-05-28-1x8yof7",
+    "date": "2026-05-28",
+    "pollster": "משתנה",
+    "outlet": "Israel Voting",
+    "sampleSize": null,
+    "mode": "unknown",
+    "seats": {
+      "likud": 23,
+      "yashar": 17,
+      "democrats": 11,
+      "yisrael-beiteinu": 9,
+      "shas": 8,
+      "utj": 8,
+      "otzma": 8,
+      "joint-list": 5,
+      "raam": 5,
+      "religious-zionism": 4
+    },
+    "provenance": "published-partial",
+    "source": "https://israelvoting.com/polls/n12-2026-05-28",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 98 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "wiki-2024-03-07-לאזר",
     "date": "2024-03-07",
     "pollster": "לאזר",

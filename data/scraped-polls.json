@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T06:42:21.520Z",
+  "updatedAt": "2026-10-16T06:51:26.469Z",
   "polls": [
     {
       "id": "c13-2026-10-15-l39vz4",
@@ -2005,6 +2005,30 @@
       "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
     },
     {
+      "id": "israelvoting-2026-06-04-13krwlm",
+      "date": "2026-06-04",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 30,
+        "yashar": 16,
+        "democrats": 10,
+        "yisrael-beiteinu": 9,
+        "shas": 9,
+        "otzma": 8,
+        "utj": 8,
+        "raam": 6,
+        "religious-zionism": 5,
+        "joint-list": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/polls/i24-2026-06-04",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 106 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
       "id": "israelvoting-2026-06-04-1opgk0e",
       "date": "2026-06-04",
       "pollster": "משתנה",
@@ -2028,6 +2052,30 @@
       "source": "https://israelvoting.com/polls/n12-2026-06-04",
       "partial": true,
       "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "israelvoting-2026-05-28-1x8yof7",
+      "date": "2026-05-28",
+      "pollster": "משתנה",
+      "outlet": "Israel Voting",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "likud": 23,
+        "yashar": 17,
+        "democrats": 11,
+        "yisrael-beiteinu": 9,
+        "shas": 8,
+        "utj": 8,
+        "otzma": 8,
+        "joint-list": 5,
+        "raam": 5,
+        "religious-zionism": 4
+      },
+      "provenance": "published-partial",
+      "source": "https://israelvoting.com/polls/n12-2026-05-28",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 98 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
     },
     {
       "id": "wiki-2024-03-07-לאזר",
