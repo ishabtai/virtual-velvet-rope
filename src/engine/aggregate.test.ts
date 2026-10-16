@@ -210,3 +210,78 @@ describe("unattributed polls", () => {
     expect(withAnon.shares.likud).toBeGreaterThan(without.shares.likud);
   });
 });
+
+describe("house effects must survive one bad poll", () => {
+  it("does not let a single outlier force a large correction onto every other institute", () => {
+    // The mechanism that did most of the damage, and the counter-intuitive one.
+    // One article under a highly-graded institute's name reported a small party
+    // at an absurd level. That poll carried only ~7% of the party's weight, so
+    // its direct effect was small — but zero-centring turned its huge residual
+    // into a -4.7pp "house effect" for every OTHER institute, and since the
+    // correction is subtracted, every clean reading was inflated by that much.
+    const clean = { likud: 30, yashar: 30, byachad: 30, democrats: 30 };
+    const polls: Poll[] = [];
+    for (let i = 0; i < 4; i++) {
+      const d = `2026-09-0${i + 1}`;
+      polls.push(poll({ id: `m${i}`, date: d, pollster: "מדגם", seats: clean }));
+      polls.push(poll({ id: `f${i}`, date: d, pollster: "קמיל פוקס", seats: clean }));
+      polls.push(poll({ id: `k${i}`, date: d, pollster: "כאן מחקרים", seats: clean }));
+    }
+    const withoutOutlier = estimateHouseEffects(weighPolls(polls, "2026-09-05", cfg, {}), cfg);
+
+    polls.push(poll({ id: "bad", date: "2026-09-04", pollster: "כאן מחקרים", seats: { likud: 21, democrats: 52, yashar: 23, byachad: 24 } }));
+    const withOutlier = estimateHouseEffects(weighPolls(polls, "2026-09-05", cfg, {}), cfg);
+
+    // The clean institutes must not be dragged far by one bad reading.
+    for (const house of ["מדגם", "קמיל פוקס"]) {
+      const before = withoutOutlier[house].democrats;
+      const after = withOutlier[house].democrats;
+      expect(Math.abs(after - before), `${house} moved too far`).toBeLessThan(0.015);
+    }
+  });
+
+  it("caps any single residual's contribution", () => {
+    // No institute has a real bias of three points on a party; anything beyond
+    // that is a parse error wearing an institute's name.
+    const polls: Poll[] = [
+      poll({ id: "a", pollster: "מדגם", seats: { likud: 30, yashar: 30, byachad: 30, democrats: 30 } }),
+      poll({ id: "b", pollster: "קמיל פוקס", seats: { likud: 30, yashar: 30, byachad: 30, democrats: 30 } }),
+      poll({ id: "c", pollster: "כאן מחקרים", seats: { likud: 44, yashar: 30, byachad: 30, democrats: 16 } }),
+    ];
+    const he = estimateHouseEffects(weighPolls(polls, "2026-09-11", cfg, {}), cfg);
+    for (const [house, effects] of Object.entries(he)) {
+      for (const [party, v] of Object.entries(effects)) {
+        expect(Math.abs(v), `${house}/${party}`).toBeLessThanOrEqual(0.031);
+      }
+    }
+  });
+});
+
+describe("the aggregate's own consistency check", () => {
+  it("reports the pre-residual share sum so uneven coverage is visible", () => {
+    // Each party is averaged over the polls that reported IT, so the sum is not
+    // forced to one and an over-subscribed board looks like a normal forecast
+    // once the residual clamps and the caller renormalises. In October 2026 the
+    // sum reached 1.079 and every point of the excess was contamination. The
+    // number must therefore leave aggregatePolls, not stay a local.
+    const agg = aggregatePolls(POLLS, "2026-09-11", cfg, BELOW_THRESHOLD);
+    expect(agg.rawShareSum).toBeGreaterThan(0.8);
+    expect(agg.rawShareSum).toBeLessThan(1.3);
+  });
+
+  it("goes over one when a party is carried only by the polls that flatter it", () => {
+    // Two polls, one party listed in just the generous one. Averaging that
+    // party over its own subset while everyone else is averaged over both is
+    // exactly the mechanism, reproduced in miniature.
+    const polls = [
+      poll({ id: "p1", seats: { likud: 35, yashar: 30, byachad: 15, democrats: 10, shas: 18, utj: 12 } }),
+      poll({
+        id: "p2",
+        pollster: "קמיל פוקס",
+        seats: { likud: 28, yashar: 24, byachad: 12, democrats: 8, shas: 14, utj: 10, amcha: 24 },
+      }),
+    ];
+    const agg = aggregatePolls(polls, "2026-09-11", cfg, {});
+    expect(agg.rawShareSum).toBeGreaterThan(1);
+  });
+});

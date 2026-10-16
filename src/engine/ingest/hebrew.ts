@@ -50,7 +50,17 @@ function stripPrefixes(word: string): string {
 const ALIASES: Record<string, string[]> = {
   likud: ["הליכוד", "ליכוד"],
   yashar: ["ישר", "מפלגת ישר", "ישר עם איזנקוט", "איזנקוט"],
-  byachad: ["ביחד", "מפלגת ביחד", "בנט לפיד"],
+  byachad: [
+    "ביחד",
+    "מפלגת ביחד",
+    // The natural Hebrew is "בנט ולפיד", with the connecting vav, and both
+    // orders appear in print. Without these the commonest spelling of the
+    // party's own leaders was invisible to the parser.
+    "בנט לפיד",
+    "בנט ולפיד",
+    "לפיד ובנט",
+    "לפיד בנט",
+  ],
   democrats: ["הדמוקרטים", "דמוקרטים", "העבודה מרצ"],
   "yisrael-beiteinu": ["ישראל ביתנו", "ישראל ביתינו"],
   shas: ["שס"],
@@ -125,6 +135,28 @@ export interface Mention {
   specificity: number;
 }
 
+/**
+ * True when a bare "ביחד" is the adverb, not the party.
+ *
+ * Two signals, both conservative. Another party named earlier in the same
+ * clause means the word is adding them up. A plural verb of running or
+ * standing directly before it ("רצות ביחד", "מתמודדות יחד") is the same thing
+ * said with a verb. Everything else is left to the party, so "ביחד בראשות בנט
+ * ולפיד מקבלת 15" and a sentence-opening "ביחד 14" still parse.
+ */
+const TOGETHER_VERBS = /(?:רצות|רצים|מתמודדות|מתמודדים|יתמודדו|מופיעות|מופיעים|מצטרפות|מצטרפים|עומדות|עומדים)\s*$/;
+
+function isAdverbialTogether(normalized: string, at: number, found: Mention[]): boolean {
+  const clauseStart = Math.max(
+    normalized.lastIndexOf(".", at),
+    normalized.lastIndexOf(",", at),
+    normalized.lastIndexOf(";", at),
+    normalized.lastIndexOf("|", at),
+  ) + 1;
+  if (found.some((m) => m.index >= clauseStart && m.index < at)) return true;
+  return TOGETHER_VERBS.test(normalized.slice(clauseStart, at));
+}
+
 export function findPartyMentions(text: string): Mention[] {
   const normalized = normalizeHebrew(text);
   const mentions: Mention[] = [];
@@ -154,6 +186,17 @@ export function findPartyMentions(text: string): Mention[] {
       const prefixChars = normalized.slice(wordStart, at);
       if (prefixChars.length > 0 && stripPrefixes(prefixChars + alias.text) !== alias.text) {
         if (prefixChars.length > 2) continue;
+      }
+
+      // "ביחד" is also an ordinary Hebrew adverb meaning "together", and the
+      // matcher could not tell the two apart: "הליכוד וש״ס ביחד 39 מנדטים"
+      // produced byachad=39, and "הרשימה המשותפת ורע״ם רצות ביחד 10" produced
+      // byachad=10. That is the amcha=52 failure mode exactly — a bloc subtotal
+      // recorded as one party — only manufactured by the parser rather than
+      // mis-read from the page. When another party has already been named in
+      // the same clause, the word is summing them up, not naming a list.
+      if (alias.partyId === "byachad" && alias.text === "ביחד" && isAdverbialTogether(normalized, at, mentions)) {
+        continue;
       }
 
       claimed.push([at, end]);
@@ -211,6 +254,18 @@ export function seatsAfterMention(
   // perfectly legal seat range.
   const sentenceEnd = bounded.search(/[.!?|]/);
   if (sentenceEnd >= 0) bounded = bounded.slice(0, sentenceEnd);
+
+  // So does the word "together". A number after it is the sum of two or more
+  // lists ("הרשימה המשותפת ורע״ם רצות ביחד 10 מנדטים"), and crediting a sum to
+  // whichever party happened to be named first is how a bloc subtotal becomes a
+  // party's seat count — the same mistake that put 52 seats on a party polling
+  // five. Refuse the number instead.
+  //
+  // Only "ביחד", not a bare "יחד": the bare form turns up in constructions
+  // whose number belongs to the single party named ("ש״ס, שקיבלה בשנת 2022 יחד
+  // 11 מנדטים"), and cutting there loses a good reading.
+  const together = bounded.search(/(?:^|\s)ו?ביחד(?:\s|$)/);
+  if (together >= 0) bounded = bounded.slice(0, together);
 
   const withUnit = bounded.match(/(\d{1,3})(?:\.\d)?\s*מנדט/);
   if (withUnit) return readLevel(bounded, withUnit);

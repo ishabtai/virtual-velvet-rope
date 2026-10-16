@@ -1,8 +1,24 @@
 /** Hebrew-locale formatting helpers. Kept in one place so every number on the
  *  site rounds and reads the same way. */
 
-export const pct = (x: number, digits = 0) =>
-  `${(x * 100).toFixed(digits)}%`;
+/**
+ * A probability as a percentage — but 0% and 100% are reserved for certainty.
+ *
+ * toFixed(0) turned a 99.885% threshold probability into "100%", and the panel
+ * that watches threshold risk filters out anything above 98%, so a party with a
+ * one-in-870 chance of falling out of the Knesset was presented as safe beyond
+ * doubt and then not presented at all. A model that runs 20,000 simulations
+ * should not round its own uncertainty away in the last step before the reader.
+ * Anything that is merely very likely now reads ">99%" / "<1%".
+ */
+export const pct = (x: number, digits = 0) => {
+  if (x >= 1) return "100%";
+  if (x <= 0) return "0%";
+  const shown = (x * 100).toFixed(digits);
+  if (Number(shown) >= 100) return ">99%";
+  if (Number(shown) <= 0) return "<1%";
+  return `${shown}%`;
+};
 
 /** Seat counts are means, so they carry one decimal — but never a bare ".0". */
 export const seats = (x: number) =>

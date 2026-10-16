@@ -231,6 +231,8 @@ export interface Forecast {
   pollsUsed: number;
   /** Effective sample size of the aggregate (sum of weights squared, normalised). */
   effectivePollCount: number;
+  /** Pre-residual sum of party shares; above 1 flags uneven poll coverage. */
+  rawShareSum?: number;
   /** Estimated house effects by pollster and party, in share points. */
   houseEffects: Record<string, Record<string, number>>;
   config: ModelConfig;

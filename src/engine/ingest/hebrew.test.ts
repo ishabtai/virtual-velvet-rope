@@ -149,3 +149,35 @@ describe("extractDate", () => {
     expect(extractDate("אין כאן תאריך", "2026-09-12")).toBe("2026-09-12");
   });
 });
+
+describe('"ביחד" is both a party and an ordinary Hebrew adverb', () => {
+  const read = (text: string) => {
+    const t = normalizeHebrew(text);
+    const out: Record<string, number> = {};
+    for (const m of findPartyMentions(t)) {
+      if (out[m.partyId] !== undefined) continue;
+      const n = seatsAfterMention(t, m);
+      if (n !== null) out[m.partyId] = n;
+    }
+    return out;
+  };
+
+  it("does not turn a sum of two parties into a party of its own", () => {
+    // This is the amcha=52 failure mode manufactured by the parser rather than
+    // mis-read from the page: a bloc subtotal recorded as one list's seats.
+    expect(read('הליכוד וש"ס ביחד 39 מנדטים')).toEqual({});
+    expect(read("הרשימה המשותפת ורעם רצות ביחד 10 מנדטים")).toEqual({});
+  });
+
+  it("still reads the party when the word names the party", () => {
+    expect(read("ביחד בראשות בנט ולפיד מקבלת 15 מנדטים")).toEqual({ byachad: 15 });
+    expect(read("ביחד 14 מנדטים")).toEqual({ byachad: 14 });
+  });
+
+  it("reads the leaders' names in the spelling Hebrew actually uses", () => {
+    // The alias list held "בנט לפיד" without the connecting vav, so the
+    // commonest written form of the party was invisible to the parser.
+    expect(read("מפלגת בנט ולפיד 15 מנדטים")).toEqual({ byachad: 15 });
+    expect(read("לפיד ובנט 15 מנדטים")).toEqual({ byachad: 15 });
+  });
+});

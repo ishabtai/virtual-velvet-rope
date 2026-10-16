@@ -18,8 +18,12 @@ export function ThresholdWatch({
   parties: PartyEstimate[];
   threshold: number;
 }) {
+  // The cut was 0.98, which hid a party sitting at 99.9% — a one-in-870 chance
+  // of losing every one of its seats, on a board where the two blocs are inside
+  // a seat of each other. At that margin the omission is the error, not the
+  // clutter: 0.999 is the first value this panel can honestly call safe.
   const atRisk = parties
-    .filter((p) => p.pAboveThreshold > 0.01 && p.pAboveThreshold < 0.98)
+    .filter((p) => p.pAboveThreshold > 0.01 && p.pAboveThreshold < 0.999)
     .sort((a, b) => a.pAboveThreshold - b.pAboveThreshold);
 
   if (atRisk.length === 0) {
