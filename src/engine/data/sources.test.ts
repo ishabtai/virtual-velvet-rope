@@ -51,3 +51,18 @@ describe("source registry", () => {
     }
   });
 });
+
+describe("one source, one adapter", () => {
+  it("does not hand a source with its own adapter to the prose crawler as well", () => {
+    // kan-lobby was registered twice in one scrape: once by its own adapter and
+    // once by the generic crawler, which claims anything carrying index URLs.
+    // The second copy crawled the lobby as a news section and reported that the
+    // layout had changed.
+    const dedicated = SOURCES.filter((s) => s.dedicatedAdapter).map((s) => s.id);
+    expect(dedicated.length).toBeGreaterThan(0);
+    for (const id of dedicated) {
+      expect(TEXT_SOURCES.map((s) => s.id), `${id} has an adapter and must not be crawled as prose`)
+        .not.toContain(id);
+    }
+  });
+});

@@ -40,6 +40,17 @@ export interface SourceDescriptor {
   notes: string;
   /** Section pages the scraper starts from. */
   indexUrls: string[];
+  /**
+   * True when this source has an adapter written for it specifically.
+   *
+   * Without this the generic prose crawler claims every source carrying an
+   * indexUrls entry, so a source with its own adapter gets registered twice and
+   * crawled as if it were a news section — which is how kan-lobby appeared
+   * twice in one scrape, the second copy reporting that the layout had changed.
+   * Wikipedia avoided this only by having no index URLs at all, which is an
+   * accident rather than a rule.
+   */
+  dedicatedAdapter?: boolean;
   /** Article URLs must match this to be followed. */
   articlePattern?: string;
   minParties?: number;
@@ -105,6 +116,7 @@ export const SOURCES: SourceDescriptor[] = [
     notes:
       "לובי הסקרים של כאן: 241 סקרים מתשעה כלי תקשורת, אחורה עד נובמבר 2025 — המקור הגדול ביותר שזמין למערכת הזו, ובמקביל הבדיקה החיצונית הטובה ביותר למודל. הוא מפרסם גם ממוצע וגם מפת גושים משלו, ואלה פלט של מודל מתחרה ולא ראיה: האדפטר קולט שורות של סקר בודד עם מכון נקוב בלבד, ומסרב לכל השאר.",
     indexUrls: ["https://www.kan.org.il/lobby/skarim/"],
+    dedicatedAdapter: true,
   },
   {
     id: "israelvoting",
@@ -301,8 +313,8 @@ export const SOURCE_BY_ID: Record<string, SourceDescriptor> = Object.fromEntries
   SOURCES.map((s) => [s.id, s]),
 );
 
-/** Sources the scraper follows as prose. */
-export const TEXT_SOURCES = SOURCES.filter((s) => s.indexUrls.length > 0);
+/** Sources the scraper follows as prose: an index to crawl and no adapter of their own. */
+export const TEXT_SOURCES = SOURCES.filter((s) => s.indexUrls.length > 0 && !s.dedicatedAdapter);
 
 export const KIND_LABELS: Record<SourceKind, string> = {
   structured: "מבני",
