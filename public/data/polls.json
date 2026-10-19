@@ -1,5 +1,29 @@
 [
   {
+    "id": "i24-2026-10-18-c9g3qp",
+    "date": "2026-10-18",
+    "pollster": "דיירקט פולס",
+    "outlet": "i24NEWS",
+    "sampleSize": 525,
+    "mode": "online-panel",
+    "seats": {
+      "likud": 25,
+      "otzma": 10,
+      "joint-list": 8,
+      "yashar": 21,
+      "byachad": 13,
+      "democrats": 9,
+      "utj": 8,
+      "shas": 8,
+      "religious-zionism": 6,
+      "raam": 6
+    },
+    "provenance": "published-partial",
+    "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-81805",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 114 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c13-2026-10-15-l39vz4",
     "date": "2026-10-15",
     "pollster": "קמיל פוקס",
