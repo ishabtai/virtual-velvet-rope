@@ -1,6 +1,52 @@
 {
-  "updatedAt": "2026-10-20T09:26:54.742Z",
+  "updatedAt": "2026-10-21T09:23:13.248Z",
   "polls": [
+    {
+      "id": "kikar-2026-10-21-1qeyv7u",
+      "date": "2026-10-21",
+      "pollster": "לא ידוע",
+      "outlet": "כיכר השבת",
+      "sampleSize": null,
+      "mode": "unknown",
+      "seats": {
+        "yashar": 20,
+        "likud": 18,
+        "byachad": 14,
+        "joint-list": 9,
+        "yisrael-beiteinu": 8,
+        "utj": 7,
+        "religious-zionism": 7,
+        "raam": 6,
+        "reservists": 4
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kikar.co.il/political-news/channel-13-poll-izenkot-netanyahu-iran-attack-conc",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 93 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "i24-2026-10-20-ypwe9w",
+      "date": "2026-10-20",
+      "pollster": "דיירקט פולס",
+      "outlet": "i24NEWS",
+      "sampleSize": 521,
+      "mode": "online-panel",
+      "seats": {
+        "likud": 26,
+        "yashar": 20,
+        "byachad": 12,
+        "otzma": 9,
+        "democrats": 9,
+        "joint-list": 8,
+        "yisrael-beiteinu": 7,
+        "religious-zionism": 7,
+        "raam": 6
+      },
+      "provenance": "published-partial",
+      "source": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-91da6024",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 104 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "kikar-2026-10-20-1qeyv7u",
       "date": "2026-10-20",
