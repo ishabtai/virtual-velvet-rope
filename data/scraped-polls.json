@@ -1,6 +1,52 @@
 {
-  "updatedAt": "2026-10-23T09:21:56.475Z",
+  "updatedAt": "2026-10-24T08:52:54.238Z",
   "polls": [
+    {
+      "id": "c13-2026-10-24-1r8bcig",
+      "date": "2026-10-24",
+      "pollster": "קמיל פוקס",
+      "outlet": "חדשות 13",
+      "sampleSize": 875,
+      "mode": "mixed",
+      "seats": {
+        "yashar": 22,
+        "likud": 19,
+        "byachad": 14,
+        "democrats": 10,
+        "joint-list": 9,
+        "utj": 8,
+        "shas": 7
+      },
+      "provenance": "published-partial",
+      "source": "https://13tv.co.il/item/news/politics/politics/survey-905415900/?pid=62&amp;refc=902992386",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 89 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "n12-2026-10-23-1yujxre",
+      "date": "2026-10-23",
+      "pollster": "מדגם",
+      "outlet": "חדשות 12",
+      "sampleSize": null,
+      "mode": "mixed",
+      "seats": {
+        "yashar": 23,
+        "likud": 21,
+        "byachad": 15,
+        "democrats": 10,
+        "joint-list": 9,
+        "shas": 8,
+        "yisrael-beiteinu": 8,
+        "otzma": 8,
+        "utj": 7,
+        "religious-zionism": 6,
+        "raam": 5
+      },
+      "provenance": "published-partial",
+      "source": "https://www.mako.co.il/news-israel-elections/2026/Article-8ea5e45ec2961a1027.htm",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (11 מפלגות, 120 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "c13-2026-10-22-niiyst",
       "date": "2026-10-22",
