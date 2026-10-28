@@ -1,6 +1,73 @@
 {
-  "updatedAt": "2026-10-27T09:48:30.002Z",
+  "updatedAt": "2026-10-28T10:33:43.229Z",
   "polls": [
+    {
+      "id": "c13-2026-10-28-1htenkc",
+      "date": "2026-10-28",
+      "pollster": "קמיל פוקס",
+      "outlet": "חדשות 13",
+      "sampleSize": null,
+      "mode": "mixed",
+      "seats": {
+        "yashar": 19,
+        "likud": 27,
+        "yisrael-beiteinu": 8,
+        "utj": 7,
+        "shas": 7,
+        "otzma": 7,
+        "religious-zionism": 6,
+        "raam": 6,
+        "joint-list": 11
+      },
+      "provenance": "published-partial",
+      "source": "https://13tv.co.il/item/news/politics/politics/a5orx-905426277/?pid=62&amp;refc=902992371",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (9 מפלגות, 98 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kan-2026-10-28-1g20uoh",
+      "date": "2026-10-28",
+      "pollster": "כאן מחקרים",
+      "outlet": "כאן 11",
+      "sampleSize": null,
+      "mode": "phone",
+      "seats": {
+        "likud": 25,
+        "yashar": 21,
+        "byachad": 13,
+        "joint-list": 11,
+        "democrats": 9,
+        "yisrael-beiteinu": 8,
+        "raam": 7,
+        "religious-zionism": 6
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kan.org.il/content/kan-news/politic/1113403/",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 100 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kan-2026-10-28-j6uos9",
+      "date": "2026-10-28",
+      "pollster": "כאן מחקרים",
+      "outlet": "כאן 11",
+      "sampleSize": null,
+      "mode": "phone",
+      "seats": {
+        "likud": 27,
+        "yashar": 20,
+        "byachad": 11,
+        "yisrael-beiteinu": 8,
+        "shas": 7,
+        "religious-zionism": 6,
+        "joint-list": 13,
+        "raam": 6
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kan.org.il/content/kan-news/politic/1113524/",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (8 מפלגות, 98 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "c13-2026-10-24-1r8bcig",
       "date": "2026-10-24",
