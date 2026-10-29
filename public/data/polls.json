@@ -1,5 +1,26 @@
 [
   {
+    "id": "c13-2026-10-29-1ovp6yy",
+    "date": "2026-10-29",
+    "pollster": "קמיל פוקס",
+    "outlet": "חדשות 13",
+    "sampleSize": null,
+    "mode": "mixed",
+    "seats": {
+      "joint-list": 11,
+      "yashar": 19,
+      "raam": 13,
+      "likud": 26,
+      "byachad": 12,
+      "democrats": 8,
+      "religious-zionism": 6
+    },
+    "provenance": "published-partial",
+    "source": "https://13tv.co.il/item/news/politics/politics/mo8fd-905428800/?pid=62&amp;refc=902992383",
+    "partial": true,
+    "notes": "נקלט אוטומטית מטקסט הכתבה (7 מפלגות, 95 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+  },
+  {
     "id": "c13-2026-10-28-1htenkc",
     "date": "2026-10-28",
     "pollster": "קמיל פוקס",
