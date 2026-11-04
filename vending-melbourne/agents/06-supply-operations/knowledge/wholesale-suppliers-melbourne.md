@@ -80,3 +80,11 @@ All ESTIMATEs are reasoned from the Coles/Woolworths price data and general cash
 3. Build a price book (spreadsheet) of the top 30 SKUs across 3 suppliers; refresh monthly.
 4. At ~10 machines, call CCEP and Asahi reps and ask about vending pricing, delivery minimums and branded machine programs.
 5. For chilled lines, test PFD/Bidfood/Complete Food Services minimums before committing to a smart fridge.
+
+## 11. Phase 2 updates (4 Nov 2026)
+
+- **Campbells:** the FAQ confirms it is open to all ABN holders and membership is free. A Dec 2024 count shows about 14 stores nationally, 4 of them in VIC. "Campbells Clayton" is a registered trading name under ABN 57 000 226 399. https://campbells.com.au/convenience/faq ; https://scrapehero.com/location-reports/Campbells-Australia ; https://abr.business.gov.au/ABN/View/57000226399
+- **Asian snack/noodle wholesalers (for niche machines):** Wang Distribution and Chen Foods (both Clayton South), Golden Sun Trading (Dandenong), New Eastland, and Asian Pantry (wholesale/bulk section). Trade terms are unpublished. https://bestfoodimporters.com/company/wang-distribution-pty-ltd/ ; https://bestfoodimporters.com/company/chen-foods/ ; https://bestfoodimporters.com/company/golden-sun-trading-pty-ltd/ ; https://asianpantry.com.au/pages/wholesale-bulk
+- **Fresh sandwiches:** no vending-oriented supplier found. The leads are Bidfood Port Melbourne and a sandwich manufacturer listed for sale (under offer). https://www.bidfood.com.au/branch/port-melbourne/ ; https://linkbusiness.com.au/business-for-sale/under-offer-wholesale-manufacturing-distribution-business-169000-11105
+- **Costco business fee:** sources still conflict. The fee most likely rose to $65 in Jun 2023. https://www.channelnews.com.au/costco-set-to-raise-membership-prices-once-again-in-oz/
+- **Self-storage:** National Storage prohibits perishable and contained/tinned food, so check every lease before storing vending stock. Wilson small units start at $149/mo. https://nationalstorage.com.au/?p=503826 ; https://wilsonstorage.com.au/?p=9881

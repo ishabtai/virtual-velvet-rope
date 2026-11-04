@@ -11,6 +11,7 @@
 | [maintenance-and-security.md](maintenance-and-security.md) | Maintenance schedule, common faults, spares, security by site risk, cash handling, vandalism protocol, WHS |
 | [scaling-operations.md](scaling-operations.md) | Stages 1→80+ machines, labour costs (award vs $50 per visit contractor), outsourcing, hire triggers, buying an existing route |
 | [open-questions.md](open-questions.md) | Unknowns and hand-offs to other agents |
+| [../analysis/phase2-analysis.md](../analysis/phase2-analysis.md) | Phase 2b: ops-feasibility scores and operating plans per archetype |
 
 ## Top findings
 1. **Start with Costco plus supermarket specials, then Campbells.** Costco has 4 Melbourne warehouses (Ardeer, Epping, Moorabbin, Ringwood; membership about $60–65/yr). Campbells (Metcash) cash & carry is reportedly free for ABN holders. Direct bottler accounts carry minimums (the only one found was 10 cartons, in a WA contract) and suit operators with roughly 10–20 or more machines.
@@ -22,3 +23,4 @@
 7. **Labour benchmarks.** Retail award casual Level 1 is $34.76/h from July 2026 (the correct award is still to be confirmed by Agent 08). That is roughly $16 per machine visit (ESTIMATE), compared with a Melbourne contractor ad paying $50 per machine serviced. Hire when route hours exceed about 20/week and gross profit covers labour at least 3×.
 8. **Buying a route is a real option.** Melbourne listings range from a 2-machine package at $20k + GST to a 62-machine route quoting about $95k/month revenue (under offer). Do operational due diligence: ride-alongs, telemetry history, site contract assignability.
 9. **Sourcing gaps.** Shrinkage benchmarks, AUD telemetry pricing and real shelf prices for the top SKUs all need follow-up (see open-questions.md).
+10. **Phase 2:** a clustered classic route takes about 1 h per machine per week (5 machines ≈ 5.5 h, 20 ≈ 20 h); a scattered one takes 2+ h. The South-East belt has the best supply base (Costco Moorabbin, Campbells Clayton, Asian wholesalers in Clayton South and Dandenong). Mainstream self-storage bans food stock.

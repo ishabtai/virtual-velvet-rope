@@ -31,3 +31,11 @@
 | 07 Financial | Use: vehicle ~$0.88/km; ~11–12 h/week for a 10-machine route; casual labour ~$16 per visit (ESTIMATE) vs contractor $50 per visit; shrinkage of 1–3% ambient and 5–15% fresh; storage $80–344/month. Stress-test with the high shrinkage figures. |
 | 08 Legal | Confirm: correct modern award for a restocker; contractor vs employee risk; FoodTrader class registration (Class 4 vs 3); ACL "paid but no product" refund duty; test-and-tag obligations; home-storage of food stock and council home-business rules; insurance types; multipack labelling compliance; GST classification of stock lines. |
 | 09 Devil's Advocate | Weak points: US-sourced time benchmarks; "placement included" starter packages; scattered routes destroy margin; fresh food shrinkage; dependence on supermarket specials does not scale. |
+
+## Phase 2 status (4 Nov 2026)
+- Q1 Campbells: membership is free for ABN holders (verified via FAQ). There are 4 VIC stores, but only Clayton has a known address. Is there a West store?
+- Q2 Costco: still conflicting; $65 is most likely.
+- Q7 Shrinkage: still no independent smart-fridge benchmark (grocery fresh is ~6.6%, vendor-sourced).
+- Q9 Storage: National Storage bans perishable and tinned food. Food-permitted storage is still to be found.
+- New: Asian wholesaler minimums; a small-volume fresh sandwich supplier for smart fridges; Class 3 fees at Greater Dandenong and Wyndham (08).
+- Labour: a Melbourne West/Geelong vending ad pays $28/h part-time. https://www.jobstralia.com/detail/8/9b0265b616aed4ec159fdf9a73bfb440
