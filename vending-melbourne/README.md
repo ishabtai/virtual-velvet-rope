@@ -36,10 +36,10 @@ vending-melbourne/
 Every knowledge folder also has `INDEX.md` and `open-questions.md` (unverified items + hand-offs).
 
 ## Workflow
-1. Knowledge build — **complete** (Nov 2026).
-2. Analysis — 01–05 in parallel; 06–08 build on them.
-3. Challenge — 09 attacks draft options.
-4. Synthesis — 00 presents business-model options.
+1. Knowledge build — **complete** (`agents/*/knowledge/`).
+2. Analysis — **complete** (`agents/01–08/analysis/phase2-analysis.md`, model: `agents/07-financial-modeller/analysis/option-model.csv`).
+3. Challenge — **complete** (`agents/09-devils-advocate/analysis/phase3-challenge.md`).
+4. Synthesis — **complete**: **[OPTIONS-REPORT.md](agents/00-lead-strategist/analysis/OPTIONS-REPORT.md)** ← start here.
 
 ## Research caveat
 Web search was capped per session and many source sites (health.vic.gov.au, ato.gov.au, bsale,

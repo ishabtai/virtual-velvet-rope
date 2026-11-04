@@ -11,6 +11,7 @@ Owner: 00 Lead Strategist · Built 4 Nov 2026 (Phase 1) · AUD.
 | [decision-framework.md](decision-framework.md) | Founder-profile dials, archetype shortlist, weighted scoring, hard gates, a 90-day test plan per option, rules for resolving conflicts between agents |
 | [synthesis-template.md](synthesis-template.md) | Phase 4 report skeleton: option cards, assumptions table, comparison, roadmap, risk register |
 | [open-questions.md](open-questions.md) | Research limits, ranked unknowns, hand-offs to agents 01–09, founder intake questions |
+| [../analysis/OPTIONS-REPORT.md](../analysis/OPTIONS-REPORT.md) | **Phase 4 synthesis (4 Nov 2026):** rebased base case ($150/$175/$220 per wk), $/h vs $26.44 minimum wage, option cards (A, A+C, A+B-lite, A-with-option-to-buy, D), dropped E/F/G, profile mapping, first-30-days list, top-10 facts to verify, conflict resolutions |
 
 ## Top findings
 
@@ -22,5 +23,6 @@ Owner: 00 Lead Strategist · Built 4 Nov 2026 (Phase 1) · AUD.
 6. **Micro-markets and smart fridges need 80–150+ staff per site**, and in Australia they are run by B2B providers (Morsl, Provender at $70–140k franchise resales). The fit is the warehouse belts in the west and south-east. (archetypes B)
 7. **Health-service sites must meet Victorian Healthy Choices:** ≥50% GREEN, ≤20% RED, no RED drinks in combo machines. (archetypes B)
 8. **Niche concepts are fragile.** Pizza Gio closed, and the Southern Cross pizza machine was a pop-up. Gacha is booming (Capsule Station) but faced child-related concerns in Jun 2026. (archetypes C)
-9. **Draft scoring:** A Classic DIY 3.50 leads, then D Buy route and G Asset-light (3.20 each). The suggested default path is **A → D (learn, then buy)**. (decision-framework.md)
+9. **Draft scoring (superseded by OPTIONS-REPORT.md):** the draft had A at 3.50 and A → D as the default path. After Phase 3, the rebased scores are A 3.35, A+C 3.40, A-with-option-to-buy 3.35 (no longer above A, because the route stage is priced at ~$9k/machine Melbourne asks), D 2.95, A+B-lite 2.70. E, F and G are dropped; G's "site-first" idea is folded into A. (../analysis/OPTIONS-REPORT.md)
 10. **Evidence gap:** no verified Australian P&L was found, and page fetching was blocked. Key numbers need re-verification. (open-questions.md)
+11. **Phase 4 headline:** at a beginner-realistic $150/wk, year-3 profit is ~$12–15k for 10–20 h/wk, which is $4–15/h after depreciation, below the $26.44 minimum wage. Options pay minimum wage only at ~$180–230/wk. Small-scale vending is side income; the 90-day pilot is a paid apprenticeship. (../analysis/OPTIONS-REPORT.md §2.3)
