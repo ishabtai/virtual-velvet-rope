@@ -10,6 +10,7 @@
 | `unit-economics-model.md` | Per-machine P&L (lone vs clustered), breakevens, finance overlay, smart fridge, franchise and route-purchase variants, sensitivity |
 | `scenarios-1-5-20.md` | Capital, P&L, payback and owner hourly rate at 1/5/20 machines, year-1 monthly cash flow, staged growth path, option comparison |
 | `tax-and-finance.md` | GST threshold and voluntary-registration maths, sole trader vs company, NCL rules, $20k IAWO, vehicle claims, equipment finance rates |
+| `../analysis/phase2-analysis.md` | Phase 2b option model (A, A+C, A+B-lite, A→D, D, E, F, G) with reconciled assumptions, sensitivity and scores; data in `../analysis/option-model.csv` |
 | `open-questions.md` | Unverified inputs ranked by impact; hand-offs to agents 00–09 |
 
 ## Top findings (all ESTIMATE unless sourced)

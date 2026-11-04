@@ -18,7 +18,7 @@
 | Rule | Detail | Source |
 |---|---|---|
 | Registration threshold | **$75,000** GST turnover (ex-GST). Register within 21 days of reaching it or expecting to reach it in the next 12 months | https://atotaxrates.info/businesses/tax-invoices-and-gst/gst-thresholds/ ; https://thriday.com.au/blog-posts/should-you-register-your-small-business-for-gst |
-| Voluntary registration | Allowed below $75k. If you register you must stay registered for 12 months [BK] | same |
+| Voluntary registration | Allowed below $75k. If you register you generally must stay registered for 12 months (verified 4 Nov 2026: https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst) | same |
 | BAS frequency | Quarterly, due 28 days after quarter end. Voluntary registrants under $75k can usually report annually | https://accounts-os.com/blog/quarterly-bas-gst-pty-ltd-guide.md ; https://www.hrblock.com.au/tax-academy/beginners-guide-to-gst |
 | Cash vs accrual GST | SBEs can account for GST on a cash basis [BK] | — |
 | GST-free lines | Plain water and some basic foods are GST-free. Soft drinks, confectionery and chips are taxable [BK]. Hand-off to 04 and 08 | — |
@@ -50,11 +50,11 @@ Shelf prices stay the same either way, because customers will not pay $5.50 inst
 
 | Structure | Tax rate | Pros | Cons |
 |---|---|---|---|
-| Sole trader | Personal marginal rates. Tax-free threshold $18,200. Bracket $18,201–45,000 at 15% from 1 Jul 2026, plus 2% Medicare levy [BK] | Cheap and simple. Losses can offset salary **if** non-commercial loss (NCL) rules are met | Unlimited personal liability |
-| Pty Ltd company | **25%** base-rate-entity rate (passive income under 80%, turnover under $50M) [BK] | Limited liability. Losses carried forward. Hosts may prefer dealing with a company | ~$600 setup plus ASIC annual fee. Accountant cost of $1.5–3k/yr more (ESTIMATE) |
+| Sole trader | Personal marginal rates. Tax-free threshold $18,200. Bracket $18,201–45,000 at 15% from 1 Jul 2026, plus 2% Medicare levy (verified via secondary source 4 Nov 2026: https://www.wagecalculator.com.au/tax-rates/2026-27; 30% to $135k, 37% to $190k, 45% above) | Cheap and simple. Losses can offset salary **if** non-commercial loss (NCL) rules are met | Unlimited personal liability |
+| Pty Ltd company | **25%** base-rate-entity rate (passive income ≤80%, turnover under $50M; verified 4 Nov 2026: https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes) | Limited liability. Losses carried forward. Hosts may prefer dealing with a company | ~$600 setup plus ASIC annual fee. Accountant cost of $1.5–3k/yr more (ESTIMATE) |
 | Trust | Distributed | Flexibility | Overkill at this scale |
 
-### Non-commercial loss (NCL) rules — relevant in year 1 [BK]
+### Non-commercial loss (NCL) rules — relevant in year 1 (verified 4 Nov 2026: https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/losses/non-commercial-losses/offset-or-defer-the-loss-individuals-or-sole-traders ; ATO lists NCL claims as a Feb 2026 focus area)
 A sole trader can offset a business loss against wage income only if adjusted taxable income is **under $250k** and the business passes **one** of these tests:
 1. Assessable business income ≥ $20,000.
 2. Profit in 3 of the last 5 years.
@@ -69,7 +69,7 @@ Otherwise the loss is deferred until the business makes a profit. This matters b
 |---|---|---|
 | IAWO threshold | **$20,000 per asset, made permanent from 1 Jul 2026** (2026–27 Budget, 12 May 2026). Reported as passed by Parliament in Aug 2026. **Royal Assent not independently confirmed.** Check the ATO page | https://www.ato.gov.au/businesses-and-organisations/small-business-newsroom/20000-instant-asset-writeoff-iawo-here-to-stay ; https://dynamicbusiness.com/news/the-ato-just-locked-in-the-20-000-write-off-for-good ; https://www.boxas.com.au/news/instant-asset-write-off-2026/ |
 | Eligibility | Aggregated turnover under $10M. Applies per asset, so many machines each under $20k can all be written off. Business-use portion only. Asset must be first used or installed ready for use in the year | same, plus https://aspireapp.com/en-au/blog/instant-asset-write-off-rules |
-| Assets ≥ $20k | Go into the **small business pool**: 15% in year 1, 30% a year after that [BK]. Example: a franchise machine package over $20k, or a micro-market fit-out if it is one asset | — |
+| Assets ≥ $20k | Go into the **small business pool**: 15% in year 1, 30% a year after that (verified 4 Nov 2026: https://www.ato.gov.au/business/depreciation-and-capital-expenses-and-allowances/simpler-depreciation-for-small-business/). Note: a $40.5k franchise fridge package falls here, not in the IAWO. Example: a franchise machine package over $20k, or a micro-market fit-out if it is one asset | — |
 | Effective life (non-SBE, or accounting) | **Not verified.** TR 2022/1 was withdrawn 31 Oct 2025 and replaced by the Effective Life Determination 2025. The vending-machine figure was not found. The model uses **8 years** for accounting (ESTIMATE) | https://www.legislation.gov.au/F2025N00859/asmade/2025-10-30/text/original/pdf |
 
 **Every vending option under ~$20k per unit (new combo $9.3k, used $5k, smart fridge $6–15k) is immediately deductible.** The IAWO is a **timing** benefit: it brings deductions forward. It does not make an unprofitable machine profitable.
