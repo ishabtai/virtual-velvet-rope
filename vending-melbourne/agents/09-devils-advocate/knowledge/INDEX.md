@@ -13,6 +13,8 @@ Owner: 09 Devil's Advocate · Researched: 4 Nov 2026 · Greater Melbourne, AUD
 | [kill-criteria.md](kill-criteria.md) | Pre-purchase, 90-day, 12-month and founder-level tripwires, plus green-light counter-criteria |
 | [open-questions.md](open-questions.md) | Research limitations, unknowns, hand-offs to agents 00–08 |
 
+Phase 3 output: `../analysis/phase3-challenge.md` (4 Nov 2026). Option letters there follow 00/07 (B fridge, C niche, D route, E franchise, F package, G locator), not the older order used in these knowledge files.
+
 ## Top findings
 
 1. **Location is the asset, and the machine is a commodity.** Every documented vending scam, including the ACCC's action against Michigan Group over orange-juice machines it said would go into major supermarkets, sold placements that did not exist (https://www.accc.gov.au/node/14733).

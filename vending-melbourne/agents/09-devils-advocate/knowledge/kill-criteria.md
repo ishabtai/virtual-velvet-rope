@@ -17,7 +17,7 @@ Kill criteria are pre-committed tripwires. Write them down *before* spending mon
 | P5 | <70% of a route's revenue sits under written, assignable agreements | E | Contracts are the asset; buyer reports of locations pulled within 30 days (https://vendiscuss.net/topic/14920-what-questions-should-i-ask-re-purchasing-this-full-line-route/) |
 | P6 | Price per machine > 2× independent replacement cost and no verified site earnings to justify the premium | E, F | Goodwill unsupported |
 | P7 | Modelled break-even requires >$200/week gross per machine at a site with no trading history | A, B, D | Above typical AU benchmark (~$650–750/month gross ≈ $150–175/week, RealCommercial) |
-| P8 | Modelled owner hourly rate at base case < national minimum wage (≈$25/h) after vehicle & depreciation | All | Business is a low-paid job with capital at risk |
+| P8 | Modelled owner hourly rate at base case < national minimum wage ($26.44/h from 1 Jul 2026, https://www.fairwork.gov.au/pay-and-wages/minimum-wages) after vehicle & depreciation | All | Business is a low-paid job with capital at risk |
 | P9 | Founder cannot fund 6 months of downside (site loss, move, storage, repairs) without debt stress | All | Liquidity, not profit, kills micro-businesses |
 | P10 | Franchise/licence: no disclosure document, or franchisor won't give contacts of ≥5 current *and* former franchisees | F | Franchising Code expectation — hand-off 08 to confirm applicability |
 
