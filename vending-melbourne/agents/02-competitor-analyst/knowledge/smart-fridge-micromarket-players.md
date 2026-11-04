@@ -65,3 +65,11 @@ Reasoning: micro-markets generally need a minimum headcount to cover fresh-food 
 - **Residential (build-to-rent, student housing)** micro-markets have only one visible Melbourne player (Provender).
 - **Night-shift/24-7 hot or fresh meals** for logistics precincts: claimed by Machines Vending/Ausbox, but no evidence of strong fresh-meal offers.
 - **Local brand curation** (Melbourne bakeries, coffee roasters, healthy brands) not visibly used as a selling point by any player found.
+
+---
+
+## 6. Phase 2 update: Morsl in Victoria (4 Nov 2026)
+- Morsl is **present in Victoria and active in industrial/logistics**, not only corporate offices. It reportedly serves 13 warehouse and logistics companies across NSW and VIC, including Amazon and Officeworks: https://www.procurementmag.com/articles/morsl-transforms-workplace-eating-culture-amazon-and-beyond (2023). It has a national partnership across **Charter Hall's industrial portfolio**: https://www.charterhall.com.au/News/news-article/2022/04/26/promoting-wellbeing-in-the-industrial-sector-with-healthy-food-provider-morsl
+- In Jul 2025 it ran a 24/7 self-service café pilot for staff at St John of God Ballarat Hospital: https://timesnewsgroup.com.au/ballarat/news/new-24-7-cafe-options-for-hospital-staff
+- Series A of $5m (~$14.4m post-money, Jan 2023 per a profile), with a pipeline of 20+ sites: https://www.forbes.com.au/news/entrepreneurs/morsl-adds-5-million-in-series-a-raise/
+- **Implication (ESTIMATE):** large western and south-eastern logistics sheds, especially Charter Hall estates, are contested by a funded micro-market operator. The beginner opening is smaller sites (20–100 staff) and residential towers. Melbourne site count is still unknown.

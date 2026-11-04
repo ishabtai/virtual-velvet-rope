@@ -131,3 +131,11 @@ One Provender listing was flagged "AI generated. Contact seller to confirm" — 
 3. **10% of gross sales** is the most commonly cited Australian host commission (SVA). Generic range 0–30%. `ESTIMATE` that sub-50-staff sites usually take 0–10%.
 4. **Several "national" names are really business-opportunity sellers** whose packages create many small new competitors each year (a supply of motivated sellers later — see `routes-for-sale.md`).
 5. **Large enterprise sites are locked** behind catering/FM tenders (Compass) — out of reach for a startup.
+
+---
+
+## Phase 2 update (4 Nov 2026)
+- Coke Vending: searched again, and still **no published host commission or minimum staff count**. Pages stress free end-to-end service, background-checked staff and Safe Work Method Statements. https://www.cocacolaep.com/au/cokevending/doing-business-with-us/safe-and-secure-options . CCEP advertises a "National Scheduling Manager – Vending" and vending stockist roles in **Moorabbin**, so Melbourne vending operations appear to run from Moorabbin: https://www.ccep.jobs/en/job/moorabbin/national-scheduling-manager-vending-moorabbin/1299/41750054144
+- Industry rule of thumb (US FAQ): classic vending needs ~25–50 staff on site. https://vendingexchange.com/vending-faqs/what-is-the-minimum-number-of-employees-for-vending
+- Franchise fee benchmark (US only): Fresh Healthy Vending charged a royalty of 6–12% of gross and US$1–5k per machine (10-K FY2016). https://www.sec.gov/Archives/edgar/data/0001526689/000164033416001762/Financial_Report.xlsx . No Provender or Ausbox disclosure found.
+- Locator services: Vending Machines Australia has offered site-locating to owner-operators since 2006 and publishes no fee. https://www.vendingmachinesaustralia.com.au/vending-machine-site-location-services

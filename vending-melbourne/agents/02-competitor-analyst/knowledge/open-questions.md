@@ -39,3 +39,13 @@
 | **07 Financial Modeller** | Benchmarks: 10% gross commission (SVA); 20–30% net margin claim (weak source); 62-machine route ≈ $1.14m revenue ≈ $18.4k/machine/yr (seller claim); small packages ≈ 1.1× revenue. Stress-test route valuations at 2–3× SDE. |
 | **08 Legal & Compliance** | Site agreement assignability on route sale; going-concern GST; franchise vs licence (Ausbox "licence/distribution" — is it covered by Franchising Code?); tobacco vending restrictions (Health Vic factsheet Oct 2025); "tax deductible" marketing claims in Ausbox listings. |
 | **09 Devil's Advocate** | Challenge: (a) will hosts actually switch for better service when everyone is free? (b) are placement packages structurally overpriced? (c) can a beginner fund smart fridges placed free? (d) does Coke&Go AI-cooler rollout squeeze independents out of drinks? |
+
+## 4. Phase 2 status (4 Nov 2026)
+- #1 Coke commission and minimum site: **still open** (not public). Ask Coke Vending directly as a prospective host.
+- #4 Morsl: **partly closed.** Present in VIC (logistics, Charter Hall, Ballarat hospital). Melbourne site count is still open.
+- #5 62-machine route: still under offer. It has prison sites (Vic Pol clearance).
+- #6 Package buyer outcomes: still open. No reviews found. Sites are on 12-month rolling tenure.
+- #7 Franchise fees: still open. Use the US 6–12% royalty as the downside case.
+- #10 AU multiples: asking prices only (~3–3.3× profit interstate). Achieved prices are still open.
+- New: 07 cites a Melbourne 45-machine listing (~$184/wk). URL needed for `routes-for-sale.md`.
+- WebFetch is still blocked for bsale.com.au.

@@ -25,3 +25,9 @@
 8. **Service proof is a gap**: no Melbourne operator found publishing response-time guarantees, telemetry-based restocking or host sales dashboards.
 9. **Franchise/licence entry is cheap but not free**: Provender $30k–$40k+; Ausbox ~$35k–$37k on 5+5-year terms.
 10. **Recommended Phase-2 shortlist (`ESTIMATE`)**: dense classic route in one precinct → add smart fridges; buy-and-upgrade a route; night-shift fresh/hot meals for logistics precincts.
+
+## Phase 2 additions (4 Nov 2026)
+- Analysis: `../analysis/phase2-analysis.md` scores archetypes A–G (A3, B2/B-lite 3, C2/4 as layer, D4, E2, F1, G2).
+11. **Morsl is in VIC industrial/logistics** (Charter Hall partnership, Amazon, Officeworks). Large western sheds are contested. The fresh-food gap is 20–100-staff sites.
+12. **Package sites are on 12-month rolling tenure**, and SVA claims 6,000+ machines sold. That makes a pool of future distressed sellers to buy from.
+13. **Route asks are ~3–3.3× profit** (interstate asking prices), above 07's ≤2.5× SDE walk-away.

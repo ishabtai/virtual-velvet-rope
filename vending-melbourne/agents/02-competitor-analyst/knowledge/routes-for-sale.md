@@ -104,3 +104,11 @@ Hand-off to 07 Financial Modeller to stress-test.
 2. **Package pricing ≈ $9–10k per machine**, roughly 1× annual revenue for small units — expensive relative to likely profit.
 3. **Mid-sized routes ($150k–$500k)** exist but disclose little; the 62-machine route (~$1.14m revenue) shows a single operator can scale with casual labour.
 4. **Buying a route is a valid entry option** for a founder with ~$150k+ capital who values day-one cash flow; the biggest risk is site-agreement transferability.
+
+---
+
+## 5. Phase 2 update (4 Nov 2026, web search summaries; pages not fetchable)
+- **E1 (62 machines)** still shows "under offer". New detail: the broker says it holds a **Victoria Police clearance certificate for prison sites**. Captive prison sites help explain its high revenue per machine (~$354/wk vs 07's $175/wk Base). Do not treat it as a beginner benchmark. https://bsale.com.au/listing/under-offer-expansive-vic-646352 (via search summary)
+- **New listing:** Melbourne vending combined with event hire, **$90,000**, updated 14 Feb 2026. https://ftp.anybusiness.com.au/listings/melbourne-vic-3000-leisure-entertainment-vending-services-hire-rent-food-hospitality-catering-3447771 (via search summary)
+- **Placement-package terms:** SVA/JBS listings state a site "location tenure agreement of 12 months, then rolls over every 12 months". Some say locations are "being finalised" (not yet secured). SVA claims "6,000+ machines sold to 3,000+ customers" (seller marketing). https://bsale.com.au/listing/new-vending-business-melbourne-vic-684863 and sister listings (via search summary)
+- **Interstate asking multiples:** a Sydney mystery-box vending chain is asking $2.2m + SAV on $661k profit (≈3.3×) and $1.5m on $500k (≈3×). A Sydney 26-machine route sold on ~$40k net profit, price undisclosed. These are asking prices, not achieved prices. https://linkbusiness.com.au (via search summary). Still no Australian achieved-price data.
