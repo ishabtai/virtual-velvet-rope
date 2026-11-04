@@ -113,7 +113,7 @@ Assumptions: new sites ramp at 60% in month 1, 85% in month 2, 100% from month 3
 | Commission 20% | ~$24,600 | −16,540 |
 | Operator pays electricity on all machines | ~$21,100 | −20,000 |
 | 3 machines vandalised/removed (17 active) | ~$34,000 | −7,065 |
-| Card fee 6% instead of 4% | ~$38,450 | −2,650 |
+| Card fee 6% instead of 4% | ~$38,460 | −2,640 |
 
 (Δ = per-machine deltas from unit-economics-model.md §6 × 20. Machine-loss row = 3 × $2,355.)
 
@@ -125,5 +125,5 @@ Assumptions: new sites ramp at 60% in month 1, 85% in month 2, 100% from month 3
 | 20 used combos (built) | ~$114k | ~$41k | 15 | ~2.8 yrs | Time to build, plus site churn |
 | Buy 10-machine route @ 2× SDE | ~$40–45k | ~$20k | 8 | ~2 yrs | Overstated sales, sites not assignable |
 | Buy route at broker ask (~$100k/11 machines) | ~$100k + GST | ~$20–22k | 8 | ~5 yrs | Overpaying |
-| 5 AI smart fridges | ~$53k | ~$11k − fixed ≈ $8.6k | 8–10 | ~6 yrs | Fresh-food waste, theft, few suitable sites |
+| 5 AI smart fridges | ~$55k | ~$11.1k − fixed ≈ $8.6k | 8–10 | ~6.4 yrs | Fresh-food waste, theft, few suitable sites |
 | 1 franchise interactive machine | ~$30k + GST | ~$5.7–12.7k (claims) | 2–3 | 2.4–5.2 yrs | Unverified franchisor revenue claims |
