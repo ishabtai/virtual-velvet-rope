@@ -4,8 +4,8 @@ _Research date: 2026-11-04_
 
 ## A. Could not verify (research limitations)
 - **Page fetches were blocked in this session** (hosts such as hospitalityhub.com.au, thevendshop.com.au, nayax.com, cfotech.com.au failed to resolve). All figures come from search-engine extracts of those pages. Re-verify key numbers directly if the network allows, or by phone.
-- **Australian Nayax pricing** (purchase price, monthly fee, processing %) — only US/Canada/Ireland figures and the AU "<$1/day" rental headline found. Need a written AU quote.
-- **AI smart fridge AU prices** (HAHA Mini/Pro/Ultra/Frozen via The Vend Shop) — quote only. Our $6k–$15k range is an ESTIMATE.
+- **Australian Nayax pricing**: the AU reseller price is now found (Onyx $2,200 incl GST, $14.70 + GST/mo, $20 + GST/fleet/mo, Dipacci). The direct Nayax AU processing % is still unknown, so a written quote is still needed.
+- **AI smart fridge AU prices**: a range of $6k–15k+ is now cited (VMA 2026), but HAHA models remain quote-only. The AU platform fee % is unknown (US Micromart: US$60/mo + 4% + 10c).
 - **Micro-market kiosk/fit-out AU cost** — no AU data; ESTIMATEs only.
 - **Vendcell U2000, Card Access Services, SOM Vending** pricing and whether CAS/OTI partnerships are current.
 - **Cantaloupe** — whether it actively sells in Australia in 2026.

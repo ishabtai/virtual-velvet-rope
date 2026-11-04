@@ -40,8 +40,9 @@ _Research date: 2026-11-04 · AUD · Figures from search extracts of cited pages
 | Drinks | ~$10,000 + GST + payment | VMA [21] |
 | Coffee vending | $3,000–$10,000 (avg $6,500) or $8,000–$20,000 | HospitalityHub [17][18] |
 | Melbourne listings (all vending, mixed) | $3,000–$10,000, avg $6,500 | HospitalityHub Melbourne page [22] |
-| AI smart fridge | **No published AU price** — quote only. ESTIMATE $6,000–$15,000 incl. GST (see machine-types.md) | [6][23] |
+| AI smart fridge | **$6,000–$15,000+** (VMA 2026 buyer's guide, verified via search extract 2026-11-04: https://www.vendingmachinesaustralia.com.au/dispensing-machines-for-sale-in-australia-2026-buyers-guide-for-businesses-and-operators). HAHA via The Vend Shop is still quote-only | [6][23] |
 | Franchise turnkey machine | from $29,970 + GST | AIPVend [12] |
+| AI smart fridge package (new fridge + cashless + placement + 24-month warranty + 180-day re-site) | $40,497 per fridge (Craigieburn VIC, Robina QLD) | Royal Vending listings on SEEK Business, search extract 2026-11-04: https://www.seekbusiness.com.au/business-listing/ai-smart-fridge-business-for-sale-geelong/768123 |
 
 ### Used / refurbished
 | Machine | Range | Source |
@@ -78,11 +79,11 @@ Source: [10][11][25]. Term length/residual not stated — must be checked.
 | Item | Used combo path | New combo path | AI smart fridge path |
 |---|---|---|---|
 | Machine | $4,000 | $8,500 | $10,000 |
-| Card reader (if not included) | $600 | $600 | incl. |
+| Card reader (if not included; corrected Phase 2: AU reseller Onyx $2,200 incl GST; $0 if rented) | $1,400 | $1,400 | incl. |
 | Delivery + install | $350 | $350 | $350 |
 | Initial stock | $500 | $600 | $800 |
 | Signage/wrap (optional) | $0–$400 | $400 | $400 |
-| **Total ex GST** | **~$5,500** | **~$10,500** | **~$11,500** |
+| **Total ex GST** | **~$6,300** (~$4,900 with rented reader) | **~$11,300** | **~$11,500** |
 Reasoning: midpoints of ranges above; reader cost from payments file; delivery/stock are estimates. GST (10%) is generally claimable if the business is GST-registered (Agent 07/08).
 
 ## Sources (accessed 2026-11-04)

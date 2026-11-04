@@ -19,14 +19,20 @@ _Research date: 2026-11-04 · AUD unless stated · Search extracts of cited page
 | **Smart-fridge native payments** (HAHA etc.) | Built-in card/QR/wallet | Included in fridge | Platform fee — quote | Quote | Card, mobile wallet, QR supported [13] |
 | **Generic retail terminals** (Square, SumUp, Tyro, Zeller) | Handheld EFTPOS | SumUp: one-off device; Tyro rent ~$29/mo | SumUp $0; Pocket Pay $23+GST | SumUp 1.40%; Square ~1.9%; Tyro ~1.4% (early 2025) [14][15] | **Not MDB/unattended** — fine for honesty-box/micro-market kiosks, not inside a spiral machine |
 
+### AU reseller price point (verified via search extract, 2026-11-04)
+- Dipacci (AU reseller, coffee-machine context) sells the **Nayax Onyx at $2,200 incl GST**, **$130 + GST onboarding**, then **$14.70 + GST per machine per month** (licence, support, telemetry and SIM) plus a **$20 + GST per fleet per month** merchant account fee. https://dipacci.com.au/products/nayax-onyx-contactless-card-reader-suitable-for-dr-coffee
+- This replaces the earlier ~$500–$800 purchase estimate below, which was too low. Use **$1,400–$2,000 ex GST** to buy, or the <$1/day rental.
+
 ### Reality-check estimate for Agent 07 (ESTIMATE)
 For a Nayax-class reader on an Australian vending machine in late 2026:
-- Hardware: **$0 upfront on rental (~$25–$30/mo)** or **~$500–$800 purchase + ~$10–$20/mo service** (converted from US/IE pricing + GST).
+- Hardware: **$0 upfront on rental (~$25–$30/mo)** or **~$1,400–$2,000 purchase + $14.70/mo per machine + $20/mo per fleet** (AU reseller, above; corrected in Phase 2).
 - Processing: **ESTIMATE 3.0%–5.0% of cashless sales** on small tickets (avg vend $3–$5), because fixed per-transaction cents dominate. Use **4%** as model default; 2.5–3% for smart fridges with larger baskets.
 - Reasoning: US pricing 5.95% at ≤$5; Canada 2.5%+10c → $4 sale = 5%; AU interchange caps lowered Oct 2026 (below) should pull AU toward the lower end.
 
 ## 3. Regulatory change: RBA surcharge ban (critical, new)
 - **From 1 October 2026 surcharging on eftpos, Visa and Mastercard is banned**; interchange caps lowered at the same time (domestic cards 1 Oct 2026; foreign cards 1 Apr 2027) [16][17][18].
+- **Verified Phase 2 (2026-11-04):** this is the RBA's final decision in its Conclusions Paper (Mar 2026). New caps: debit and prepaid **0.16% or 8c max** (was 0.20%/10c), consumer credit **0.30%**, commercial credit stays 0.8%, foreign-issued cards **1.0%** from 1 Apr 2027. Amex is excluded. eftpos, Mastercard, Visa and large acquirers must publish their fees. https://www.rba.gov.au/payments-and-infrastructure/review-of-retail-payments-regulation/2026-03/index.html ; https://www.mozo.com.au/credit-cards/guides/credit-card-interchange-fees-guide ; https://natlawreview.com/article/australia-card-payments-costs-and-surcharging-reforms-what-it-means-payments
+- **Implication:** on a $4 vend, interchange is ~1c. Most of the ~4% effective cost is the unattended provider's margin, so negotiate with the provider.
 - RBA estimates wholesale cost cuts ~$1.2 bn/yr, largest for small merchants; ~90% of small merchants better off [16][17].
 - **Implication:** an operator **cannot add a "card fee"** on a vend — processing costs must be built into shelf price (Agent 04) and margin (Agent 07). Ask providers whether they are passing on the interchange cut. Some fintech terminal providers may exit [17] — prefer established unattended specialists.
 - Amex and some others are excluded from the ban per ACCC commentary [16]. (Legal detail → Agent 08.)

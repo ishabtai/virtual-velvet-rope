@@ -72,7 +72,7 @@ Hybrids: **A→D 5** (you learn MDB and Nayax on 3–5 machines, then can value 
 | AI smart fridge (bare, incl. payments) | $10,000 (range $6,000–15,000+) | VMA-cited range; base is an ESTIMATE |
 | Micro-market full fit-out | $25,000–40,000 | ESTIMATE |
 | Franchise machine / fridge package | $29,970 / ~$40,500 | Listed prices |
-| Nayax reader, bought | $1,400–2,000 + $118 onboarding (once per fleet) | AU reseller; ESTIMATE range |
+| Nayax reader, bought | $1,400–2,000 + $130 onboarding (once per fleet) | AU reseller; ESTIMATE range |
 | Nayax reader, rented | ~$30/mo, $0 upfront | Nayax AU headline |
 | Telemetry/licence if reader is bought | $14.70/mo per machine + $20/mo per fleet | AU reseller |
 | Card processing, classic machine ($3–5 vend) | **4%** of cashless sales (range 3–6%) | ESTIMATE |

@@ -10,6 +10,7 @@ Research date: 4 Nov 2026. AUD. Facts are cited with URLs; uncited numbers are m
 | [pricing-strategy.md](pricing-strategy.md) | Melbourne price anchors; recommended price card by site tier; pricing principles; CDS Vic impact in detail |
 | [healthy-choices-guidelines.md](healthy-choices-guidelines.md) | Victorian Healthy Choices traffic-light system, hospital directive (no RED drinks), ≥50% GREEN/≤20% RED food, FoodChecker, compliant planograms |
 | [niche-products.md](niche-products.md) | Scorecard of 15 niches (Asian snacks, noodles, protein, fresh, frozen, hot food, coffee, chargers, PPE, etc.) and beginner recommendation |
+| [../analysis/phase2-analysis.md](../analysis/phase2-analysis.md) | Phase 2: archetype scores (A3 B4 C3 D4 E3 F2 G1; A+C 5), starter mixes, assumptions |
 | [open-questions.md](open-questions.md) | Verification gaps and hand-offs to agents 01–09 |
 
 ## Top findings

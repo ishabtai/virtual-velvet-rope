@@ -19,6 +19,14 @@ Research date: 4 Nov 2026.
 9. Australian smart-fridge average basket size and fresh-food waste rate.
 10. Ken Research claims (avg ticket USD 4.16; snack price +6.5% 2025) — verify against ABS CPI.
 
+## B2. Phase 2 status (4 Nov 2026)
+- Q3 water GST: lead found (GST reg 38-3.01, vending beverages) — operative text still to read (Agent 08).
+- Q6 surcharging: answered by Agent 05 — banned from 1 Oct 2026.
+- Q7 CDS: price held 1 Aug 2026; Oct 2026 review outcome unknown.
+- Q9 smart-fridge basket: still no AU data.
+- New: PPE vending prices (RSEA/Winc) not public — need quotes.
+- See ../analysis/phase2-analysis.md for archetype scores and recommended assumptions (year-1 COGS 50%).
+
 ## C. Hand-offs to other agents
 | To | What |
 |---|---|

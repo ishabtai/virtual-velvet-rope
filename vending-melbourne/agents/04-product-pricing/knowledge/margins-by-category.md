@@ -18,7 +18,7 @@ Research date: 4 Nov 2026. All prices AUD.
 
 | Item | Price | Channel | Source (accessed 4 Nov 2026) |
 |---|---|---|---|
-| Coca-Cola Classic 600 ml ×24 | $70.24 / carton (≈ $2.93/unit; GST status not stated) | Trade distributor (Kelly's Distributors) | https://kellysdistributors.com.au/product-category/carbonated-drinks/coca-cola-products/600ml-coca-cola (search snippet) |
+| Coca-Cola Classic 600 ml ×24 | $70.24 / carton (≈ $2.93/unit; read as GST-incl → **$2.66 ex-GST**, per Agent 07 — adopted 4 Nov 2026 as the conservative reading) | Trade distributor (Kelly's Distributors) | https://kellysdistributors.com.au/product-category/carbonated-drinks/coca-cola-products/600ml-coca-cola (search snippet) |
 | Coca-Cola Classic 600 ml single | $4.50 | BWS retail | https://bws.com.au/product/93167/coca-cola-bottle-600ml |
 | Coca-Cola 600 ml single | $4.40 | TerryWhite Chemmart retail | https://terrywhitechemmart.com.au/shop/product/coca-cola-coke-bottle-600ml |
 | Mount Franklin still water 600 ml | $2.45 (Coles & Woolworths) | Supermarket | https://www.grocerize.com.au/product/7942941376595/mount-franklin-spring-water-bottle-600ml |
@@ -57,7 +57,7 @@ Assumptions: GST-registered operator; costs are ex-GST landed; vend prices typic
 | Muesli/health bar | $0.80–1.50 | $3.00 | $2.73 (some GST-free — check) | 45–71% |
 | Protein bar 45–60 g | $2.00–3.20 | $5.50–6.00 | $5.00–5.45 | 36–63% |
 | RTD protein shake 350–500 ml | $2.80–4.00 | $6.50–7.50 | $5.91–6.82 | 32–59% |
-| Cup noodle (Nissin/Indomie cup) | $0.90–1.80 | $3.50–4.00 | $3.18–3.64 | 43–75% |
+| Cup noodle (Nissin/Indomie/Shin cup; Shin Cup retail ≈ $1.70–1.75/cup in 6-packs, Umall https://www.umall.com.au/collections/lunar-new-year-2026/instant-noodles, 4 Nov 2026) | $0.90–1.80 | $3.50–4.00 | $3.18–3.64 | 43–75% |
 | Sandwich / wrap (fresh, bought-in) | $4.00–6.50 | $9.00–11.00 | $8.18–10.00 (GST status varies — see §4) | 35–55% **before** waste |
 | Ready meal (chilled, microwave) | $6.00–9.00 | $12.00–15.00 | $10.90–13.60 | 34–56% before waste |
 | Bean-to-cup coffee (beans + milk + cup + lid) | $0.70–1.20 | $3.50–4.50 | $3.18–4.09 | **62–83%** |
@@ -83,7 +83,7 @@ Example: Coke 600 ml, vend $4.50 incl GST.
 | COGS (direct bottler / promo buying) | −2.10 |
 | **Gross profit** | **1.99 (49%)** |
 | Site commission 15% of net sales (ESTIMATE; range 0–25%) | −0.61 |
-| Card/payment fee ~1.5–2.0% + telemetry per-tx ~$0.05–0.10 (Agent 05 to confirm) | −0.15 |
+| Card/payment fee + telemetry (Agent 05 Phase 1: model 4% of cashless sales) | −0.16 |
 | Shrink/expiry/damage 2% | −0.08 |
 | **Contribution per unit** | **≈ 1.15 (28%)** |
 
@@ -97,6 +97,7 @@ From ATO food guidance (accessed 4 Nov 2026):
 - **Taxable (10% GST):** confectionery (chocolate, lollies, chewing gum), savoury snacks (chips, crackers, pretzels), soft drinks, flavoured/carbonated water, sports drinks, flavoured milk, ice cream, **hot food** and food sold for consumption on the premises — https://ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/gst-and-food/taxable-food
 - **GST-free:** natural non-carbonated water without additives; juice ≥90% fruit/vegetable; many basic foods (plain yoghurt, fruit, some bars/biscuits differ) — https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/in-detail/your-industry/gst-and-food/gst-free-food
 - **Watch-out:** ATO example says bottled water sold at an event for consumption at the event is taxable ("consumed on premises" rule). Whether a vending machine in an office/gym counts as "premises" for a GST-free item is **unverified** — hand-off to Agent 08 / an accountant. The model should conservatively treat everything as taxable except plain still water, flagged.
+- **Update 4 Nov 2026 (Phase 2):** the GST Regulations contain reg **38-3.01 "GST-free beverages supplied from vending machines"** — https://www.legislation.gov.au/F2019L00417/2025-11-01/2025-11-01/text/original/pdf (heading seen in search; operative text not read). This supports treating plain water from a vending machine as GST-free; Agent 08 to confirm the wording.
 - Use the ATO detailed food list for each SKU.
 
 ## 5. CDS Vic effect on drink costs
