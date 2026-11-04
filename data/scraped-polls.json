@@ -1,6 +1,50 @@
 {
-  "updatedAt": "2026-11-03T11:54:27.635Z",
+  "updatedAt": "2026-11-04T12:04:46.585Z",
   "polls": [
+    {
+      "id": "c13-2026-11-04-58370y",
+      "date": "2026-11-04",
+      "pollster": "קמיל פוקס",
+      "outlet": "חדשות 13",
+      "sampleSize": null,
+      "mode": "mixed",
+      "seats": {
+        "likud": 27,
+        "yashar": 21,
+        "joint-list": 11,
+        "democrats": 8,
+        "raam": 8,
+        "yisrael-beiteinu": 7,
+        "otzma": 7,
+        "utj": 7,
+        "shas": 6,
+        "religious-zionism": 6
+      },
+      "provenance": "published-partial",
+      "source": "https://13tv.co.il/item/news/politics/politics/uh5r2-905439957/?pid=62&amp;refc=902992371",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (10 מפלגות, 108 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
+    {
+      "id": "kikar-2026-11-02-tpe1w0",
+      "date": "2026-11-02",
+      "pollster": "לא ידוע",
+      "outlet": "כיכר השבת",
+      "sampleSize": 559,
+      "mode": "unknown",
+      "seats": {
+        "likud": 28,
+        "yashar": 20,
+        "byachad": 12,
+        "joint-list": 11,
+        "yisrael-beiteinu": 8,
+        "otzma": 6
+      },
+      "provenance": "published-partial",
+      "source": "https://www.kikar.co.il/political-news/direct-polls-survey-government-coalition-options",
+      "partial": true,
+      "notes": "נקלט אוטומטית מטקסט הכתבה (6 מפלגות, 85 מנדטים). לא עבר אימות אנושי — ראו עמוד המתודולוגיה."
+    },
     {
       "id": "c13-2026-10-29-1ovp6yy",
       "date": "2026-10-29",
