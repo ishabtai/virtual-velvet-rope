@@ -90,6 +90,14 @@ The main universities are the University of Melbourne (Parkville), Monash (Clayt
 - Demand is semester-driven, with a summer drop.
 - Universities usually contract out vending centrally (often to a single large operator), so they are hard for a newcomer to enter.
 - **Student accommodation buildings** (purpose-built student accommodation, PBSA) are more accessible.
+- **PBSA sizing (added 4 Nov 2026, Phase 2):**
+  - Melbourne holds ~42% of Australia's PBSA beds and is the largest PBSA market (Cushman & Wakefield, Jul 2025). https://www.cushmanwakefield.com/en/australia/news/2025/07/melbourne-australia-purpose-built-student-accommodation-capital
+  - CBRE (2026) expects ~34k new beds nationally over 2026–29, ≈ a one-third uplift on current stock, with Melbourne taking 28%. It estimates ~10k beds of unmet demand in Melbourne City/Inner North. https://www.cbre.com.au/insights/reports/australian-student-accommodation-2026-pbsa-demand-supply-and-pricing
+  - **ESTIMATE:** a national stock of ~100k beds implies ~40–45k PBSA beds in Melbourne.
+- **International student cap:**
+  - The 2026 National Planning Level is 295k, up from 270k in 2025. https://ieaa.org.au/IEAA/News/2025/Australian-Government-2026-National-Planning-Level.aspx
+  - New commencements were down ~15% y/y to Dec 2025, while total enrolments fell ~3% (academicjobs.com, lower quality). https://www.academicjobs.com/au/higher-education-news/decline-in-international-student-commencements-australia-10167
+  - Read this as flat-to-soft demand.
 
 ---
 
@@ -106,6 +114,7 @@ The main universities are the University of Melbourne (Parkville), Monash (Clayt
 ## 7. Office workers (CBD)
 
 - **Melbourne CBD office vacancy: 19% (Jan 2026)**, the worst of any capital-city CBD (Property Council: https://www.propertycouncil.com.au/media-releases/melbournes-cbd-vacancy-continues-to-be-worst-in-the-nation).
+  - **Update (verified 4 Nov 2026):** the Property Council reports **18.9% (Jul 2026)**, edging down from 19.0%. It is still the highest of any capital-city CBD. JLL puts it at 19.7% (Q1 2026, different method). https://www.propertycouncil.com.au/media-releases/melbourne-office-market-shows-signs-of-recovery-but-nations-highest-vacancy-underscores-work-ahead ; https://www.jll.com/en-au/insights/are-structural-issues-distorting-melbourne-s-vacancy
 - About 36% of employed Australians usually work from home (ABS Working Arrangements, Aug 2024: https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/working-arrangements).
 - Roy Morgan (Sep 2025): Melbourne CBD worker numbers lag pre-pandemic levels. https://roymorgan-cms-prod.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2025/09/30051748/10037-Sydney-and-Brisbane-CBD-workers-surge-while-Melbourne-struggles-to-regain-pre-pandemic-heights-September-2025.pdf
 

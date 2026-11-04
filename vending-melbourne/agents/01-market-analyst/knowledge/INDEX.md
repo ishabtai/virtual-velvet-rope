@@ -10,6 +10,7 @@
 | [melbourne-demographics.md](melbourne-demographics.md) | Population and growth, industrial precincts, NEICs, healthcare workforce, students, apartments, CBD offices, shift workers, priority zones |
 | [consumer-trends.md](consumer-trends.md) | Payments (RBA 2025 survey), spend per transaction, health regulation and demand, 24/7 convenience, hybrid work, cultural preferences, sustainability |
 | [segments.md](segments.md) | 13 segments scored on demand, access, margin, growth and operations; top-pick profiles; under-served segments; segment-to-budget fit |
+| [../analysis/phase2-analysis.md](../analysis/phase2-analysis.md) | Phase 2: archetype scores (market lens), top findings, assumptions, conflicts |
 | [open-questions.md](open-questions.md) | Unverified items and hand-offs to agents 00 and 02–09 |
 
 ## Top findings
@@ -24,7 +25,7 @@
 4. **Best segment for a newcomer: industrial/logistics shift sites** (West: Truganina, Laverton N, Derrimut; South-east: Dandenong South; North: Campbellfield, Tullamarine). These are 24/7, captive and accessible. Next best:
    - mid-size workplace smart fridges and micro-markets;
    - student accommodation and apartment towers.
-5. **CBD office vending is weak.** Melbourne CBD office vacancy is 19% (Jan 2026), the worst of any capital-city CBD, and about 36% of workers usually WFH.
+5. **CBD office vending is weak.** Melbourne CBD office vacancy is 19% (Jan 2026), 18.9% (Jul 2026), the worst of any capital-city CBD, and about 36% of workers usually WFH.
 6. **Healthcare is huge but regulated.** Victorian public health services employ about 157k people (headcount, Jun 2025), but the **Healthy Choices directive (Jan 2025)** requires ≥50% GREEN and ≤20% RED, with no sugary drinks in all their vending. Being able to offer a compliant range is a differentiator.
 7. **Growth is in formats, not volume.** Smart fridges, micro-markets and employer-subsidised pantries are the growth area. The players are Morsl, Provender (franchise) and Agora; Coca-Cola launched AI smart coolers in 2024.
 8. **Revenue benchmarks come from sellers and are low confidence.**

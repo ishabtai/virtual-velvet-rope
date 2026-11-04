@@ -36,4 +36,5 @@ A machine grossing $300 per week incl. GST equals about $273 ex GST. A 10% commi
 ## Red flags
 - Hosts asking for an upfront "placement fee" or fixed rent at small sites. Volume rarely justifies it.
 - **Location-locator services** that sell sites to new operators. These are a common source of poor sites in AU and US vending (ESTIMATE). Several AU business-for-sale "turnkey" listings say "locations being finalised", which means the sites are not yet secured (https://bsale.com.au/listing/rare-opportunity-for-melbourne-vic-671667, via search).
+- **Re-site guarantees with hidden thresholds.** Royal Vending packages offer a re-site only if weekly takings fall below an undisclosed amount within the first 180 days, with terms on request (https://www.seekbusiness.com.au/business-listing/vending-machines-with-placement-re-site-option-geelong/762257, search summary, accessed 2026-11-04). After 180 days the buyer carries all site risk.
 - Exclusivity clauses held by an incumbent operator. Ask before pitching.

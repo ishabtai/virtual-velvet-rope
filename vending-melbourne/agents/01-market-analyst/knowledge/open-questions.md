@@ -15,13 +15,13 @@
 |---|---|---|---|
 | 1 | True Australian vending-operator revenue (estimates range from USD 428m to USD 3.5bn) | Market sizing | Buy or read the IBISWorld operator report (if one exists), Euromonitor "Vending in Australia", or ask the AVBA/IVMOA |
 | 2 | Number of vending machines in Australia / Victoria | Density and saturation | ACCC AVBA notification documents (2021); association contacts |
-| 3 | Current (2025–26) cashless share in Australian vending | Equipment spec, forecasting | Nayax/Cantaloupe AU data; ask local operators |
+| 3 | Current (2025–26) cashless share in Australian vending. *Partly resolved, 4 Nov 2026: Ken Research shows 75% (low confidence).* | Equipment spec, forecasting | Nayax/Cantaloupe AU data; ask local operators |
 | 4 | Average Melbourne vend price and ticket | Revenue model | Agent 04 field price audit |
 | 5 | Job counts per industrial precinct (Western, Northern, Southern SSIPs; airport) | Location prioritisation | MICLUP Part A/B PDFs; ABS Census 2021 place-of-work data; council economic profiles (.id) |
-| 6 | Current shift-work share (ABS 2009 figure ~16% is stale) | Sizing 24/7 demand | ABS Working Arrangements Aug 2024 tables |
+| 6 | Current shift-work share (ABS 2009 figure ~16% is stale). *Still open: the ABS Aug 2024 release exists, but no figure could be extracted.* | Sizing 24/7 demand | ABS Working Arrangements Aug 2024 tables |
 | 7 | Gym/leisure centre counts in Melbourne; AUSactive data | S5 sizing | AUSactive; council directories |
-| 8 | PBSA bed numbers in Melbourne | S3 sizing | PBSA operator reports; JLL/CBRE student-housing reports |
-| 9 | Smart fridge / micro-market market size in Australia | Format choice | Morsl/Provender disclosures; 365 Retail Markets / Nayax AU |
+| 8 | PBSA bed numbers in Melbourne. *Partly resolved, 4 Nov 2026: ~42% of national stock, ESTIMATE ~40–45k beds.* | S3 sizing | PBSA operator reports; JLL/CBRE student-housing reports |
+| 9 | Smart fridge / micro-market market size in Australia. *Still open, 4 Nov 2026: only household smart-refrigerator reports were found.* | Format choice | Morsl/Provender disclosures; 365 Retail Markets / Nayax AU |
 | 10 | Whether Healthy Choices *guidelines* apply to council leisure centres and other state sites as policy or advice only | S5 and S8 product range | Dept of Health (heas.health.vic.gov.au); Agent 08 |
 | 11 | Demand for niche/novelty vending (Japanese snacks, hot food, flowers) in Melbourne | S13 validation | Social-listening and field visits; Agent 02 competitor scan |
 | 12 | Seasonality (summer drink peaks, university semester gaps) | Cash-flow model | Operator interviews |

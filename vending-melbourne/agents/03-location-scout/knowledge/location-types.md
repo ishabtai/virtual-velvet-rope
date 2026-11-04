@@ -20,6 +20,8 @@ Sales are driven by **captive headcount × hours of access × lack of alternativ
 
 Weekly gross figures are per machine and include GST. They are ESTIMATEs drawn from US/AU operator rules of thumb and one AU listing benchmark: a 62-machine Melbourne network advertising "Rev $95k+ p/m", which works out to roughly $350 per machine per week (https://bsale.com.au/listing/under-offer-expansive-vic-646352, via search snippet; unverified).
 
+> **Phase 2 note (2026-11-04):** these ranges are upside cases for good sites. For planning, use 07's per-machine low/base/high of $100/$175/$300 per week, which is backed by a 45-machine Melbourne listing (~$184/week). See `../analysis/phase2-analysis.md`.
+
 | Location type | Typical weekly gross / machine (ESTIMATE) | Commission expectation | Competition from incumbents | Beginner fit | Notes |
 |---|---|---|---|---|---|
 | Warehouses / distribution centres (24/7 shifts) | $250–$800 | 0–10% | Medium | **High** | Best captive audience. Night shifts and no café nearby |
@@ -51,7 +53,7 @@ Weekly gross figures are per machine and include GST. They are ESTIMATEs drawn f
 - Victorian public health services must follow **Healthy Choices: policy directive for Victorian public health services**, introduced in 2021. Red (sugary) drinks were to be removed from vending and in-house retail by **30 September 2022**, and the targets continue under the January 2025 update (https://heas.health.vic.gov.au/healthy-choices-policy-directive-victorian-public-health-services; https://www.health.vic.gov.au/sites/default/files/2026-02/healthy-choices-policy-directive-for-victorian-public-health-services-short-summary-2025.pdf, via search snippets).
 - One summary cites vending targets of "at least 50% GREEN drinks and no more than 20% [amber]…" (truncated; confirm with 04/08).
 - Monash Health reports all vending machines are compliant, with red drinks removed and artificially sweetened amber drinks reduced (https://coronavirus.monashhealth.org/latest-news/2022/12/02/more-healthy-choices-at-work/). Alfred Health removed sugary drinks at Caulfield and Sandringham (https://www.alfredhealth.org.au/news/sandringham-and-caulfield-hospitals-cut-back-on-sugar).
-- Implication: public hospitals are high-volume but **tendered, compliance-heavy and lower-margin** on the "healthy" range. Private hospitals and aged care sit outside the public directive (confirm with 08) and are easier entry points.
+- Implication: public hospitals are high-volume but **tendered, compliance-heavy and lower-margin** on the "healthy" range. Private hospitals and private aged care are **not bound** by the directive (they may adopt it voluntarily), but public-sector residential aged care services (PSRACS) and integrated community health services **are** bound (verified 2026-11-04 via search summary of https://heas.health.vic.gov.au/healthy-choices). Private sites are the easier entry points.
 
 ### 3. Universities and TAFE
 - These are huge populations. Monash University (Clayton) sits in a cluster of about 75,000–95,000 jobs (see melbourne-precincts.md). The University of Melbourne has 55,000+ students (https://www.vic.gov.au/parkville-precinct).
