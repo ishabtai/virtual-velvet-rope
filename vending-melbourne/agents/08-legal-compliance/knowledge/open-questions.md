@@ -50,3 +50,11 @@
 - Tobacco licensing: new regime enforced from 1 Feb 2026.
 - Privacy reform: in progress.
 - Council fees: 2025–26 figures quoted; 2026–27 may differ.
+
+## D. Phase 2b updates (4 Nov 2026, see `../analysis/phase2-analysis.md` §6)
+- **Q2 partly resolved:** fees depend on the council, and some charge per machine. City of Casey 2026-27 lists "food vending machine registration (class 2 & 3)" at $175 **each** (https://www.casey.vic.gov.au/node/123). Maribyrnong Class 3 $175 and Banyule $107 commercial (2025-26, ABLIS).
+- **Q6 updated:** the $20k instant asset write-off is reported as made permanent from 1 Jul 2026 (bill passed Aug 2026). Royal Assent is not confirmed (ATO new-legislation page; Accountants Daily).
+- **Q7 note:** the vending-beverage GST provision appears to be reg 38-3.02 of the GST Regulations 2019 (F2019L00417); its operative text was not read.
+- **Q10 still open:** no vending-specific Retail Leases Act guidance found. The VSBC "lease or licence" guideline is the starting point.
+- **Q13 partly:** the $7,500 WorkCover threshold appears only in secondary sources (LegalVision). The average premium rate is held at 1.8% for 2026-27 (Insurance News).
+- **Franchising Code (from 1 Apr 2025):** 14-day disclosure before signing and 14-day cooling-off confirmed. The Key Facts Sheet is no longer required (Treasury key-changes table, https://treasury.gov.au/sites/default/files/2025-03/p2025-633841-t.pdf).

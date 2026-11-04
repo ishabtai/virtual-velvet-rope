@@ -45,7 +45,9 @@ Fees are set by each council and change every 1 July. Melbourne councils vary a 
 | Greater Dandenong (Melbourne SE) | $307 | https://ablis.business.gov.au/service/vic/registration-notification-of-a-food-vending-machine-city-of-greater-dandenong/38522 |
 | Glenelg (regional, for comparison) | $170 (vending) / $350 (application, per another extract) | https://ablis.business.gov.au/service/vic/registration-notification-of-a-food-vending-machine-glenelg-shire-council/38537 |
 | Monash (fixed premises, NOT vending, for scale) | $411.30 | https://ablis.business.gov.au/service/vic/registration-notification-of-a-fixed-food-premises-city-of-monash/28956 |
-| Banyule | $40 for community-group Class 3 vending | Banyule listing above |
+| Banyule | $40 for community-group Class 3 vending; $107 commercial | Banyule listing above |
+| Maribyrnong | $175 Class 3 (2025-26) | https://ablis.business.gov.au/service/vic/registration-notification-of-a-food-vending-machine-maribyrnong-city-council/31766 |
+| Casey | **$175 each machine**, Class 2 & 3 (2026-27) | https://www.casey.vic.gov.au/node/123 (search extract, 4 Nov 2026) |
 
 **ESTIMATE for modelling:** Class 3 at about **$200–$450 per year** in total (it is a single registration with the principal council, not one per machine, but check whether your council charges per machine). Class 2 at about **$400–$900 per year**, plus FSS training (~$150–$250) and FSP preparation time. All of these are ESTIMATEs and need confirmation with the chosen principal council.
 

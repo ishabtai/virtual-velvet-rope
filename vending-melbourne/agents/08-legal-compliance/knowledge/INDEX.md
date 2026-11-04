@@ -11,6 +11,7 @@
 | `host-agreement-template.md` | Unfair contract terms law, commission benchmarks, full clause-by-clause placement agreement template, licence vs lease, PPSR, site checklist |
 | `consumer-law-and-safety.md` | ACL refunds and guarantees, single-price display, card surcharge changes from 1 Oct 2026, RCM/EESS and test and tag, CDS Vic, council permits for public land, privacy and cameras |
 | `open-questions.md` | Unverified items and hand-offs to agents 00–09 |
+| `../analysis/phase2-analysis.md` | Phase 2b: compliance scores per archetype, cost checklists, route due diligence, franchise and package red flags |
 
 ## Top findings
 1. **Classic snack/drink vending (Class 4) carries very little food-law burden.** You notify your principal council once via FoodTrader. It is free, valid statewide, never renewed, and needs no Statement of Trade. (FoodTrader; Banyule and Buloke ABLIS listings.)
